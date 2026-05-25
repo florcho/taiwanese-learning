@@ -538,6 +538,325 @@ function toast(msg) {
 }
 
 // ============================================================
+// 인박스 (Upload Queue) + GitHub API
+// ============================================================
+const INBOX_KEY = 'taiwanese-inbox-queue';
+const GH_CONFIG_KEY = 'taiwanese-github-config';
+
+function getInboxQueue() {
+  try { return JSON.parse(localStorage.getItem(INBOX_KEY)) || []; } catch { return []; }
+}
+function saveInboxQueue(q) { localStorage.setItem(INBOX_KEY, JSON.stringify(q)); }
+function getGHConfig() {
+  try {
+    const c = JSON.parse(localStorage.getItem(GH_CONFIG_KEY)) || {};
+    return { owner: c.owner || 'florcho', repo: c.repo || 'taiwanese-learning', pat: c.pat || '' };
+  } catch { return { owner: 'florcho', repo: 'taiwanese-learning', pat: '' }; }
+}
+function saveGHConfig(c) { localStorage.setItem(GH_CONFIG_KEY, JSON.stringify(c)); }
+
+// 파일 → base64 변환
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      const base64 = result.split(',')[1]; // strip data:...;base64,
+      resolve({ base64, name: file.name, size: file.size, mime: file.type });
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+// UTF-8 안전 base64 인코딩 (한자 포함 텍스트용)
+function utf8Base64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+// GitHub API: 파일 업로드 (PUT contents)
+async function ghPutFile(path, contentBase64, message) {
+  const cfg = getGHConfig();
+  if (!cfg.pat) throw new Error('PAT이 설정되지 않았어요. 설정 화면에서 입력해주세요.');
+  const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+  const res = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${cfg.pat}`,
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      message: message || `Add ${path}`,
+      content: contentBase64,
+      branch: 'main'
+    })
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(`${res.status} ${res.statusText}: ${err.message || ''}`);
+  }
+  return res.json();
+}
+
+// 연결 테스트
+async function ghTestConnection() {
+  const cfg = getGHConfig();
+  if (!cfg.pat) throw new Error('PAT 미설정');
+  const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}`;
+  const res = await fetch(url, {
+    headers: { 'Authorization': `Bearer ${cfg.pat}`, 'Accept': 'application/vnd.github+json' }
+  });
+  if (!res.ok) throw new Error(`${res.status}: 토큰 또는 리포 확인 필요`);
+  const data = await res.json();
+  return data;
+}
+
+// 인박스 항목 추가
+async function submitUpload() {
+  const content = document.getElementById('upload-content').value.trim();
+  const memo = document.getElementById('upload-memo').value.trim();
+  const fileInput = document.getElementById('upload-file');
+  const file = fileInput.files[0];
+  const type = document.querySelector('.type-chip.active')?.dataset.type || 'other';
+
+  if (!content && !file) {
+    setUploadStatus('내용 텍스트나 파일 중 하나는 필요해요', 'error');
+    return;
+  }
+
+  const now = new Date();
+  const ts = now.toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  const dateStr = ts.slice(0, 10);
+  const timeStr = ts.slice(11, 19);
+  const id = `${dateStr}_${timeStr}_${type}`;
+
+  const item = {
+    id,
+    type,
+    date: now.toISOString(),
+    memo,
+    content,
+    file: null,
+    synced: false,
+    githubUrls: []
+  };
+
+  if (file) {
+    setUploadStatus('파일 처리 중...', '');
+    try {
+      const fileData = await fileToBase64(file);
+      item.file = fileData;
+    } catch (e) {
+      setUploadStatus('파일 읽기 실패: ' + e.message, 'error');
+      return;
+    }
+  }
+
+  // 1. 로컬에 추가
+  const queue = getInboxQueue();
+  queue.unshift(item);
+  saveInboxQueue(queue);
+
+  // 2. PAT 있으면 GitHub 업로드 시도
+  const cfg = getGHConfig();
+  if (cfg.pat) {
+    setUploadStatus('GitHub에 업로드 중...', '');
+    try {
+      const urls = await uploadItemToGitHub(item);
+      // 업로드 성공 → 로컬 큐 동기화 상태 업데이트
+      const q = getInboxQueue();
+      const idx = q.findIndex(x => x.id === item.id);
+      if (idx >= 0) { q[idx].synced = true; q[idx].githubUrls = urls; saveInboxQueue(q); }
+      setUploadStatus('✅ GitHub 업로드 완료!', 'success');
+      setTimeout(closeUploadModal, 1200);
+    } catch (e) {
+      setUploadStatus('로컬엔 저장됨. GitHub 업로드 실패: ' + e.message, 'error');
+    }
+  } else {
+    setUploadStatus(`✅ 로컬 저장됨. PAT 설정 후 "동기화" 해주세요. (현재 큐: ${queue.length}개)`, 'success');
+    setTimeout(closeUploadModal, 1500);
+  }
+  updateInboxBadge();
+}
+
+// 개별 항목 GitHub 업로드
+async function uploadItemToGitHub(item) {
+  const urls = [];
+  // 텍스트 → .md 파일
+  if (item.content) {
+    const md = `---\ntype: ${item.type}\ndate: ${item.date}\nmemo: ${item.memo || ''}\n---\n\n${item.content}\n`;
+    const path = `inbox/${item.id}.md`;
+    const result = await ghPutFile(path, utf8Base64(md), `Add inbox ${item.type}: ${item.id}`);
+    urls.push(result.content?.html_url);
+  }
+  // 파일 (있으면)
+  if (item.file) {
+    const ext = item.file.name.includes('.') ? item.file.name.split('.').pop() : 'bin';
+    const path = `inbox/${item.id}.${ext}`;
+    const result = await ghPutFile(path, item.file.base64, `Add inbox file ${item.id}`);
+    urls.push(result.content?.html_url);
+  }
+  return urls;
+}
+
+// 모달 제어
+function openUploadModal() {
+  document.getElementById('upload-modal').classList.remove('hidden');
+  // 폼 초기화
+  document.getElementById('upload-content').value = '';
+  document.getElementById('upload-memo').value = '';
+  document.getElementById('upload-file').value = '';
+  document.getElementById('upload-file-info').textContent = '';
+  document.getElementById('upload-status').textContent = '';
+  document.getElementById('upload-status').className = 'form-help';
+  document.querySelectorAll('.type-chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+}
+function closeUploadModal() {
+  document.getElementById('upload-modal').classList.add('hidden');
+}
+function setUploadStatus(msg, kind) {
+  const el = document.getElementById('upload-status');
+  el.textContent = msg;
+  el.className = 'form-help' + (kind ? ' ' + kind : '');
+}
+
+// 인박스 화면 렌더
+function renderInboxScreen() {
+  const queue = getInboxQueue();
+  const list = document.getElementById('inbox-queue-list');
+  const statusCard = document.getElementById('inbox-status-card');
+  const actions = document.getElementById('inbox-actions');
+  const cfg = getGHConfig();
+
+  const syncedCount = queue.filter(q => q.synced).length;
+  const pendingCount = queue.length - syncedCount;
+  statusCard.innerHTML = `
+    <p class="label">현황</p>
+    <p style="margin:0;font-size:14px;line-height:1.6">
+      📥 전체 ${queue.length}개 · ☁️ GitHub 동기화 ${syncedCount}개 · ⏳ 대기 ${pendingCount}개<br/>
+      <span style="color:var(--text-dim);font-size:12px">
+        ${cfg.pat ? `🔑 PAT 설정됨 (${cfg.owner}/${cfg.repo})` : '⚠️ PAT 미설정 — 설정에서 입력 필요'}
+      </span>
+    </p>
+  `;
+
+  if (queue.length === 0) {
+    list.innerHTML = `
+      <div class="inbox-empty">
+        <div class="big-emoji">📭</div>
+        <p>인박스가 비어있어요.<br/>+ 버튼으로 자료를 추가해보세요.</p>
+      </div>
+    `;
+    actions.classList.add('hidden');
+    return;
+  }
+
+  actions.classList.remove('hidden');
+  list.innerHTML = '';
+  queue.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'inbox-item';
+    const preview = item.content ? item.content.slice(0, 200) : '(텍스트 없음)';
+    const fileInfo = item.file ? `📎 ${item.file.name} (${(item.file.size / 1024).toFixed(1)} KB)` : '';
+    div.innerHTML = `
+      <div class="inbox-meta">
+        <span class="inbox-type-badge">${item.type}</span>
+        <span class="inbox-status ${item.synced ? 'synced' : 'pending'}">
+          ${item.synced ? '☁️ 동기화됨' : '⏳ 대기 중'}
+        </span>
+      </div>
+      <p class="inbox-preview">${escapeHTML(preview)}</p>
+      ${fileInfo ? `<p style="font-size:12px;color:var(--text-dim);margin:4px 0">${fileInfo}</p>` : ''}
+      ${item.memo ? `<p style="font-size:12px;color:var(--text-dim);margin:4px 0">📝 ${escapeHTML(item.memo)}</p>` : ''}
+      <p style="font-size:11px;color:var(--text-faint);margin:4px 0 0">${new Date(item.date).toLocaleString('ko-KR')}</p>
+      <div class="inbox-actions-row">
+        ${!item.synced ? `<button class="btn" data-action="sync" data-id="${item.id}">☁️ 동기화</button>` : ''}
+        <button class="btn" data-action="delete" data-id="${item.id}">🗑️ 삭제</button>
+      </div>
+    `;
+    div.querySelectorAll('[data-action]').forEach(btn => {
+      btn.onclick = async () => {
+        const id = btn.dataset.id;
+        const action = btn.dataset.action;
+        if (action === 'delete') {
+          if (confirm('이 항목을 삭제할까요?')) {
+            const q = getInboxQueue().filter(x => x.id !== id);
+            saveInboxQueue(q);
+            renderInboxScreen();
+            updateInboxBadge();
+          }
+        } else if (action === 'sync') {
+          btn.textContent = '⏳ 업로드 중...';
+          btn.disabled = true;
+          try {
+            const it = getInboxQueue().find(x => x.id === id);
+            const urls = await uploadItemToGitHub(it);
+            const q = getInboxQueue();
+            const idx = q.findIndex(x => x.id === id);
+            if (idx >= 0) { q[idx].synced = true; q[idx].githubUrls = urls; saveInboxQueue(q); }
+            toast('✅ 동기화 완료');
+            renderInboxScreen();
+          } catch (e) {
+            toast('실패: ' + e.message);
+            btn.disabled = false;
+            btn.textContent = '☁️ 동기화';
+          }
+        }
+      };
+    });
+    list.appendChild(div);
+  });
+}
+
+async function syncAllToGitHub() {
+  const queue = getInboxQueue();
+  const pending = queue.filter(q => !q.synced);
+  if (pending.length === 0) { toast('동기화할 항목이 없어요'); return; }
+  if (!getGHConfig().pat) { toast('PAT를 먼저 설정해주세요'); show('screen-settings'); renderSettings(); return; }
+
+  const btn = document.getElementById('sync-all-btn');
+  btn.textContent = `⏳ 0 / ${pending.length}`;
+  btn.disabled = true;
+  let success = 0, fail = 0;
+  for (let i = 0; i < pending.length; i++) {
+    const item = pending[i];
+    btn.textContent = `⏳ ${i + 1} / ${pending.length}`;
+    try {
+      const urls = await uploadItemToGitHub(item);
+      const q = getInboxQueue();
+      const idx = q.findIndex(x => x.id === item.id);
+      if (idx >= 0) { q[idx].synced = true; q[idx].githubUrls = urls; saveInboxQueue(q); }
+      success++;
+    } catch (e) {
+      console.error(e);
+      fail++;
+    }
+  }
+  btn.disabled = false;
+  btn.textContent = '☁️ 전체 GitHub로 동기화';
+  toast(`완료: 성공 ${success}, 실패 ${fail}`);
+  renderInboxScreen();
+}
+
+function updateInboxBadge() {
+  const c = getInboxQueue().length;
+  const el = document.getElementById('settings-inbox-count');
+  if (el) el.textContent = c;
+}
+
+// 설정 화면
+function renderSettings() {
+  const cfg = getGHConfig();
+  document.getElementById('gh-owner').value = cfg.owner;
+  document.getElementById('gh-repo').value = cfg.repo;
+  document.getElementById('gh-pat').value = cfg.pat;
+  document.getElementById('gh-status').textContent = '';
+  document.getElementById('gh-status').className = 'form-help';
+  updateInboxBadge();
+}
+
+// ============================================================
 // 이벤트 바인딩
 // ============================================================
 function bindEvents() {
@@ -599,13 +918,79 @@ function bindEvents() {
     };
   });
 
-  // 설정 (현재는 진행도 리셋)
+  // 설정 화면 열기
   document.getElementById('settings-btn').onclick = () => {
-    if (confirm('진행도를 초기화하시겠습니까?')) {
+    show('screen-settings');
+    renderSettings();
+  };
+
+  // 설정 화면: 저장 / 테스트 / 진행도 초기화 / 인박스
+  document.getElementById('save-gh-btn').onclick = () => {
+    saveGHConfig({
+      owner: document.getElementById('gh-owner').value.trim() || 'florcho',
+      repo: document.getElementById('gh-repo').value.trim() || 'taiwanese-learning',
+      pat: document.getElementById('gh-pat').value.trim()
+    });
+    const s = document.getElementById('gh-status');
+    s.textContent = '✅ 저장 완료';
+    s.className = 'form-help success';
+  };
+  document.getElementById('test-gh-btn').onclick = async () => {
+    // 입력값 임시 저장 후 테스트
+    saveGHConfig({
+      owner: document.getElementById('gh-owner').value.trim() || 'florcho',
+      repo: document.getElementById('gh-repo').value.trim() || 'taiwanese-learning',
+      pat: document.getElementById('gh-pat').value.trim()
+    });
+    const s = document.getElementById('gh-status');
+    s.textContent = '⏳ 연결 확인 중...';
+    s.className = 'form-help';
+    try {
+      const data = await ghTestConnection();
+      s.textContent = `✅ 연결 성공: ${data.full_name} (${data.private ? 'private' : 'public'})`;
+      s.className = 'form-help success';
+    } catch (e) {
+      s.textContent = '❌ ' + e.message;
+      s.className = 'form-help error';
+    }
+  };
+  document.getElementById('view-inbox-btn').onclick = () => {
+    show('screen-inbox');
+    renderInboxScreen();
+  };
+  document.getElementById('reset-progress-btn').onclick = () => {
+    if (confirm('진행도를 초기화하시겠습니까? (인박스는 유지됩니다)')) {
       state.progress = { completed: [], vocab: {} };
       saveProgress();
-      renderHome();
-      toast('초기화 완료');
+      toast('진행도 초기화 완료');
+      renderSettings();
+    }
+  };
+
+  // FAB + 모달
+  document.getElementById('fab').onclick = openUploadModal;
+  document.getElementById('close-modal-btn').onclick = closeUploadModal;
+  document.querySelector('#upload-modal .modal-backdrop').onclick = closeUploadModal;
+  document.querySelectorAll('.type-chip').forEach(c => {
+    c.onclick = () => {
+      document.querySelectorAll('.type-chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+    };
+  });
+  document.getElementById('upload-file').onchange = (e) => {
+    const f = e.target.files[0];
+    document.getElementById('upload-file-info').textContent = f ? `${f.name} (${(f.size / 1024).toFixed(1)} KB)` : '';
+  };
+  document.getElementById('submit-upload-btn').onclick = submitUpload;
+
+  // 인박스 화면: 전체 동기화 / 전체 삭제
+  document.getElementById('sync-all-btn').onclick = syncAllToGitHub;
+  document.getElementById('clear-all-btn').onclick = () => {
+    if (confirm('인박스의 모든 항목을 삭제할까요? (GitHub에 동기화된 파일은 유지됨)')) {
+      saveInboxQueue([]);
+      renderInboxScreen();
+      updateInboxBadge();
+      toast('인박스 비움');
     }
   };
 }

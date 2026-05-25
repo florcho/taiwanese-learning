@@ -191,6 +191,101 @@
     <div id="plaud-list"></div>
   </main>
 
+  <!-- ================= 인박스 큐 화면 ================= -->
+  <main id="screen-inbox" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2>📥 인박스 큐</h2>
+      <p class="subtitle">레슨화 대기 중인 자료들</p>
+    </div>
+    <div id="inbox-status-card" class="card" style="margin-bottom:16px"></div>
+    <div id="inbox-queue-list"></div>
+    <div id="inbox-actions" class="hidden" style="margin-top:16px">
+      <button id="sync-all-btn" class="btn btn-primary">☁️ 전체 GitHub로 동기화</button>
+      <button id="clear-all-btn" class="btn" style="margin-top:8px">🗑️ 전체 삭제</button>
+    </div>
+  </main>
+
+  <!-- ================= 설정 화면 ================= -->
+  <main id="screen-settings" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2>⚙️ 설정</h2>
+    </div>
+
+    <div class="card">
+      <p class="label">GitHub 연동</p>
+      <p style="font-size:13px;color:var(--text-dim);margin:0 0 12px;line-height:1.6">
+        인박스 업로드가 GitHub에 자동 저장됩니다. PAT은 폰에만 저장돼요 (서버 전송 X).
+      </p>
+      <label class="form-label">Repo Owner</label>
+      <input id="gh-owner" type="text" class="form-input" placeholder="florcho" />
+      <label class="form-label">Repo Name</label>
+      <input id="gh-repo" type="text" class="form-input" placeholder="taiwanese-learning" />
+      <label class="form-label">Personal Access Token</label>
+      <input id="gh-pat" type="password" class="form-input" placeholder="github_pat_..." />
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button id="save-gh-btn" class="btn btn-primary">저장</button>
+        <button id="test-gh-btn" class="btn">연결 테스트</button>
+      </div>
+      <p id="gh-status" class="form-help"></p>
+    </div>
+
+    <div class="card">
+      <p class="label">데이터 관리</p>
+      <button id="view-inbox-btn" class="btn" style="margin-bottom:8px">📥 인박스 큐 보기 (<span id="settings-inbox-count">0</span>개)</button>
+      <button id="reset-progress-btn" class="btn">진행도 초기화</button>
+    </div>
+
+    <div class="card">
+      <p class="label">정보</p>
+      <p style="font-size:13px;color:var(--text-dim);line-height:1.6;margin:0">
+        대만 만다린 학습 PWA v1.1<br/>
+        레슨 데이터: data/lessons.js<br/>
+        새 레슨 추가: 채팅에 "인박스 처리해줘" 또는 자료 직접 던지기
+      </p>
+    </div>
+  </main>
+
+  <!-- ================= 플로팅 + 버튼 ================= -->
+  <button id="fab" class="fab" aria-label="자료 추가">+</button>
+
+  <!-- ================= 업로드 모달 ================= -->
+  <div id="upload-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-head">
+        <h3>📥 자료 추가</h3>
+        <button id="close-modal-btn" class="icon-btn">✕</button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label">유형 *</label>
+        <div class="type-chips">
+          <button class="type-chip active" data-type="slack">💬 Slack</button>
+          <button class="type-chip" data-type="email">📧 이메일</button>
+          <button class="type-chip" data-type="reels">📺 Reels</button>
+          <button class="type-chip" data-type="other">📝 기타</button>
+        </div>
+
+        <label class="form-label">내용 (텍스트)</label>
+        <textarea id="upload-content" class="form-input" rows="6" placeholder="대만어 텍스트 붙여넣기..."></textarea>
+
+        <label class="form-label">파일 첨부 (선택)</label>
+        <input id="upload-file" type="file" class="form-input file-input" accept="image/*,audio/*,video/*,.txt,.pdf" />
+        <p id="upload-file-info" class="form-help"></p>
+
+        <label class="form-label">메모 (선택)</label>
+        <input id="upload-memo" type="text" class="form-input" placeholder="예: 5/26 Yuna 회의 직후" />
+
+        <div class="modal-actions">
+          <button id="submit-upload-btn" class="btn btn-primary">📤 제출</button>
+        </div>
+        <p id="upload-status" class="form-help"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- ================= 토스트 ================= -->
   <div id="toast" class="toast hidden"></div>
 
