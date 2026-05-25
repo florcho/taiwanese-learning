@@ -850,9 +850,18 @@ function renderSettings() {
   const cfg = getGHConfig();
   document.getElementById('gh-owner').value = cfg.owner;
   document.getElementById('gh-repo').value = cfg.repo;
-  document.getElementById('gh-pat').value = cfg.pat;
-  document.getElementById('gh-status').textContent = '';
-  document.getElementById('gh-status').className = 'form-help';
+  // PAT는 input에 채우지 않음 (iOS Safari password 필드 자동 비움 버그 회피)
+  const patInput = document.getElementById('gh-pat');
+  patInput.value = '';
+  patInput.placeholder = cfg.pat ? `저장됨 (...${cfg.pat.slice(-6)}) — 변경할 때만 새로 입력` : 'github_pat_...';
+  const s = document.getElementById('gh-status');
+  if (cfg.pat) {
+    s.textContent = `🔑 PAT 저장됨 (...${cfg.pat.slice(-6)})`;
+    s.className = 'form-help success';
+  } else {
+    s.textContent = '';
+    s.className = 'form-help';
+  }
   updateInboxBadge();
 }
 

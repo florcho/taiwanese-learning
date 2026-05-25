@@ -462,6 +462,64 @@ const LESSONS = [
         ]
       }
     ]
+  },
+
+  // ============================================================
+  // L08 — 칭찬 표현 (인박스에서 자동 생성)
+  // ============================================================
+  {
+    id: 'L08',
+    title: '칭찬 표현 — 你的眼光太好了吧!',
+    subtitle: '일상 캐주얼 / Yuna한테 받을법한 칭찬 답하기',
+    source: 'Inbox (2026-05-25 Slack)',
+    type: 'casual_compliment',
+    difficulty: 'A2-B1',
+    date: '2026-05-25',
+    fullText: '花真的太漂亮了 你的眼光太好了吧！',
+    koreanSummary: '꽃 진짜 너무 예뻐요, 안목 너무 좋으신데요!',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '花真的太漂亮了',
+        zhuyin: 'ㄏㄨㄚ ㄓㄣ ㄉㄜ˙ ㄊㄞˋ ㄆㄧㄠˋ ㄌㄧㄤˋ ㄌㄜ˙',
+        pinyin: 'huā zhēnde tài piàoliang le',
+        korean: '꽃 진짜 너무 예뻐요',
+        wordBreak: '花(꽃) | 真的(진짜로) | 太~了(너무 ~) | 漂亮(예쁘다)',
+        keyPattern: '「真的太 + 형용사 + 了」= "진짜 너무 ~다" — 감탄·칭찬 핵심 패턴. (例: 真的太棒了/真的太厲害了)'
+      },
+      {
+        id: 2,
+        hanzi: '你的眼光太好了吧！',
+        zhuyin: 'ㄋㄧˇ ㄉㄜ˙ ㄧㄢˇ ㄍㄨㄤ ㄊㄞˋ ㄏㄠˇ ㄌㄜ˙ ㄅㄚ˙',
+        pinyin: 'nǐde yǎnguāng tài hǎo le ba',
+        korean: '안목이 너무 좋으신데요!',
+        wordBreak: '你的(당신의) | 眼光(안목·감각) | 太好了(너무 좋다) | 吧(~네요·어조사)',
+        keyPattern: '「眼光」은 외모(눈빛) X, **안목/감각** O. 「~太好了吧」 끝의 「吧」가 부드러운 감탄을 만듦 — 대만식 회화 빈출'
+      }
+    ],
+    vocab: [
+      { hanzi: '花', zhuyin: 'ㄏㄨㄚ', pinyin: 'huā', korean: '꽃', pos: '명사', hsk: 1, tags: ['회화'], example: { hanzi: '這束花好香！', korean: '이 꽃다발 향이 좋아요!' } },
+      { hanzi: '真的', zhuyin: 'ㄓㄣ ㄉㄜ˙', pinyin: 'zhēnde', korean: '진짜로, 정말로', pos: '부사', hsk: 2, tags: ['회화', '필수'], example: { hanzi: '真的嗎？', korean: '진짜요?' } },
+      { hanzi: '漂亮', zhuyin: 'ㄆㄧㄠˋ ㄌㄧㄤˋ', pinyin: 'piàoliang', korean: '예쁘다, 아름답다', pos: '형용사', hsk: 1, tags: ['회화', '필수'], example: { hanzi: '你今天好漂亮！', korean: '오늘 너무 예뻐요!' } },
+      { hanzi: '眼光', zhuyin: 'ㄧㄢˇ ㄍㄨㄤ', pinyin: 'yǎnguāng', korean: '안목, 감각, 식견', pos: '명사', hsk: 5, tags: ['회화', '필수', '업무'], example: { hanzi: '你的眼光真好，這個KOL選得很對。', korean: '안목 진짜 좋으세요, 이 KOL 잘 골랐어요.' } },
+      { hanzi: '吧', zhuyin: 'ㄅㄚ˙', pinyin: 'ba', korean: '어조사 (부드러운 추측·권유·감탄)', pos: '어조사', hsk: 2, tags: ['회화', '대만식', '필수'], example: { hanzi: '我們明天去吧！', korean: '내일 같이 가요!' } }
+    ],
+    practice: [
+      {
+        prompt: 'Yuna가 본인이 고른 인플루언서/콘텐츠를 보고 "你的眼光真好!"라고 칭찬했을 때 겸손하게 답하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '哪有！', pinyin: 'nǎ yǒu!', korean: '어디요! (겸손)' },
+          { level: '중간', hanzi: '謝謝！其實是團隊一起選的。', pinyin: 'xièxiè! qíshí shì tuánduì yīqǐ xuǎn de.', korean: '감사해요! 사실 팀이 같이 골랐어요.' },
+          { level: '자연스러움', hanzi: '過獎了過獎了～其實我也是看了好多才選到這個。', pinyin: 'guòjiǎngle guòjiǎngle~ qíshí wǒ yěshì kànle hǎoduō cái xuǎndào zhège.', korean: '과찬이에요~ 사실 저도 많이 보고 나서야 이걸 골랐어요.' }
+        ]
+      },
+      {
+        prompt: '협력사가 "Yuna的眼光很好" 라고 칭찬할 때 Yuna 대신 받는 입장에서 응답',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '對啊，Yuna 真的很會挑！下次也讓她推薦給您。', pinyin: 'duì a, Yuna zhēnde hěn huì tiāo! xiàcì yě ràng tā tuījiàn gěi nín.', korean: '맞아요, Yuna가 정말 잘 골라요! 다음에 또 추천드릴게요.' }
+        ]
+      }
+    ]
   }
 ];
 
