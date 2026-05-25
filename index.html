@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="대만어 학습" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>🇹🇼 대만어 학습</title>
+</head>
+<body>
+  <!-- ================= 헤더 ================= -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="header-title">
+        <span class="flag">🇹🇼</span>
+        <div>
+          <h1>대만어 학습</h1>
+          <p id="header-subtitle" class="subtitle">Loading...</p>
+        </div>
+      </div>
+      <button id="settings-btn" class="icon-btn" aria-label="설정">⚙️</button>
+    </div>
+  </header>
+
+  <!-- ================= 메인 화면 (레슨 목록) ================= -->
+  <main id="screen-home" class="screen">
+    <section class="hero-card">
+      <p class="hero-eyebrow">오늘의 학습</p>
+      <h2 id="today-lesson-title">레슨 로딩 중...</h2>
+      <p id="today-lesson-subtitle" class="hero-sub"></p>
+      <div class="hero-actions">
+        <button id="start-today-btn" class="btn btn-primary">▶ 오늘 시작하기</button>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h3>전체 레슨</h3>
+        <span id="progress-pill" class="pill">0 / 0</span>
+      </div>
+      <div id="lesson-list" class="lesson-list"></div>
+    </section>
+
+    <section class="block">
+      <h3>빠른 도구</h3>
+      <div class="quick-tools">
+        <button class="tool-card" data-action="vocab-all">
+          <span class="tool-icon">📚</span>
+          <span class="tool-label">전체 단어장</span>
+          <span class="tool-sub" id="vocab-count">0개</span>
+        </button>
+        <button class="tool-card" data-action="quiz-random">
+          <span class="tool-icon">🎯</span>
+          <span class="tool-label">랜덤 퀴즈</span>
+          <span class="tool-sub">10문제</span>
+        </button>
+        <button class="tool-card" data-action="review-vocab">
+          <span class="tool-icon">🔁</span>
+          <span class="tool-label">교정 단어</span>
+          <span class="tool-sub">진단 보강</span>
+        </button>
+        <button class="tool-card" data-action="plaud-prompts">
+          <span class="tool-icon">🎙️</span>
+          <span class="tool-label">Plaud 프롬프트</span>
+          <span class="tool-sub">복붙용</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 레슨 화면 (탭 컨테이너) ================= -->
+  <main id="screen-lesson" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2 id="lesson-title">제목</h2>
+      <p id="lesson-subtitle" class="subtitle"></p>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab active" data-tab="overview">개요</button>
+      <button class="tab" data-tab="shadow">쉐도잉</button>
+      <button class="tab" data-tab="vocab">단어장</button>
+      <button class="tab" data-tab="practice">작문</button>
+    </nav>
+
+    <!-- 개요 탭 -->
+    <section id="tab-overview" class="tab-content active">
+      <div class="card">
+        <p class="label">전체 본문</p>
+        <p id="lesson-fulltext" class="hanzi-full"></p>
+      </div>
+      <div class="card">
+        <p class="label">한국어 요약</p>
+        <p id="lesson-korean-summary"></p>
+      </div>
+      <div class="card">
+        <p class="label">학습 목표</p>
+        <ul id="lesson-goals" class="list"></ul>
+      </div>
+    </section>
+
+    <!-- 쉐도잉 탭 -->
+    <section id="tab-shadow" class="tab-content">
+      <div class="shadow-counter">
+        <button id="prev-sent" class="icon-btn">◀</button>
+        <span id="sent-counter">1 / 1</span>
+        <button id="next-sent" class="icon-btn">▶</button>
+      </div>
+      <div class="card shadow-card">
+        <p class="label">繁體</p>
+        <p id="sent-hanzi" class="hanzi-big"></p>
+        <p class="label">注音</p>
+        <p id="sent-zhuyin" class="phonetic"></p>
+        <p class="label">拼音</p>
+        <p id="sent-pinyin" class="phonetic"></p>
+        <p class="label">한국어</p>
+        <p id="sent-korean"></p>
+      </div>
+      <div class="card">
+        <p class="label">단어 분해</p>
+        <p id="sent-wordbreak" class="wordbreak"></p>
+      </div>
+      <div class="card highlight-card">
+        <p class="label">💡 핵심 패턴</p>
+        <p id="sent-pattern"></p>
+      </div>
+
+      <div class="player">
+        <button id="tts-play" class="btn btn-primary">🔊 재생</button>
+        <button id="tts-slow" class="btn">🐢 0.7x</button>
+        <button id="record-toggle" class="btn">🎤 따라말하기</button>
+      </div>
+      <div id="recording-result" class="hidden">
+        <p class="label">내 녹음</p>
+        <audio id="my-audio" controls></audio>
+      </div>
+    </section>
+
+    <!-- 단어장 탭 -->
+    <section id="tab-vocab" class="tab-content">
+      <div id="vocab-list" class="vocab-list"></div>
+    </section>
+
+    <!-- 작문 탭 -->
+    <section id="tab-practice" class="tab-content">
+      <div id="practice-list" class="practice-list"></div>
+    </section>
+  </main>
+
+  <!-- ================= 단어장 전체 화면 ================= -->
+  <main id="screen-vocab-all" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2>전체 단어장</h2>
+      <p class="subtitle"><span id="vocab-total">0</span>개 단어</p>
+    </div>
+    <div class="filter-bar">
+      <button class="chip active" data-filter="all">전체</button>
+      <button class="chip" data-filter="필수">필수</button>
+      <button class="chip" data-filter="업계">업계</button>
+      <button class="chip" data-filter="이메일">이메일</button>
+      <button class="chip" data-filter="회화">회화</button>
+      <button class="chip" data-filter="대만식">대만식</button>
+      <button class="chip" data-filter="Beauty">Beauty</button>
+    </div>
+    <div id="vocab-all-list" class="vocab-list"></div>
+  </main>
+
+  <!-- ================= 퀴즈 화면 ================= -->
+  <main id="screen-quiz" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2>랜덤 퀴즈</h2>
+      <p class="subtitle"><span id="quiz-progress">1 / 10</span></p>
+    </div>
+    <div id="quiz-container"></div>
+  </main>
+
+  <!-- ================= Plaud 프롬프트 화면 ================= -->
+  <main id="screen-plaud" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2>🎙️ Plaud AI 프롬프트</h2>
+      <p class="subtitle">탭하면 복사됩니다</p>
+    </div>
+    <div id="plaud-list"></div>
+  </main>
+
+  <!-- ================= 토스트 ================= -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="data/lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
