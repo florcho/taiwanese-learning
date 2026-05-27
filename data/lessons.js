@@ -520,6 +520,257 @@ const LESSONS = [
         ]
       }
     ]
+  },
+
+  // ============================================================
+  // L09 — 캐주얼 반응·감탄 (인박스 2026-05-26)
+  // ============================================================
+  {
+    id: 'L09',
+    title: '캐주얼 반응·감탄 — 啊⋯沒申請到 / 有免費施術欸!',
+    subtitle: '아쉬움·놀람 표현 + 施術(시술) 업계 단어',
+    source: 'Inbox (2026-05-26 Slack)',
+    type: 'casual_work_chat',
+    difficulty: 'A2-B1',
+    date: '2026-05-26',
+    fullText: '啊⋯結束了 沒有申請到。有免費施術欸！！！',
+    koreanSummary: '아… 끝났네, 신청 못 했어. 무료 시술 있대!!!',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '啊⋯結束了，沒有申請到',
+        zhuyin: 'ㄚ ㄐㄧㄝˊ ㄕㄨˋ ㄌㄜ˙ ㄇㄟˊ ㄧㄡˇ ㄕㄣ ㄑㄧㄥˇ ㄉㄠˋ',
+        pinyin: 'a... jiéshù le, méiyǒu shēnqǐng dào',
+        korean: '아… 끝났네, 신청 못 했어',
+        wordBreak: '啊(아…감탄) | 結束了(끝났다) | 沒有(못/안) | 申請(신청) | 到(성공 결과보어)',
+        keyPattern: '「沒有 + 동사 + 到」= "~하지 못했다". 到는 동작의 성공/달성을 나타내는 결과보어. 申請到=신청에 성공하다 → 沒申請到=신청 실패'
+      },
+      {
+        id: 2,
+        hanzi: '有免費施術欸！！！',
+        zhuyin: 'ㄧㄡˇ ㄇㄧㄢˇ ㄈㄟˋ ㄕ ㄕㄨˋ ㄟ',
+        pinyin: 'yǒu miǎnfèi shīshù ei!',
+        korean: '무료 시술 있대!!!',
+        wordBreak: '有(있다) | 免費(무료) | 施術(시술) | 欸(~네!·대만 감탄 어조사)',
+        keyPattern: '「欸」= 놀람·발견의 대만식 어조사 ("~있대!/~네!"). 施術 = 의료미용 시술 — 강남언니 업무 필수 단어 ⭐'
+      }
+    ],
+    vocab: [
+      { hanzi: '啊', zhuyin: 'ㄚ', pinyin: 'a', korean: '아… (감탄·아쉬움)', pos: '감탄사', hsk: 1, tags: ['회화'], example: { hanzi: '啊，我忘記了！', korean: '아, 깜빡했다!' } },
+      { hanzi: '結束', zhuyin: 'ㄐㄧㄝˊ ㄕㄨˋ', pinyin: 'jiéshù', korean: '끝나다, 종료되다', pos: '동사', hsk: 3, tags: ['회화', '필수'], example: { hanzi: '活動已經結束了。', korean: '이벤트는 이미 끝났어요.' } },
+      { hanzi: '申請', zhuyin: 'ㄕㄣ ㄑㄧㄥˇ', pinyin: 'shēnqǐng', korean: '신청하다', pos: '동사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '我要申請合作。', korean: '협업을 신청하려고 해요.' } },
+      { hanzi: '免費', zhuyin: 'ㄇㄧㄢˇ ㄈㄟˋ', pinyin: 'miǎnfèi', korean: '무료', pos: '형용사', hsk: 3, tags: ['회화', '필수'], example: { hanzi: '這是免費體驗。', korean: '이건 무료 체험이에요.' } },
+      { hanzi: '施術', zhuyin: 'ㄕ ㄕㄨˋ', pinyin: 'shīshù', korean: '시술 (의료미용)', pos: '명사·동사', hsk: '업계', tags: ['업계', '필수', '의료'], example: { hanzi: '這個施術恢復很快。', korean: '이 시술은 회복이 빨라요.' } },
+      { hanzi: '欸', zhuyin: 'ㄟ', pinyin: 'ei', korean: '~네!/어! (대만식 놀람 어조사)', pos: '어조사', hsk: '대만식', tags: ['대만식', '회화', '필수'], example: { hanzi: '欸，你也在這裡！', korean: '어, 너도 여기 있네!' } }
+    ],
+    practice: [
+      {
+        prompt: '동료가 "申請的活動結束了" 라고 했을 때 아쉬움 표현하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '啊⋯太可惜了。', pinyin: 'a... tài kěxí le.', korean: '아… 너무 아쉽다.' },
+          { level: '자연스러움', hanzi: '欸真的假的⋯下次要早點申請才行。', pinyin: 'ei zhēnde jiǎde... xiàcì yào zǎodiǎn shēnqǐng cái xíng.', korean: '헐 진짜요…? 다음엔 좀 더 일찍 신청해야겠어요.' }
+        ]
+      },
+      {
+        prompt: '무료 시술 이벤트 정보를 동료에게 공유하기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '欸欸這個診所有免費施術耶！要不要一起申請？', pinyin: 'ei ei zhège zhěnsuǒ yǒu miǎnfèi shīshù ye! yào bù yào yìqǐ shēnqǐng?', korean: '야야 이 클리닉 무료 시술 있대! 같이 신청할래?' }
+        ]
+      }
+    ]
+  },
+
+  // ============================================================
+  // L10 — 인플루언서 협업 업무 용어 (인박스 2026-05-26)
+  // ============================================================
+  {
+    id: 'L10',
+    title: '인플루언서 협업 업무 용어 — 網紅/口碑帳號/PPL',
+    subtitle: '업계 핵심 어휘 + 바쁜 동료 친근체',
+    source: 'Inbox (2026-05-26 Slack)',
+    type: 'casual_work_chat',
+    difficulty: 'B1',
+    date: '2026-05-26',
+    fullText: '網紅、再合作清單推薦、台灣相關口碑帳號、PPL 推薦清單。因為等等 11:30 要去接 Elva，所以我現在正在超級集中中!!嘿嘿',
+    koreanSummary: '인플루언서, 재협업 리스트 추천, 대만 관련 평판 좋은 계정, PPL 추천 리스트. 이따 11:30에 Elva 데리러 가야 해서 지금 완전 초집중 중!! 헤헤',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '網紅、再合作清單推薦',
+        zhuyin: 'ㄨㄤˇ ㄏㄨㄥˊ ㄗㄞˋ ㄏㄜˊ ㄗㄨㄛˋ ㄑㄧㄥ ㄉㄢ ㄊㄨㄟ ㄐㄧㄢˋ',
+        pinyin: 'wǎnghóng, zài hézuò qīngdān tuījiàn',
+        korean: '인플루언서, 재협업 리스트 추천',
+        wordBreak: '網紅(인플루언서·왕홍) | 再合作(재협업) | 清單(리스트·목록) | 推薦(추천)',
+        keyPattern: '網紅 = 網路紅人(인터넷 유명인) 줄임 = 인플루언서. KOL과 거의 같은 뜻으로 혼용'
+      },
+      {
+        id: 2,
+        hanzi: '台灣相關口碑帳號、PPL 推薦清單',
+        zhuyin: 'ㄊㄞˊ ㄨㄢ ㄒㄧㄤ ㄍㄨㄢ ㄎㄡˇ ㄅㄟ ㄓㄤˋ ㄏㄠˋ ㄊㄨㄟ ㄐㄧㄢˋ ㄑㄧㄥ ㄉㄢ',
+        pinyin: 'Táiwān xiāngguān kǒubēi zhànghào, PPL tuījiàn qīngdān',
+        korean: '대만 관련 평판 좋은 계정, PPL 추천 리스트',
+        wordBreak: '台灣相關(대만 관련) | 口碑(입소문·평판) | 帳號(계정) | PPL(간접광고·제품 배치) | 推薦清單(추천 리스트)',
+        keyPattern: '口碑 = 입소문/평판 (口碑帳號 = 신뢰도 높은 계정). PPL = Product Placement, 대만에선 置入性行銷이라고도 함'
+      },
+      {
+        id: 3,
+        hanzi: '因為等等 11:30 要去接 Elva，所以我現在正在超級集中中!!嘿嘿',
+        zhuyin: 'ㄧㄣ ㄨㄟˋ ㄉㄥˇ ㄉㄥˇ ㄧㄠˋ ㄑㄩˋ ㄐㄧㄝ ㄙㄨㄛˇ ㄧˇ ㄨㄛˇ ㄒㄧㄢˋ ㄗㄞˋ ㄓㄥˋ ㄗㄞˋ ㄔㄠ ㄐㄧˊ ㄐㄧˊ ㄓㄨㄥ ㄓㄨㄥ',
+        pinyin: 'yīnwèi děngděng 11:30 yào qù jiē Elva, suǒyǐ wǒ xiànzài zhèngzài chāojí jízhōng zhōng!! hēihēi',
+        korean: '이따 11:30에 Elva 데리러 가야 해서, 지금 완전 초집중 중이에요!! 헤헤',
+        wordBreak: '等等(이따가) | 要去接(데리러 가야 한다) | 所以(그래서) | 正在~中(~하는 중) | 超級(엄청·super) | 集中(집중) | 嘿嘿(헤헤)',
+        keyPattern: '「正在 + 동사 + 中」= "~하는 중". 「超級」은 超보다 더 강한 강조. 嘿嘿 = 친근한 웃음소리 — 동료 사이 캐주얼 톤'
+      }
+    ],
+    vocab: [
+      { hanzi: '網紅', zhuyin: 'ㄨㄤˇ ㄏㄨㄥˊ', pinyin: 'wǎnghóng', korean: '인플루언서, 왕홍', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '我們想找台灣網紅合作。', korean: '대만 인플루언서랑 협업하고 싶어요.' } },
+      { hanzi: '口碑', zhuyin: 'ㄎㄡˇ ㄅㄟ', pinyin: 'kǒubēi', korean: '입소문, 평판', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '這家診所口碑很好。', korean: '이 클리닉 평판이 좋아요.' } },
+      { hanzi: '清單', zhuyin: 'ㄑㄧㄥ ㄉㄢ', pinyin: 'qīngdān', korean: '리스트, 목록', pos: '명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '我整理了一份推薦清單。', korean: '추천 리스트 하나 정리했어요.' } },
+      { hanzi: '推薦', zhuyin: 'ㄊㄨㄟ ㄐㄧㄢˋ', pinyin: 'tuījiàn', korean: '추천하다', pos: '동사', hsk: 4, tags: ['업무', '필수', 'SNS'], example: { hanzi: '我推薦這位網紅。', korean: '이 인플루언서 추천해요.' } },
+      { hanzi: 'PPL', zhuyin: '(英)', pinyin: 'PPL', korean: '간접광고, 제품 배치 (置入性行銷)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '계약'], example: { hanzi: '這支影片有 PPL。', korean: '이 영상엔 PPL이 들어가요.' } },
+      { hanzi: '接', zhuyin: 'ㄐㄧㄝ', pinyin: 'jiē', korean: '데리러 가다, 마중하다, (전화) 받다', pos: '동사', hsk: 3, tags: ['회화', '필수'], example: { hanzi: '我去接小孩。', korean: '애 데리러 가요.' } },
+      { hanzi: '正在', zhuyin: 'ㄓㄥˋ ㄗㄞˋ', pinyin: 'zhèngzài', korean: '~하는 중이다 (진행)', pos: '부사', hsk: 2, tags: ['회화', '필수'], example: { hanzi: '我正在開會。', korean: '회의 중이에요.' } },
+      { hanzi: '超級', zhuyin: 'ㄔㄠ ㄐㄧˊ', pinyin: 'chāojí', korean: '엄청, 완전 (super)', pos: '부사', hsk: 4, tags: ['회화', 'SNS'], example: { hanzi: '超級好吃！', korean: '완전 맛있어!' } },
+      { hanzi: '集中', zhuyin: 'ㄐㄧˊ ㄓㄨㄥ', pinyin: 'jízhōng', korean: '집중하다', pos: '동사', hsk: 4, tags: ['회화', '업무'], example: { hanzi: '我要集中精神。', korean: '정신 집중해야 해요.' } }
+    ],
+    practice: [
+      {
+        prompt: 'Yuna가 "幫我整理台灣網紅的再合作清單" 이라고 부탁했을 때 답하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '好的，我來整理。', pinyin: 'hǎode, wǒ lái zhěnglǐ.', korean: '네, 제가 정리할게요.' },
+          { level: '자연스러움', hanzi: '好唷～我先把口碑好的網紅列出來，再加上 PPL 推薦清單給你。', pinyin: 'hǎo yo~ wǒ xiān bǎ kǒubēi hǎo de wǎnghóng liè chūlái, zài jiāshàng PPL tuījiàn qīngdān gěi nǐ.', korean: '좋아요~ 평판 좋은 인플루언서 먼저 뽑고, PPL 추천 리스트도 추가해서 드릴게요.' }
+        ]
+      },
+      {
+        prompt: '바빠서 잠깐 자리 비운다고 동료에게 캐주얼하게 알리기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '我等等要去接人，現在超級忙，晚點回你!!', pinyin: 'wǒ děngděng yào qù jiē rén, xiànzài chāojí máng, wǎndiǎn huí nǐ!!', korean: '저 이따 누구 데리러 가야 해서 지금 완전 바빠요, 좀 있다 답할게요!!' }
+        ]
+      }
+    ]
+  },
+
+  // ============================================================
+  // L11 — 대만식 일정 조율 어조사 (인박스 2026-05-26)
+  // ============================================================
+  {
+    id: 'L11',
+    title: '대만식 일정 조율 — 好挖~可以唷~',
+    subtitle: '挖/唷 귀여운 어조사 + 부드러운 지연 제안',
+    source: 'Inbox (2026-05-26 Slack)',
+    type: 'casual_work_chat',
+    difficulty: 'A2-B1',
+    date: '2026-05-26',
+    fullText: '好挖~ 可以唷~但可能要等七月可以嗎~',
+    koreanSummary: '좋아요~ 가능해요~ 근데 아마 7월까지 기다려야 할 수도 있는데 괜찮을까요~',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '好挖~ 可以唷~',
+        zhuyin: 'ㄏㄠˇ ㄨㄚ ㄎㄜˇ ㄧˇ ㄛ',
+        pinyin: 'hǎo wa~ kěyǐ yo~',
+        korean: '좋아요~ 가능해요~',
+        wordBreak: '好(좋다) | 挖(=哇, 대만식 어조사) | 可以(가능하다) | 唷(대만식 친근 어조사)',
+        keyPattern: '「挖」(哇)·「唷」= 대만 여성들이 자주 쓰는 귀엽고 부드러운 문장 끝 어조사. 같은 "좋아요"도 톤이 훨씬 친근해짐'
+      },
+      {
+        id: 2,
+        hanzi: '但可能要等七月可以嗎~',
+        zhuyin: 'ㄉㄢˋ ㄎㄜˇ ㄋㄥˊ ㄧㄠˋ ㄉㄥˇ ㄑㄧ ㄩㄝˋ ㄎㄜˇ ㄧˇ ㄇㄚ˙',
+        pinyin: 'dàn kěnéng yào děng qīyuè kěyǐ ma~',
+        korean: '근데 아마 7월까지 기다려야 할 수도 있는데 괜찮을까요~',
+        wordBreak: '但(근데) | 可能(아마·~일 수도) | 要等(기다려야) | 七月(7월) | 可以嗎(괜찮을까요?)',
+        keyPattern: '「但可能要~，可以嗎?」= 부드럽게 지연·조건 거는 공식. 단정 X, 상대 의향 물으며 완곡하게 ("~해야 할 수도 있는데 괜찮으세요?")'
+      }
+    ],
+    vocab: [
+      { hanzi: '挖', zhuyin: 'ㄨㄚ', pinyin: 'wa', korean: '~요~ (哇의 변형, 대만식 친근 어조사)', pos: '어조사', hsk: '대만식', tags: ['대만식', '회화', '필수'], example: { hanzi: '好挖～我知道了！', korean: '좋아요~ 알겠어요!' } },
+      { hanzi: '唷', zhuyin: 'ㄛ', pinyin: 'yo', korean: '~요~ (부드럽고 귀여운 대만식 어조사)', pos: '어조사', hsk: '대만식', tags: ['대만식', '회화', '필수'], example: { hanzi: '可以唷～沒問題！', korean: '가능해요~ 문제없어요!' } },
+      { hanzi: '可以', zhuyin: 'ㄎㄜˇ ㄧˇ', pinyin: 'kěyǐ', korean: '가능하다, 괜찮다', pos: '조동사', hsk: 2, tags: ['회화', '필수'], example: { hanzi: '這樣可以嗎？', korean: '이렇게 해도 될까요?' } },
+      { hanzi: '但', zhuyin: 'ㄉㄢˋ', pinyin: 'dàn', korean: '근데, 하지만 (=但是)', pos: '접속사', hsk: 2, tags: ['회화', '필수'], example: { hanzi: '可以，但要等一下。', korean: '가능한데, 좀 기다려야 해요.' } },
+      { hanzi: '可能', zhuyin: 'ㄎㄜˇ ㄋㄥˊ', pinyin: 'kěnéng', korean: '아마, ~일 수도 있다', pos: '부사·형용사', hsk: 3, tags: ['회화', '필수'], example: { hanzi: '可能要下週才行。', korean: '아마 다음주나 돼야 할 것 같아요.' } },
+      { hanzi: '等', zhuyin: 'ㄉㄥˇ', pinyin: 'děng', korean: '기다리다', pos: '동사', hsk: 2, tags: ['회화', '필수'], example: { hanzi: '請等我一下。', korean: '잠깐만 기다려 주세요.' } }
+    ],
+    practice: [
+      {
+        prompt: '협력사가 6월 협업을 요청했는데 7월로 미뤄야 할 때 부드럽게 답하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '可以唷～但可能要等七月。', pinyin: 'kěyǐ yo~ dàn kěnéng yào děng qīyuè.', korean: '가능해요~ 근데 7월까지 기다려야 할 수도 있어요.' },
+          { level: '자연스러움', hanzi: '好挖～這個我們很有興趣！但檔期可能要排到七月，這樣可以嗎～', pinyin: 'hǎo wa~ zhège wǒmen hěn yǒu xìngqù! dàn dàngqí kěnéng yào páidào qīyuè, zhèyàng kěyǐ ma~', korean: '좋아요~ 이거 저희 관심 많아요! 근데 일정이 7월로 잡힐 수도 있는데 괜찮을까요~' }
+        ]
+      }
+    ]
+  },
+
+  // ============================================================
+  // L12 — 협업 문의 정중 답변 (인박스 2026-05-26)
+  // ============================================================
+  {
+    id: 'L12',
+    title: '협업 문의 정중 답변 — 請問是什麼方面的合作呢?',
+    subtitle: '정중한 문의·확인 + 報價 제안',
+    source: 'Inbox (2026-05-26 Slack)',
+    type: 'business_email_terms',
+    difficulty: 'B1',
+    date: '2026-05-26',
+    fullText: '請問是什麼方面的合作呢？是想詢問目前新的公司有什麼合作機會嗎？是醫美診所合作嗎～那我這邊先報價給您嗎？',
+    koreanSummary: '어떤 방면의 협업일까요? 지금 새 회사에 어떤 협업 기회가 있는지 문의하시는 건가요? 의료미용 클리닉 협업인가요~ 그럼 제가 먼저 견적 드릴까요?',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '請問是什麼方面的合作呢？',
+        zhuyin: 'ㄑㄧㄥˇ ㄨㄣˋ ㄕˋ ㄕㄣˊ ㄇㄜ˙ ㄈㄤ ㄇㄧㄢˋ ㄉㄜ˙ ㄏㄜˊ ㄗㄨㄛˋ ㄋㄜ˙',
+        pinyin: 'qǐngwèn shì shénme fāngmiàn de hézuò ne?',
+        korean: '어떤 방면의 협업일까요?',
+        wordBreak: '請問(여쭙겠습니다) | 什麼方面(어떤 방면·분야) | 合作(협업) | 呢(부드러운 질문 어조사)',
+        keyPattern: '「請問是什麼~呢?」= 정중하게 되묻는 공식. 끝의 「呢」가 딱딱함을 덜어줌'
+      },
+      {
+        id: 2,
+        hanzi: '是想詢問目前新的公司有什麼合作機會嗎？',
+        zhuyin: 'ㄕˋ ㄒㄧㄤˇ ㄒㄩㄣˊ ㄨㄣˋ ㄇㄨˋ ㄑㄧㄢˊ ㄒㄧㄣ ㄉㄜ˙ ㄍㄨㄥ ㄙ ㄧㄡˇ ㄕㄣˊ ㄇㄜ˙ ㄏㄜˊ ㄗㄨㄛˋ ㄐㄧ ㄏㄨㄟˋ ㄇㄚ˙',
+        pinyin: 'shì xiǎng xúnwèn mùqián xīn de gōngsī yǒu shénme hézuò jīhuì ma?',
+        korean: '지금 새 회사에 어떤 협업 기회가 있는지 문의하시는 건가요?',
+        wordBreak: '想詢問(문의하시려는) | 目前(현재) | 新的公司(새 회사) | 合作機會(협업 기회) | 嗎(질문)',
+        keyPattern: '「是想 + 동사 + 嗎?」= 상대 의도를 확인하는 정중 표현 ("~하시려는 건가요?"). 詢問 = 询问의 번체, 격식 "문의"'
+      },
+      {
+        id: 3,
+        hanzi: '是醫美診所合作嗎～那我這邊先報價給您嗎？',
+        zhuyin: 'ㄕˋ ㄧ ㄇㄟˇ ㄓㄣˇ ㄙㄨㄛˇ ㄏㄜˊ ㄗㄨㄛˋ ㄇㄚ˙ ㄋㄚˋ ㄨㄛˇ ㄓㄜˋ ㄅㄧㄢ ㄒㄧㄢ ㄅㄠˋ ㄐㄧㄚˋ ㄍㄟˇ ㄋㄧㄣˊ ㄇㄚ˙',
+        pinyin: 'shì yīměi zhěnsuǒ hézuò ma~ nà wǒ zhèbiān xiān bàojià gěi nín ma?',
+        korean: '의료미용 클리닉 협업인가요~ 그럼 제가 먼저 견적 드릴까요?',
+        wordBreak: '醫美診所(의료미용 클리닉) | 那(그럼) | 我這邊(제 쪽에서) | 先(먼저) | 報價給您(견적 드리다)',
+        keyPattern: '「那我這邊先 ~ 給您嗎?」= "그럼 제 쪽에서 먼저 ~해드릴까요?" — 능동적이고 정중한 비즈니스 제안. 협업 협상에서 매우 자주'
+      }
+    ],
+    vocab: [
+      { hanzi: '請問', zhuyin: 'ㄑㄧㄥˇ ㄨㄣˋ', pinyin: 'qǐngwèn', korean: '여쭙겠습니다, 실례지만', pos: '동사', hsk: 1, tags: ['업무', '이메일', '필수'], example: { hanzi: '請問您貴姓？', korean: '성함이 어떻게 되세요?' } },
+      { hanzi: '方面', zhuyin: 'ㄈㄤ ㄇㄧㄢˋ', pinyin: 'fāngmiàn', korean: '방면, 분야, 측면', pos: '명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '哪方面的合作？', korean: '어떤 방면의 협업이요?' } },
+      { hanzi: '詢問', zhuyin: 'ㄒㄩㄣˊ ㄨㄣˋ', pinyin: 'xúnwèn', korean: '문의하다 (격식)', pos: '동사', hsk: 5, tags: ['업무', '이메일', '필수'], example: { hanzi: '想跟您詢問報價。', korean: '견적 문의드리고 싶어요.' } },
+      { hanzi: '目前', zhuyin: 'ㄇㄨˋ ㄑㄧㄢˊ', pinyin: 'mùqián', korean: '현재, 지금', pos: '명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '目前還在洽談中。', korean: '현재 아직 협의 중이에요.' } },
+      { hanzi: '機會', zhuyin: 'ㄐㄧ ㄏㄨㄟˋ', pinyin: 'jīhuì', korean: '기회', pos: '명사', hsk: 3, tags: ['업무', '필수'], example: { hanzi: '希望有合作的機會。', korean: '협업 기회가 있길 바라요.' } },
+      { hanzi: '醫美診所', zhuyin: 'ㄧ ㄇㄟˇ ㄓㄣˇ ㄙㄨㄛˇ', pinyin: 'yīměi zhěnsuǒ', korean: '의료미용 클리닉', pos: '명사', hsk: '업계', tags: ['업계', '필수', '의료'], example: { hanzi: '我們合作的醫美診所很多。', korean: '저희가 협업하는 의료미용 클리닉이 많아요.' } },
+      { hanzi: '診所', zhuyin: 'ㄓㄣˇ ㄙㄨㄛˇ', pinyin: 'zhěnsuǒ', korean: '클리닉, 의원', pos: '명사', hsk: '업계', tags: ['업계', '의료'], example: { hanzi: '這家診所在台北。', korean: '이 클리닉은 타이베이에 있어요.' } },
+      { hanzi: '這邊', zhuyin: 'ㄓㄜˋ ㄅㄧㄢ', pinyin: 'zhèbiān', korean: '이쪽, 제 쪽 (=這裡, 대만 빈출)', pos: '명사', hsk: 2, tags: ['회화', '대만식', '필수'], example: { hanzi: '我這邊處理一下。', korean: '제 쪽에서 좀 처리할게요.' } },
+      { hanzi: '報價', zhuyin: 'ㄅㄠˋ ㄐㄧㄚˋ', pinyin: 'bàojià', korean: '견적, 견적 내다', pos: '명사·동사', hsk: '업계', tags: ['업무', '필수', '인플루언서'], example: { hanzi: '我先報價給您。', korean: '먼저 견적 드릴게요.' } },
+      { hanzi: '呢', zhuyin: 'ㄋㄜ˙', pinyin: 'ne', korean: '~요? (부드러운 질문 어조사)', pos: '어조사', hsk: 2, tags: ['회화', '필수'], example: { hanzi: '你覺得呢？', korean: '어떻게 생각하세요?' } }
+    ],
+    practice: [
+      {
+        prompt: '협력사가 막연하게 "想跟你們合作" 라고만 했을 때, 어떤 협업인지 정중하게 되묻기',
+        modelAnswers: [
+          { level: '간단', hanzi: '請問是什麼方面的合作呢？', pinyin: 'qǐngwèn shì shénme fāngmiàn de hézuò ne?', korean: '어떤 방면의 협업일까요?' },
+          { level: '자연스러움', hanzi: '謝謝您的來信！請問是什麼方面的合作呢？是醫美診所還是品牌的合作？', pinyin: 'xièxiè nín de láixìn! qǐngwèn shì shénme fāngmiàn de hézuò ne? shì yīměi zhěnsuǒ háishì pǐnpái de hézuò?', korean: '연락 감사해요! 어떤 방면의 협업일까요? 의료미용 클리닉인가요 아니면 브랜드 협업인가요?' }
+        ]
+      },
+      {
+        prompt: '협업 내용 파악 후 먼저 견적을 제안하기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '了解～那我這邊先報價給您，您再看看是否合適？', pinyin: 'liǎojiě~ nà wǒ zhèbiān xiān bàojià gěi nín, nín zài kànkan shìfǒu héshì?', korean: '알겠어요~ 그럼 제가 먼저 견적 드릴 테니, 적합한지 보시겠어요?' }
+        ]
+      }
+    ]
   }
 ];
 
