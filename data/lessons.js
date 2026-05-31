@@ -1162,6 +1162,296 @@ const LESSONS = [
       }
     ]
   }
+  ,
+  {
+    id: 'L18',
+    title: '협업 견적·재제작 조건 안내 ⭐ — 报價/再製 템플릿',
+    subtitle: '협력사가 보낸 협업 비용 견적 + 영상 재제작(再製) 조건 안내 — 본인이 받거나 보낼 표준 메시지',
+    source: 'Inbox (2026-06-01 — 협력사/대행사 발송)',
+    type: 'business_email_terms',
+    difficulty: 'B1-B2',
+    date: '2026-06-01',
+    fullText: '您好，合作費用報價給您：1.圖文 $10000 2.極短篇（30秒）$12000 3.介紹影片（1分鐘）$15000 4.廣告主授權 $5000/月 5.加購平台發佈 $2000/平台（FB、Threads、TikTok、YTshorts）。再製不會更改創作者的內容，也不會另外加上字卡等等，目前廣告分成直式與橫式兩種，只會因應廣告形式修剪影片長度，比方說修改為 6 秒或 15 秒素材，另加上包框設計！以下提供相關的廣告影片給您參考，謝謝您！',
+    koreanSummary: '안녕하세요, 협업 비용 견적 드립니다: 1.이미지+글(피드) 1만 2.극초단편(30초) 1.2만 3.소개 영상(1분) 1.5만 4.광고주 사용권한 5천/월 5.추가 플랫폼 게재 2천/플랫폼(FB·Threads·TikTok·YT쇼츠). 재제작 시 크리에이터 콘텐츠는 변경하지 않고, 별도 자막 카드 등도 추가하지 않아요. 현재 광고는 세로형·가로형 두 종류로 나뉘며, 광고 형식에 맞춰 영상 길이만 잘라요(예: 6초/15초 소재로 수정), 프레임(테두리) 디자인만 추가합니다! 참고용 광고 영상 첨부드려요, 감사합니다!',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '您好，合作費用報價給您',
+        zhuyin: 'ㄋㄧㄣˊ ㄏㄠˇ ㄏㄜˊ ㄗㄨㄛˋ ㄈㄟˋ ㄩㄥˋ ㄅㄠˋ ㄐㄧㄚˋ ㄍㄟˇ ㄋㄧㄣˊ',
+        pinyin: 'nín hǎo, hézuò fèiyòng bàojià gěi nín',
+        korean: '안녕하세요, 협업 비용 견적 드립니다',
+        wordBreak: '合作(협업) | 費用(비용) | 報價(견적·견적가) | 給您(~께 드리다)',
+        keyPattern: '「報價給您」= "견적 드립니다" 견적 메일 첫 문장 공식 ⭐. 報價는 명사(견적가)·동사(견적 내다) 모두 가능'
+      },
+      {
+        id: 2,
+        hanzi: '廣告主授權 $5000/月，加購平台發佈 $2000/平台',
+        zhuyin: 'ㄍㄨㄤˇ ㄍㄠˋ ㄓㄨˇ ㄕㄡˋ ㄑㄩㄢˊ ㄐㄧㄚ ㄍㄡˋ ㄆㄧㄥˊ ㄊㄞˊ ㄈㄚ ㄅㄨˋ',
+        pinyin: 'guǎnggào zhǔ shòuquán $5000/yuè, jiā gòu píngtái fābù $2000/píngtái',
+        korean: '광고주 사용권한 5천/월, 추가 플랫폼 게재 2천/플랫폼',
+        wordBreak: '廣告主(광고주) | 授權(사용권한·라이선스) | 加購(추가 구매) | 平台(플랫폼) | 發佈(게재·배포)',
+        keyPattern: '「授權」= 광고에 콘텐츠 쓸 권리 (인플 협업 핵심 비용 항목) ⭐. 「加購」= 옵션 추가 구매, 견적서 빈출'
+      },
+      {
+        id: 3,
+        hanzi: '再製不會更改創作者的內容，也不會另外加上字卡',
+        zhuyin: 'ㄗㄞˋ ㄓˋ ㄅㄨˊ ㄏㄨㄟˋ ㄍㄥ ㄍㄞˇ ㄔㄨㄤˋ ㄗㄨㄛˋ ㄓㄜˇ ㄉㄜ˙ ㄋㄟˋ ㄖㄨㄥˊ ㄧㄝˇ ㄅㄨˊ ㄏㄨㄟˋ ㄌㄧㄥˋ ㄨㄞˋ ㄐㄧㄚ ㄕㄤˋ ㄗˋ ㄎㄚˇ',
+        pinyin: 'zàizhì bú huì gēnggǎi chuàngzuòzhě de nèiróng, yě bú huì lìngwài jiā shàng zìkǎ',
+        korean: '재제작 시 크리에이터 콘텐츠는 변경하지 않고, 별도 자막 카드도 추가하지 않아요',
+        wordBreak: '再製(재제작·재가공) | 更改(변경) | 創作者(크리에이터·창작자) | 另外(별도로) | 加上(추가하다) | 字卡(자막 카드·텍스트 카드)',
+        keyPattern: '「再製」= 영상 소재 재가공 (광고용 재편집) ⭐ 업계 필수. 「不會~也不會~」= "~하지도 ~하지도 않는다" 약속·보장 톤'
+      },
+      {
+        id: 4,
+        hanzi: '目前廣告分成直式與橫式兩種，只會因應廣告形式修剪影片長度',
+        zhuyin: 'ㄇㄨˋ ㄑㄧㄢˊ ㄍㄨㄤˇ ㄍㄠˋ ㄈㄣ ㄔㄥˊ ㄓˊ ㄕˋ ㄩˇ ㄏㄥˊ ㄕˋ ㄌㄧㄤˇ ㄓㄨㄥˇ ㄓˇ ㄏㄨㄟˋ ㄧㄣ ㄧㄥˋ ㄍㄨㄤˇ ㄍㄠˋ ㄒㄧㄥˊ ㄕˋ ㄒㄧㄡ ㄐㄧㄢˇ ㄧㄥˇ ㄆㄧㄢˋ ㄔㄤˊ ㄉㄨˋ',
+        pinyin: 'mùqián guǎnggào fēnchéng zhíshì yǔ héngshì liǎng zhǒng, zhǐ huì yīnyìng guǎnggào xíngshì xiūjiǎn yǐngpiàn chángdù',
+        korean: '현재 광고는 세로형·가로형 두 종류로 나뉘며, 광고 형식에 맞춰 영상 길이만 잘라요',
+        wordBreak: '目前(현재) | 分成(~로 나뉘다) | 直式(세로형) | 橫式(가로형) | 因應(~에 맞춰·대응하여) | 修剪(잘라내다·트리밍) | 影片長度(영상 길이)',
+        keyPattern: '「分成A與B兩種」= "A·B 두 종류로 나뉜다" 설명 공식. 「因應~」= "~에 맞춰" 격식 표현(=配合). 「直式/橫式」= 세로/가로 영상 — 광고 소재 필수어 ⭐'
+      },
+      {
+        id: 5,
+        hanzi: '比方說修改為 6 秒或 15 秒素材，另加上包框設計',
+        zhuyin: 'ㄅㄧˇ ㄈㄤ ㄕㄨㄛ ㄒㄧㄡ ㄍㄞˇ ㄨㄟˊ ㄌㄧㄡˋ ㄇㄧㄠˇ ㄏㄨㄛˋ ㄕˊ ㄨˇ ㄇㄧㄠˇ ㄙㄨˋ ㄘㄞˊ ㄌㄧㄥˋ ㄐㄧㄚ ㄕㄤˋ ㄅㄠ ㄎㄨㄤ ㄕㄜˋ ㄐㄧˋ',
+        pinyin: 'bǐfāng shuō xiūgǎi wéi 6 miǎo huò 15 miǎo sùcái, lìng jiā shàng bāokuāng shèjì',
+        korean: '예를 들어 6초 또는 15초 소재로 수정하고, 프레임(테두리) 디자인만 추가해요',
+        wordBreak: '比方說(예를 들면) | 修改為(~로 수정하다) | 秒(초) | 素材(소재·에셋) | 包框(프레임·테두리) | 設計(디자인)',
+        keyPattern: '「比方說」= "예를 들면" 회화·설명 빈출(=例如/譬如). 「素材」= 광고 소재(영상/이미지 에셋) ⭐ 초빈출. 「包框」= 영상에 두르는 프레임 디자인'
+      }
+    ],
+    vocab: [
+      { hanzi: '報價', zhuyin: 'ㄅㄠˋ ㄐㄧㄚˋ', pinyin: 'bàojià', korean: '견적, 견적가', pos: '명사·동사', hsk: '업무', tags: ['업무', '이메일', '필수', '인플루언서'], example: { hanzi: '報價給您參考。', korean: '참고용 견적 드려요.' } },
+      { hanzi: '授權', zhuyin: 'ㄕㄡˋ ㄑㄩㄢˊ', pinyin: 'shòuquán', korean: '사용권한, 라이선스', pos: '명사·동사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '廣告授權另外收費。', korean: '광고 사용권한은 별도 비용이에요.' } },
+      { hanzi: '廣告主', zhuyin: 'ㄍㄨㄤˇ ㄍㄠˋ ㄓㄨˇ', pinyin: 'guǎnggào zhǔ', korean: '광고주', pos: '명사', hsk: '업계', tags: ['업계', '필수'], example: { hanzi: '廣告主授權一個月。', korean: '광고주 권한 한 달.' } },
+      { hanzi: '加購', zhuyin: 'ㄐㄧㄚ ㄍㄡˋ', pinyin: 'jiāgòu', korean: '추가 구매, 옵션 추가', pos: '동사', hsk: '업무', tags: ['업무', '필수'], example: { hanzi: '可以加購平台發佈。', korean: '플랫폼 게재 추가 구매 가능해요.' } },
+      { hanzi: '發佈', zhuyin: 'ㄈㄚ ㄅㄨˋ', pinyin: 'fābù', korean: '게재, 배포, 발행', pos: '동사', hsk: 4, tags: ['업무', '인플루언서'], example: { hanzi: '今晚發佈貼文。', korean: '오늘 밤 게시물 올려요.' } },
+      { hanzi: '再製', zhuyin: 'ㄗㄞˋ ㄓˋ', pinyin: 'zàizhì', korean: '재제작, 재가공', pos: '명사·동사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '再製成廣告素材。', korean: '광고 소재로 재제작해요.' } },
+      { hanzi: '更改', zhuyin: 'ㄍㄥ ㄍㄞˇ', pinyin: 'gēnggǎi', korean: '변경, 수정', pos: '동사', hsk: 4, tags: ['업무'], example: { hanzi: '不會更改內容。', korean: '내용은 변경하지 않아요.' } },
+      { hanzi: '創作者', zhuyin: 'ㄔㄨㄤˋ ㄗㄨㄛˋ ㄓㄜˇ', pinyin: 'chuàngzuòzhě', korean: '크리에이터, 창작자', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '尊重創作者的內容。', korean: '크리에이터 콘텐츠를 존중해요.' } },
+      { hanzi: '字卡', zhuyin: 'ㄗˋ ㄎㄚˇ', pinyin: 'zìkǎ', korean: '자막 카드, 텍스트 카드', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서'], example: { hanzi: '不另外加字卡。', korean: '자막 카드는 따로 안 넣어요.' } },
+      { hanzi: '直式', zhuyin: 'ㄓˊ ㄕˋ', pinyin: 'zhíshì', korean: '세로형 (세로 영상)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '直式適合限動。', korean: '세로형은 스토리에 어울려요.' } },
+      { hanzi: '橫式', zhuyin: 'ㄏㄥˊ ㄕˋ', pinyin: 'héngshì', korean: '가로형 (가로 영상)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '橫式適合 YT。', korean: '가로형은 유튜브에 어울려요.' } },
+      { hanzi: '因應', zhuyin: 'ㄧㄣ ㄧㄥˋ', pinyin: 'yīnyìng', korean: '~에 맞춰, 대응하여', pos: '동사', hsk: 5, tags: ['업무', '이메일', '격식'], example: { hanzi: '因應需求調整。', korean: '수요에 맞춰 조정해요.' } },
+      { hanzi: '修剪', zhuyin: 'ㄒㄧㄡ ㄐㄧㄢˇ', pinyin: 'xiūjiǎn', korean: '잘라내다, 트리밍', pos: '동사', hsk: '업계', tags: ['업계', '인플루언서'], example: { hanzi: '修剪成 15 秒。', korean: '15초로 잘라요.' } },
+      { hanzi: '素材', zhuyin: 'ㄙㄨˋ ㄘㄞˊ', pinyin: 'sùcái', korean: '소재, 에셋 (광고 영상/이미지)', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '提供廣告素材。', korean: '광고 소재 제공해요.' } },
+      { hanzi: '包框', zhuyin: 'ㄅㄠ ㄎㄨㄤ', pinyin: 'bāokuāng', korean: '프레임, 테두리 (영상 둘레)', pos: '명사', hsk: '업계', tags: ['업계'], example: { hanzi: '加上包框設計。', korean: '프레임 디자인을 추가해요.' } },
+      { hanzi: '比方說', zhuyin: 'ㄅㄧˇ ㄈㄤ ㄕㄨㄛ', pinyin: 'bǐfāng shuō', korean: '예를 들면', pos: '관용구', hsk: 4, tags: ['회화', '필수'], example: { hanzi: '比方說改成 6 秒。', korean: '예를 들어 6초로 바꿔요.' } }
+    ],
+    practice: [
+      {
+        prompt: '협력사에 협업 견적을 항목별로 안내하기 (見積 첫 메시지)',
+        modelAnswers: [
+          { level: '템플릿', hanzi: '您好，合作費用報價給您：圖文 $XXX、影片 $XXX、廣告主授權 $XXX/月。若需加購平台發佈，每個平台 $XXX。再請您參考，謝謝！', pinyin: '(템플릿)', korean: '템플릿 — 금액만 바꿔 재사용 ⭐' }
+        ]
+      },
+      {
+        prompt: '재제작 시 원본을 안 바꾼다고 안심시키기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '再製不會更改您的內容，只會因應廣告形式修剪長度，請放心!', pinyin: 'zàizhì bú huì gēnggǎi nín de nèiróng, zhǐ huì yīnyìng guǎnggào xíngshì xiūjiǎn chángdù, qǐng fàngxīn!', korean: '재제작해도 콘텐츠는 변경 안 하고 광고 형식에 맞춰 길이만 잘라요, 안심하세요!' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L19',
+    title: '網紅 素材 언어(韓/中) 선택 내부 토론 ⭐⭐ — 의사결정 회화',
+    subtitle: '한국어 강사 인플루언서를 한국어로 찍게 할지 중국어로 찍게 할지 팀에 의견 묻는 실제 대화 — 능동 산출 연습용',
+    source: 'Inbox (2026-06-01 — 팀 Slack 토론)',
+    type: 'casual_work_chat',
+    difficulty: 'B1',
+    date: '2026-06-01',
+    fullText: '我有一個問題想問問大家的意見。6 月份我想找一個網紅合作，他是韓語老師、常做施術，也很常在 IG 分享韓國醫美心得，他的粉絲有 90% 以上的受眾都集中在台灣跟香港。我的苦惱是：要請老師拍攝的時候說韓文還是說中文比較好呢？過去沒有操作過講韓文的素材，所以沒有數據比較。我擔心的是퍼마(廣告投放)不知道好不好，可以幫我投票嗎？1. 說韓文搭配中文字幕 2. 說中文搭配中文字幕。他的粉絲數是 6.2 萬，reels 報價是 120 萬韓元，廣告授權本來是另外收費的，但因為我使出極致誇獎，跟他說以前我都看他的影片學韓文，所以他很爽快的說送我 1 個月的廣告授權！如果不是超級有名的網紅或藝人說韓文上中文字幕，跑廣告的時候好像真的有點危險，我請網紅說中文好了~',
+    koreanSummary: '여러분 의견 묻고 싶은 게 있어요. 6월에 한 인플루언서랑 협업하려는데, 한국어 강사이고 시술도 자주 받고 IG에 한국 의료미용 후기도 자주 올려요. 팔로워의 90% 이상이 대만·홍콩에 몰려 있어요. 고민은: 촬영할 때 한국어로 말하게 할지 중국어로 할지예요. 한국어 소재는 해본 적이 없어서 비교 데이터가 없어요. 걱정되는 건 퍼마(광고 투입) 성과예요. 투표 부탁! 1.한국어+중국어 자막 2.중국어+중국어 자막. 팔로워 6.2만, 릴스 견적 120만원, 광고 사용권은 원래 별도 비용인데 제가 극찬을 쏟아부으며 "예전에 영상 보며 한국어 배웠다"고 했더니 흔쾌히 1개월 권한을 무료로 줬어요! 엄청 유명한 인플/연예인이 아닌 이상 한국어+자막은 광고 돌릴 때 좀 위험한 것 같아서, 그냥 중국어로 부탁하기로 했어요~',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '我有一個問題想問問大家的意見',
+        zhuyin: 'ㄨㄛˇ ㄧㄡˇ ㄧˊ ㄍㄜˋ ㄨㄣˋ ㄊㄧˊ ㄒㄧㄤˇ ㄨㄣˋ ㄨㄣˋ ㄉㄚˋ ㄐㄧㄚ ㄉㄜ˙ ㄧˋ ㄐㄧㄢˋ',
+        pinyin: 'wǒ yǒu yí gè wèntí xiǎng wènwèn dàjiā de yìjiàn',
+        korean: '여러분 의견을 좀 물어보고 싶은 게 하나 있어요',
+        wordBreak: '問題(질문·문제) | 想(~하고 싶다) | 問問(좀 물어보다·동사 중첩) | 大家(여러분) | 意見(의견)',
+        keyPattern: '「問問」= 동사 중첩 = "좀 ~해보다" 부드러운 톤 ⭐. 팀에 의견 구할 때 여는 문장으로 그대로 활용'
+      },
+      {
+        id: 2,
+        hanzi: '他的粉絲有 90% 以上的受眾都集中在台灣跟香港',
+        zhuyin: 'ㄊㄚ ㄉㄜ˙ ㄈㄣˇ ㄙ ㄧㄡˇ ㄐㄧㄡˇ ㄕˊ ㄅㄞˇ ㄈㄣ ㄓ ㄧˇ ㄕㄤˋ ㄉㄜ˙ ㄕㄡˋ ㄓㄨㄥˋ ㄉㄡ ㄐㄧˊ ㄓㄨㄥ ㄗㄞˋ ㄊㄞˊ ㄨㄢ ㄍㄣ ㄒㄧㄤ ㄍㄤˇ',
+        pinyin: 'tā de fěnsī yǒu 90% yǐshàng de shòuzhòng dōu jízhōng zài Táiwān gēn Xiānggǎng',
+        korean: '그의 팔로워 중 90% 이상의 수용자가 대만과 홍콩에 몰려 있어요',
+        wordBreak: '粉絲(팔로워·팬) | 以上(이상) | 受眾(수용자·오디언스) | 集中(집중·몰리다) | 跟(=和, ~와)',
+        keyPattern: '「受眾」= 오디언스/타깃 시청자 ⭐ 마케팅 빈출. 「集中在~」= "~에 몰려 있다" 데이터 설명 공식. 대만에선 和 대신 「跟」을 회화에서 더 씀'
+      },
+      {
+        id: 3,
+        hanzi: '要請老師拍攝的時候說韓文還是說中文比較好呢？',
+        zhuyin: 'ㄧㄠˋ ㄑㄧㄥˇ ㄌㄠˇ ㄕ ㄆㄞ ㄕㄜˋ ㄉㄜ˙ ㄕˊ ㄏㄡˋ ㄕㄨㄛ ㄏㄢˊ ㄨㄣˊ ㄏㄞˊ ㄕˋ ㄕㄨㄛ ㄓㄨㄥ ㄨㄣˊ ㄅㄧˇ ㄐㄧㄠˋ ㄏㄠˇ ㄋㄜ˙',
+        pinyin: 'yào qǐng lǎoshī pāishè de shíhòu shuō Hánwén háishì shuō Zhōngwén bǐjiào hǎo ne?',
+        korean: '선생님께 촬영 요청할 때 한국어로 말하게 할지 중국어로 할지 어느 쪽이 나을까요?',
+        wordBreak: '請(부탁하다·요청) | 拍攝(촬영) | 的時候(~할 때) | 還是(아니면·선택) | 比較好(더 낫다) | 呢(부드러운 의문)',
+        keyPattern: '「A還是B比較好呢？」= "A와 B 중 어느 게 나을까요?" 선택 질문 핵심 공식 ⭐. 「請+사람+동사」= "~께 ~하시도록 요청하다"'
+      },
+      {
+        id: 4,
+        hanzi: '過去沒有操作過講韓文的素材，所以沒有數據比較',
+        zhuyin: 'ㄍㄨㄛˋ ㄑㄩˋ ㄇㄟˊ ㄧㄡˇ ㄘㄠ ㄗㄨㄛˋ ㄍㄨㄛˋ ㄐㄧㄤˇ ㄏㄢˊ ㄨㄣˊ ㄉㄜ˙ ㄙㄨˋ ㄘㄞˊ ㄙㄨㄛˇ ㄧˇ ㄇㄟˊ ㄧㄡˇ ㄕㄨˋ ㄐㄩˋ ㄅㄧˇ ㄐㄧㄠˋ',
+        pinyin: 'guòqù méiyǒu cāozuò guò jiǎng Hánwén de sùcái, suǒyǐ méiyǒu shùjù bǐjiào',
+        korean: '예전에 한국어로 말하는 소재를 운영해본 적이 없어서, 비교할 데이터가 없어요',
+        wordBreak: '過去(과거·예전) | 操作(운영·집행·돌리다) | 過(~한 적 있다) | 講(말하다) | 數據(데이터) | 比較(비교)',
+        keyPattern: '「操作」= 캠페인·소재를 "운영/집행하다" ⭐ 마케팅 필수. 「動詞+過」= 경험 표현. 「沒有數據比較」= 데이터 부재 설명 빈출'
+      },
+      {
+        id: 5,
+        hanzi: '因為我使出極致誇獎，所以他很爽快的說送我 1 個月的廣告授權',
+        zhuyin: 'ㄧㄣ ㄨㄟˋ ㄨㄛˇ ㄕˇ ㄔㄨ ㄐㄧˊ ㄓˋ ㄎㄨㄚ ㄐㄧㄤˇ ㄙㄨㄛˇ ㄧˇ ㄊㄚ ㄏㄣˇ ㄕㄨㄤˇ ㄎㄨㄞˋ ㄉㄜ˙ ㄕㄨㄛ ㄙㄨㄥˋ ㄨㄛˇ ㄧˊ ㄍㄜˋ ㄩㄝˋ ㄉㄜ˙ ㄍㄨㄤˇ ㄍㄠˋ ㄕㄡˋ ㄑㄩㄢˊ',
+        pinyin: 'yīnwèi wǒ shǐ chū jízhì kuājiǎng, suǒyǐ tā hěn shuǎngkuài de shuō sòng wǒ yí gè yuè de guǎnggào shòuquán',
+        korean: '제가 극찬을 쏟아부었더니, 그가 흔쾌히 1개월 광고 사용권을 무료로 준다고 했어요',
+        wordBreak: '使出(쏟아내다·발휘하다) | 極致(극치·극도) | 誇獎(칭찬) | 爽快(흔쾌히·시원시원) | 送(공짜로 주다·선물) | 廣告授權(광고 사용권)',
+        keyPattern: '「爽快」= 흔쾌히·쿨하게 (성격/응답 묘사) ⭐ 회화 빈출. 「送我~」= "공짜로 ~를 주다". 협상에서 칭찬으로 권한 따낸 실전 표현'
+      },
+      {
+        id: 6,
+        hanzi: '跑廣告的時候好像真的有點危險，我請網紅說中文好了',
+        zhuyin: 'ㄆㄠˇ ㄍㄨㄤˇ ㄍㄠˋ ㄉㄜ˙ ㄕˊ ㄏㄡˋ ㄏㄠˇ ㄒㄧㄤˋ ㄓㄣ ㄉㄜ˙ ㄧㄡˇ ㄉㄧㄢˇ ㄨㄟˊ ㄒㄧㄢˇ ㄨㄛˇ ㄑㄧㄥˇ ㄨㄤˇ ㄏㄨㄥˊ ㄕㄨㄛ ㄓㄨㄥ ㄨㄣˊ ㄏㄠˇ ㄌㄜ˙',
+        pinyin: 'pǎo guǎnggào de shíhòu hǎoxiàng zhēn de yǒudiǎn wéixiǎn, wǒ qǐng wǎnghóng shuō Zhōngwén hǎo le',
+        korean: '광고 돌릴 때는 진짜 좀 위험한 것 같아서, 그냥 인플루언서한테 중국어로 해달라고 할래요',
+        wordBreak: '跑廣告(광고 돌리다·집행) | 好像(~인 것 같다) | 有點(좀·약간) | 危險(위험) | 網紅(인플루언서) | ~好了(~하는 게 낫겠다·결정)',
+        keyPattern: '「跑廣告」= 광고를 "돌리다/집행하다" ⭐ 초빈출 회화. 「~好了」= 고민 끝 결정 톤 "그냥 ~할래/하는 게 낫겠다". 「網紅」= 인플루언서(대만 표준어)'
+      }
+    ],
+    vocab: [
+      { hanzi: '受眾', zhuyin: 'ㄕㄡˋ ㄓㄨㄥˋ', pinyin: 'shòuzhòng', korean: '수용자, 오디언스, 타깃 시청자', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '受眾集中在台灣。', korean: '오디언스가 대만에 몰려 있어요.' } },
+      { hanzi: '占比', zhuyin: 'ㄓㄢˋ ㄅㄧˇ', pinyin: 'zhànbǐ', korean: '비중, 점유 비율', pos: '명사', hsk: '업무', tags: ['업무', '인플루언서'], example: { hanzi: '台灣受眾占比 90%。', korean: '대만 오디언스 비중 90%.' } },
+      { hanzi: '操作', zhuyin: 'ㄘㄠ ㄗㄨㄛˋ', pinyin: 'cāozuò', korean: '운영, 집행, (캠페인을) 돌리다', pos: '동사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '操作講韓文的素材。', korean: '한국어 소재를 운영해요.' } },
+      { hanzi: '數據', zhuyin: 'ㄕㄨˋ ㄐㄩˋ', pinyin: 'shùjù', korean: '데이터', pos: '명사', hsk: 5, tags: ['업무', '필수', '인플루언서'], example: { hanzi: '沒有數據比較。', korean: '비교할 데이터가 없어요.' } },
+      { hanzi: '成效', zhuyin: 'ㄔㄥˊ ㄒㄧㄠˋ', pinyin: 'chéngxiào', korean: '성과, 효과', pos: '명사', hsk: '업무', tags: ['업무', '필수', '인플루언서'], example: { hanzi: '影片成效不錯。', korean: '영상 성과가 괜찮아요.' } },
+      { hanzi: '跑廣告', zhuyin: 'ㄆㄠˇ ㄍㄨㄤˇ ㄍㄠˋ', pinyin: 'pǎo guǎnggào', korean: '광고를 돌리다·집행하다', pos: '동사구', hsk: '업계', tags: ['업계', '필수', '인플루언서', '회화'], example: { hanzi: '這支素材拿來跑廣告。', korean: '이 소재로 광고 돌려요.' } },
+      { hanzi: '廣告授權', zhuyin: 'ㄍㄨㄤˇ ㄍㄠˋ ㄕㄡˋ ㄑㄩㄢˊ', pinyin: 'guǎnggào shòuquán', korean: '광고 사용권', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '送我一個月廣告授權。', korean: '광고 사용권 한 달 무료로 줬어요.' } },
+      { hanzi: '字幕', zhuyin: 'ㄗˋ ㄇㄨˋ', pinyin: 'zìmù', korean: '자막', pos: '명사', hsk: 4, tags: ['인플루언서', '필수'], example: { hanzi: '說韓文搭配中文字幕。', korean: '한국어+중국어 자막.' } },
+      { hanzi: '搭配', zhuyin: 'ㄉㄚ ㄆㄟˋ', pinyin: 'dāpèi', korean: '곁들이다, 조합하다, ~와 함께', pos: '동사', hsk: 5, tags: ['회화', '인플루언서'], example: { hanzi: '韓文搭配字幕。', korean: '한국어에 자막을 곁들여요.' } },
+      { hanzi: '爽快', zhuyin: 'ㄕㄨㄤˇ ㄎㄨㄞˋ', pinyin: 'shuǎngkuài', korean: '흔쾌하다, 시원시원하다', pos: '형용사', hsk: 5, tags: ['회화', '필수'], example: { hanzi: '他很爽快答應了。', korean: '그가 흔쾌히 수락했어요.' } },
+      { hanzi: '誇獎', zhuyin: 'ㄎㄨㄚ ㄐㄧㄤˇ', pinyin: 'kuājiǎng', korean: '칭찬하다', pos: '동사', hsk: 5, tags: ['회화'], example: { hanzi: '使出極致誇獎。', korean: '극찬을 쏟아부었어요.' } },
+      { hanzi: '苦惱', zhuyin: 'ㄎㄨˇ ㄋㄠˇ', pinyin: 'kǔnǎo', korean: '고민, 골치 아픔', pos: '명사·형용사', hsk: 5, tags: ['회화'], example: { hanzi: '我的苦惱是…', korean: '제 고민은…' } },
+      { hanzi: '投票', zhuyin: 'ㄊㄡˊ ㄆㄧㄠˋ', pinyin: 'tóupiào', korean: '투표', pos: '명사·동사', hsk: 4, tags: ['회화', '업무'], example: { hanzi: '可以幫我投票嗎？', korean: '투표 도와줄 수 있어요?' } },
+      { hanzi: '網紅', zhuyin: 'ㄨㄤˇ ㄏㄨㄥˊ', pinyin: 'wǎnghóng', korean: '인플루언서 (대만 표준)', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '想找一個網紅合作。', korean: '인플루언서랑 협업하고 싶어요.' } },
+      { hanzi: '施術', zhuyin: 'ㄕ ㄕㄨˋ', pinyin: 'shīshù', korean: '시술 (시술 받다·하다)', pos: '명사·동사', hsk: '업계', tags: ['업계', '필수'], example: { hanzi: '他常做施術。', korean: '그는 시술을 자주 받아요.' } }
+    ],
+    practice: [
+      {
+        prompt: '팀에 A/B 의견을 구하며 투표 요청하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '大家覺得說韓文還是說中文比較好？可以幫我投票嗎？', pinyin: 'dàjiā juéde shuō Hánwén háishì shuō Zhōngwén bǐjiào hǎo? kěyǐ bāng wǒ tóupiào ma?', korean: '한국어가 나아요 중국어가 나아요? 투표 도와줄 수 있어요?' },
+          { level: '자연스러움', hanzi: '我有個苦惱想問大家：要請網紅說韓文搭配中文字幕，還是直接說中文呢？因為過去沒操作過韓文素材，沒有數據比較，可以幫我投票嗎？', pinyin: 'wǒ yǒu gè kǔnǎo xiǎng wèn dàjiā: yào qǐng wǎnghóng shuō Hánwén dāpèi Zhōngwén zìmù, háishì zhíjiē shuō Zhōngwén ne? yīnwèi guòqù méi cāozuò guò Hánwén sùcái, méiyǒu shùjù bǐjiào, kěyǐ bāng wǒ tóupiào ma?', korean: '고민 하나 물을게요: 인플한테 한국어+중국어 자막으로 할지, 그냥 중국어로 할지? 한국어 소재는 해본 적 없어 데이터가 없어서요, 투표 부탁해요!' }
+        ]
+      },
+      {
+        prompt: '고민 끝에 중국어로 가기로 결정 알리기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '想了一下，跑廣告的話說韓文好像有點危險，我還是請網紅說中文好了，謝謝大家的意見!', pinyin: 'xiǎng le yíxià, pǎo guǎnggào dehuà shuō Hánwén hǎoxiàng yǒudiǎn wéixiǎn, wǒ háishì qǐng wǎnghóng shuō Zhōngwén hǎo le, xièxie dàjiā de yìjiàn!', korean: '생각해봤는데 광고 돌릴 땐 한국어가 좀 위험할 것 같아서, 그냥 중국어로 부탁할래요. 의견 줘서 고마워요!' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L20',
+    title: '醫美 광고 카피 어휘 폭격 💥 — 시술명 + 세일 패턴',
+    subtitle: '대량 광고 카피에서 중복 제외하고 시술명·세일 표현·CTA 패턴만 추출 — 광고 90% 이해 KPI 직결',
+    source: 'Inbox (2026-06-01 — 광고 카피 모음, 중복 제거)',
+    type: 'vocab_burst',
+    difficulty: 'A2-B1',
+    date: '2026-06-01',
+    fullText: '比台灣便宜超多! V-Line 拉提特價中｜ONDA 超微波 $1,999 起｜海芙音波 $899 起｜鳳凰電波 $22,990 起｜肉毒、水光針、消脂針特價中｜麗珠蘭黑盒、Juvelook 喬雅露、黃金微針 POTENZA｜輪廓針、手臂/大腿消脂針｜玻尿酸、雷射除毛、微整隆鼻、抽脂、眼整形、鼻整形｜韓國高評分 9.0+，滿滿好評不踩雷，大量術前術後對比照｜🇹🇼 ONDA $28,000 / 🇰🇷 ONDA $4,400（省下 84%）｜【限時】最高 51 折｜歡迎新會員｜超高 CP 值 $169 起｜立刻預約超殺優惠 / 立即查看精選診所 ＞',
+    koreanSummary: '대만보다 훨씬 저렴! V라인 리프팅 특가｜온다 초음파 $1,999부터｜울쎄라(하이푸) $899부터｜텐써마(피닉스) $22,990부터｜보톡스·물광주사·지방분해주사 특가｜리쥬란 블랙·쥬베룩·포텐자 골드미세침｜윤곽주사·팔/허벅지 지방분해｜필러·레이저 제모·코필러·지방흡입·눈성형·코성형｜한국 고평점 9.0+, 후기 가득 실패 없음, 전후 비교 사진 다수｜대만 ONDA $28,000 vs 한국 $4,400(84% 절약)｜한정 최대 51%할인｜신규회원 환영｜초가성비 $169부터｜지금 예약/엄선 클리닉 보기. (※ 광고 카피라 격식 X, 패턴·시술명 암기용)',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '比台灣便宜超多！V-Line 拉提特價中',
+        zhuyin: 'ㄅㄧˇ ㄊㄞˊ ㄨㄢ ㄆㄧㄢˊ ㄧˊ ㄔㄠ ㄉㄨㄛ ㄌㄚ ㄊㄧˊ ㄊㄜˋ ㄐㄧㄚˋ ㄓㄨㄥ',
+        pinyin: 'bǐ Táiwān piányí chāo duō! V-Line lātí tèjià zhōng',
+        korean: '대만보다 훨씬 저렴! V라인 리프팅 특가 중',
+        wordBreak: '比(~보다·비교) | 便宜(싸다) | 超多(엄청 많이) | 拉提(리프팅·당겨올림) | 特價中(특가 진행 중)',
+        keyPattern: '「比A便宜超多」= "A보다 훨씬 싸다" 가격 비교 광고 공식 ⭐. 「超+형용사」= "엄청 ~" 대만 회화·광고 빈출. 「特價中」= 세일 중'
+      },
+      {
+        id: 2,
+        hanzi: '滿滿好評不踩雷，大量術前術後對比照',
+        zhuyin: 'ㄇㄢˇ ㄇㄢˇ ㄏㄠˇ ㄆㄧㄥˊ ㄅㄨˋ ㄘㄞˇ ㄌㄟˊ ㄉㄚˋ ㄌㄧㄤˋ ㄕㄨˋ ㄑㄧㄢˊ ㄕㄨˋ ㄏㄡˋ ㄉㄨㄟˋ ㄅㄧˇ ㄓㄠˋ',
+        pinyin: 'mǎnmǎn hǎopíng bù cǎiléi, dàliàng shùqián shùhòu duìbǐ zhào',
+        korean: '후기 가득, 실패(지뢰) 없음, 전후 비교 사진 다수',
+        wordBreak: '滿滿(가득) | 好評(호평·좋은 후기) | 踩雷(지뢰 밟다=실패·낭패) | 大量(다량) | 術前術後(시술 전후) | 對比照(비교 사진)',
+        keyPattern: '「踩雷」= "지뢰 밟다" → 실패·잘못 고르다 ⭐ 리뷰·광고 초빈출 회화. 「術前術後對比照」= 비포애프터 사진 — 의료미용 광고 필수어'
+      },
+      {
+        id: 3,
+        hanzi: '🇹🇼 ONDA $28,000 / 🇰🇷 ONDA $4,400（省下 84%）',
+        zhuyin: 'ㄕㄥˇ ㄒㄧㄚˋ ㄅㄞˇ ㄈㄣ ㄓ ㄅㄚ ㄕˊ ㄙˋ',
+        pinyin: 'Táiwān ONDA $28,000 / Hánguó ONDA $4,400 (shěng xià 84%)',
+        korean: '대만 ONDA 28,000 / 한국 ONDA 4,400 (84% 절약)',
+        wordBreak: '省下(절약하다·아끼다) | 百分之 84(84%)',
+        keyPattern: '「省下 N%」= "N% 절약" 가격 강조 공식 ⭐. 대만 vs 한국 가격 직접 비교는 강남언니 광고의 핵심 앵글'
+      },
+      {
+        id: 4,
+        hanzi: '【限時】最高 51 折，歡迎新會員',
+        zhuyin: 'ㄒㄧㄢˋ ㄕˊ ㄗㄨㄟˋ ㄍㄠ ㄨˇ ㄕˊ ㄧ ㄓㄜˊ ㄏㄨㄢ ㄧㄥˊ ㄒㄧㄣ ㄏㄨㄟˋ ㄩㄢˊ',
+        pinyin: 'xiànshí zuìgāo 51 zhé, huānyíng xīn huìyuán',
+        korean: '한정! 최대 51% 할인, 신규 회원 환영',
+        wordBreak: '限時(한정 시간·기간 한정) | 最高(최대) | 51 折(51% 가격=49% 할인 ※주의) | 歡迎(환영) | 新會員(신규 회원)',
+        keyPattern: '⚠️ 「N折」 함정: 「51折」는 "정가의 51%만 받음" = 49% 할인! 「打折」= 할인. 「限時」= 기간 한정 — CTA 단골'
+      },
+      {
+        id: 5,
+        hanzi: '超高 CP 值 $169 起，立刻預約超殺優惠 ＞',
+        zhuyin: 'ㄔㄠ ㄍㄠ CP ㄓˊ ㄑㄧˇ ㄌㄧˋ ㄎㄜˋ ㄩˋ ㄩㄝ ㄔㄠ ㄕㄚ ㄧㄡ ㄏㄨㄟˋ',
+        pinyin: 'chāo gāo CP zhí $169 qǐ, lìkè yùyuē chāoshā yōuhuì >',
+        korean: '초가성비 $169부터, 지금 바로 예약, 초특가 혜택 ＞',
+        wordBreak: 'CP值(가성비·cost performance) | 起(~부터·최저가) | 立刻(즉시) | 預約(예약) | 超殺(초특가·파격) | 優惠(혜택·할인)',
+        keyPattern: '「CP值」= 가성비 ⭐ 대만 초초빈출 (가성비 좋다=CP值高). 「$N 起」= "N부터" 최저가 표기. 「超殺」= 파격·초특가 슬랭'
+      }
+    ],
+    vocab: [
+      { hanzi: '拉提', zhuyin: 'ㄌㄚ ㄊㄧˊ', pinyin: 'lātí', korean: '리프팅 (당겨 올림)', pos: '명사·동사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: 'V-Line 拉提特價。', korean: 'V라인 리프팅 특가.' } },
+      { hanzi: '超微波 (ONDA)', zhuyin: 'ㄔㄠ ㄨㄟˊ ㄆㄛ', pinyin: 'chāo wēibō', korean: '초음파(온다 ONDA) 시술', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: 'ONDA 超微波 $1,999 起。', korean: '온다 초음파 $1,999부터.' } },
+      { hanzi: '海芙音波', zhuyin: 'ㄏㄞˇ ㄈㄨˊ ㄧㄣ ㄆㄛ', pinyin: 'hǎifú yīnbō', korean: '울쎄라/하이푸(HIFU) 음파', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '海芙音波 $899 起。', korean: '하이푸 음파 $899부터.' } },
+      { hanzi: '鳳凰電波', zhuyin: 'ㄈㄥˋ ㄏㄨㄤˊ ㄉㄧㄢˋ ㄆㄛ', pinyin: 'fènghuáng diànbō', korean: '피닉스(텐써마) 고주파', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '鳳凰電波 $22,990 起。', korean: '피닉스 전파 $22,990부터.' } },
+      { hanzi: '肉毒', zhuyin: 'ㄖㄡˋ ㄉㄨˊ', pinyin: 'ròudú', korean: '보톡스 (肉毒桿菌)', pos: '명사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: '咀嚼肌肉毒 $699 起。', korean: '교근(사각턱) 보톡스 $699부터.' } },
+      { hanzi: '水光針', zhuyin: 'ㄕㄨㄟˇ ㄍㄨㄤ ㄓㄣ', pinyin: 'shuǐguāng zhēn', korean: '물광주사', pos: '명사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: '水光針特價中。', korean: '물광주사 특가 중.' } },
+      { hanzi: '消脂針', zhuyin: 'ㄒㄧㄠ ㄓ ㄓㄣ', pinyin: 'xiāozhī zhēn', korean: '지방분해주사', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '大腿消脂針 $888 起。', korean: '허벅지 지방분해주사 $888부터.' } },
+      { hanzi: '輪廓針', zhuyin: 'ㄌㄨㄣˊ ㄎㄨㄛˋ ㄓㄣ', pinyin: 'lúnkuò zhēn', korean: '윤곽주사', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '輪廓針 $449 起。', korean: '윤곽주사 $449부터.' } },
+      { hanzi: '玻尿酸', zhuyin: 'ㄅㄛ ㄋㄧㄠˋ ㄙㄨㄢ', pinyin: 'bōniàosuān', korean: '히알루론산(필러)', pos: '명사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: '玻尿酸 $1,099 起。', korean: '필러 $1,099부터.' } },
+      { hanzi: '雷射除毛', zhuyin: 'ㄌㄟˊ ㄕㄜˋ ㄔㄨˊ ㄇㄠˊ', pinyin: 'léishè chúmáo', korean: '레이저 제모 (雷射=레이저, 대만)', pos: '명사', hsk: '업계', tags: ['업계', '시술', '대만식'], example: { hanzi: '雷射除毛 $299 起。', korean: '레이저 제모 $299부터.' } },
+      { hanzi: '隆鼻', zhuyin: 'ㄌㄨㄥˊ ㄅㄧˊ', pinyin: 'lóngbí', korean: '코 성형/융비', pos: '명사·동사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '微整隆鼻 $19,999 起。', korean: '쁘띠 코성형 $19,999부터.' } },
+      { hanzi: '抽脂', zhuyin: 'ㄔㄡ ㄓ', pinyin: 'chōuzhī', korean: '지방흡입', pos: '명사·동사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '人氣抽脂手術。', korean: '인기 지방흡입 수술.' } },
+      { hanzi: '整形', zhuyin: 'ㄓㄥˇ ㄒㄧㄥˊ', pinyin: 'zhěngxíng', korean: '성형 (鼻整形·眼整形)', pos: '명사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: '人氣眼整形特價中。', korean: '인기 눈성형 특가 중.' } },
+      { hanzi: '咀嚼肌', zhuyin: 'ㄐㄩˇ ㄐㄧㄠˊ ㄐㄧ', pinyin: 'jǔjiáo jī', korean: '교근(사각턱 근육)', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '咀嚼肌肉毒。', korean: '교근 보톡스.' } },
+      { hanzi: '特價', zhuyin: 'ㄊㄜˋ ㄐㄧㄚˋ', pinyin: 'tèjià', korean: '특가, 세일가', pos: '명사', hsk: 4, tags: ['업무', '필수', '광고'], example: { hanzi: '水光針特價中。', korean: '물광주사 특가 중.' } },
+      { hanzi: '限時', zhuyin: 'ㄒㄧㄢˋ ㄕˊ', pinyin: 'xiànshí', korean: '기간 한정, 한정 시간', pos: '명사·부사', hsk: '업무', tags: ['업무', '광고', '필수'], example: { hanzi: '限時最低 51 折。', korean: '한정 최저 51%가.' } },
+      { hanzi: '折', zhuyin: 'ㄓㄜˊ', pinyin: 'zhé', korean: '할인율(N折=정가의 N0%) ⚠️', pos: '명사', hsk: 4, tags: ['업무', '광고', '필수'], example: { hanzi: '51 折≈打 5 折多。', korean: '51折 = 약 49% 할인(정가의 51%).' } },
+      { hanzi: '省下', zhuyin: 'ㄕㄥˇ ㄒㄧㄚˋ', pinyin: 'shěng xià', korean: '절약하다, 아끼다', pos: '동사', hsk: 4, tags: ['광고', '필수'], example: { hanzi: '省下 84%!', korean: '84% 절약!' } },
+      { hanzi: '踩雷', zhuyin: 'ㄘㄞˇ ㄌㄟˊ', pinyin: 'cǎiléi', korean: '지뢰 밟다=실패·낭패 보다', pos: '동사', hsk: '슬랭', tags: ['회화', '광고', '필수'], example: { hanzi: '好評不踩雷。', korean: '후기 좋고 실패 없어요.' } },
+      { hanzi: '對比照', zhuyin: 'ㄉㄨㄟˋ ㄅㄧˇ ㄓㄠˋ', pinyin: 'duìbǐ zhào', korean: '비교 사진 (전후 비교)', pos: '명사', hsk: '업계', tags: ['업계', '광고'], example: { hanzi: '術前術後對比照。', korean: '시술 전후 비교 사진.' } },
+      { hanzi: 'CP值', zhuyin: 'CP ㄓˊ', pinyin: 'CP zhí', korean: '가성비 (cost performance)', pos: '명사', hsk: '슬랭', tags: ['회화', '광고', '필수', '대만식'], example: { hanzi: '超高 CP 值!', korean: '초가성비!' } },
+      { hanzi: '超殺', zhuyin: 'ㄔㄠ ㄕㄚ', pinyin: 'chāoshā', korean: '초특가, 파격 (슬랭)', pos: '형용사', hsk: '슬랭', tags: ['회화', '광고', '대만식'], example: { hanzi: '超殺優惠!', korean: '초특가 혜택!' } },
+      { hanzi: '優惠', zhuyin: 'ㄧㄡ ㄏㄨㄟˋ', pinyin: 'yōuhuì', korean: '혜택, 할인 특전', pos: '명사', hsk: 4, tags: ['업무', '광고', '필수'], example: { hanzi: '立即查看優惠療程。', korean: '혜택 시술 바로 보기.' } },
+      { hanzi: '療程', zhuyin: 'ㄌㄧㄠˊ ㄔㄥˊ', pinyin: 'liáochéng', korean: '시술 코스, 프로그램', pos: '명사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: '人氣療程特價中。', korean: '인기 시술 코스 특가 중.' } },
+      { hanzi: '預約', zhuyin: 'ㄩˋ ㄩㄝ', pinyin: 'yùyuē', korean: '예약', pos: '명사·동사', hsk: 4, tags: ['업무', '광고', '필수'], example: { hanzi: '立刻預約優惠。', korean: '지금 혜택 예약.' } }
+    ],
+    practice: [
+      {
+        prompt: '광고 카피 한 줄 만들기 — 시술명 + 특가 + CTA (패턴 조립)',
+        modelAnswers: [
+          { level: '템플릿', hanzi: '🔥 [시술명]特價中 $XXX 起｜滿滿好評不踩雷｜立刻預約超殺優惠 ＞', pinyin: '(패턴 템플릿)', korean: '템플릿 — [시술명]·금액만 바꿔 카피 양산 ⭐' },
+          { level: '자연스러움', hanzi: '比台灣便宜超多! 水光針 $219 起，大量術前術後對比照，限時最高 51 折，立即查看 ＞', pinyin: 'bǐ Táiwān piányí chāo duō! shuǐguāng zhēn $219 qǐ, dàliàng shùqián shùhòu duìbǐ zhào, xiànshí zuìgāo 51 zhé, lìjí chákàn >', korean: '대만보다 훨씬 저렴! 물광주사 $219부터, 전후 비교 사진 다수, 한정 최대 51%가, 바로 보기 ＞' }
+        ]
+      },
+      {
+        prompt: '카피 속 「51折」의 실제 할인율 한국어로 설명하기 (이해 체크)',
+        modelAnswers: [
+          { level: '이해체크', hanzi: '51 折 = 정가의 51%만 지불 = 약 49% 할인 (한국식 "반값"과 비슷). 「打5折」=50% 할인.', pinyin: '(설명)', korean: '⚠️ N折은 "N0% 할인"이 아니라 "정가의 N0%"임 — 헷갈리기 쉬운 함정' }
+        ]
+      }
+    ]
+  }
 ];
 
 // 진단에서 누락된 한자 회복용 - 자주 등장하는 격식체 어휘 미니뱅크
