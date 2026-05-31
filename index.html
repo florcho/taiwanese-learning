@@ -289,7 +289,13 @@
   <!-- ================= 토스트 ================= -->
   <div id="toast" class="toast hidden"></div>
 
-  <script src="data/lessons.js"></script>
-  <script src="app.js"></script>
+  <!-- 캐시 무력화: PWA/브라우저가 옛 lessons.js·app.js 를 붙들지 않도록 매 로드마다 최신 fetch -->
+  <script>
+    (function () {
+      var v = Date.now();
+      document.write('<scr' + 'ipt src="data/lessons.js?v=' + v + '"><\/scr' + 'ipt>');
+      document.write('<scr' + 'ipt src="app.js?v=' + v + '"><\/scr' + 'ipt>');
+    })();
+  </script>
 </body>
 </html>
