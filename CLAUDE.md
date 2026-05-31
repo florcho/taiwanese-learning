@@ -146,12 +146,12 @@ print(fixed.decode('utf-8', errors='replace'))
 ## ⚠️ 알려진 이슈
 
 - **Plaud TXT export 인코딩 사고**: UTF-8 → Latin-1 변환 손실 자주 발생. 항상 **Plaud 앱에서 텍스트 직접 복사** 권장
-- **iOS Safari PWA 캐싱**: 새 레슨 안 보이면 앱 닫기 → 재오픈 또는 Safari 캐시 클리어
-- **GitHub PAT 권한**: 현재 토큰은 Contents만, Pages 권한 없음 (Pages는 웹 UI에서 1회 활성화 완료)
+- **iOS Safari PWA 캐싱**: index.html이 `data/lessons.js?v=Date.now()` 동적 로드로 캐시 무력화 처리됨(2026-06-02). 그래서 보통은 **앱 재실행만 하면** 새 레슨 반영됨. 그래도 안 보이면 → index.html 셸 자체가 옛 캐시인 경우이므로 앱 삭제 후 재추가 or Safari 캐시 클리어 1회. 라이브 반영 검증: `curl -s "https://florcho.github.io/taiwanese-learning/data/lessons.js?t=$(date +%s)" | grep "id: 'L"`
+- **GitHub Pages 권한**: Pages는 웹 UI에서 1회 활성화 완료 (push만 하면 자동 재배포 ~30-60초)
 
 ## 🔐 인증
 
-GitHub PAT은 절대 코드/파일에 박지 말 것. 사용자가 매번 직접 제공하거나 환경변수 `GH_TOKEN` 사용.
+push 인증은 **macOS osxkeychain에 저장돼 있어 `git push origin main`으로 바로 됨** (토큰 입력 불필요). `GH_TOKEN` 환경변수·PAT URL 방식은 예전 메모이며 지금은 안 씀. 토큰을 코드/파일에 박는 일은 절대 X.
 
 폰 PWA의 PAT은 localStorage에만 저장 (서버 전송 X).
 
