@@ -95,10 +95,11 @@ python3 -m http.server 8000
 # 폰에서: http://[Mac IP]:8000
 ```
 
-### GitHub Push (PAT 환경변수로)
+### GitHub Push
 ```bash
-git push "https://x-access-token:${GH_TOKEN}@github.com/florcho/taiwanese-learning.git" main
+git push origin main   # ← 그냥 이걸로 됨!
 ```
+⚠️ **토큰 필요 없음.** 인증은 macOS osxkeychain에 저장돼 있어서 `git push origin main` 한 줄이면 끝. `GH_TOKEN` 환경변수 / PAT URL 방식 쓰지 말 것 (예전 메모였음, 지금은 keychain).
 
 ### lessons.js 문법 검증
 ```bash
@@ -117,7 +118,7 @@ print(fixed.decode('utf-8', errors='replace'))
 "
 ```
 
-## 📊 현재 레슨 상태 (2026-05-26 기준)
+## 📊 현재 레슨 상태 (2026-06-01 기준)
 
 | ID | 제목 | 출처 |
 |----|------|------|
@@ -129,8 +130,15 @@ print(fixed.decode('utf-8', errors='replace'))
 | L06 | 격식 한 문장 해부 (由於/將於) | 진단 A5 |
 | L07 | 🚧 Plaud Reels (재업로드 대기) | 인코딩 사고 |
 | L08 | 칭찬 표현 — 你的眼光太好了吧! | 인박스 2026-05-25 |
+| L09~L16 | (인박스 변환분 — 클리닉 마케팅/소비자 리서치 톤/광고 견적·일정 등) | 인박스 |
+| L17 | Yuna 협력사 소개 인사말 템플릿 | 인박스 2026-05-28 |
+| L18 | 협업 견적·재제작 조건 (報價/再製) | 인박스 2026-06-01 |
+| L19 | 網紅 언어(韓/中) 선택 내부 토론 | 인박스 2026-06-01 |
+| L20 | 醫美 광고 카피 어휘 폭격 (시술명+세일패턴) | 인박스 2026-06-01 |
 
-다음 추가될 레슨 ID는 **L09**.
+다음 추가될 레슨 ID는 **L21**.
+
+⚠️ **이 표는 자주 뒤처짐.** 새 세션에선 표를 믿지 말고 항상 `grep "id: 'L" data/lessons.js` 로 마지막 ID를 직접 확인할 것 (= "다음 ID" 결정 방법).
 
 ## ⚠️ 알려진 이슈
 
