@@ -1451,6 +1451,280 @@ const LESSONS = [
         ]
       }
     ]
+  },
+  {
+    id: 'L21',
+    title: '경쟁 에이전시 프로필 광고 💥 — 醫美 觀光 대행 카피',
+    subtitle: '대만인 창업 한국 의료미용 대행사의 프로필 광고 — 경쟁사 포지셔닝 + 신뢰 어필 어휘 (특수 유니코드는 일반 한자로 정규화)',
+    source: 'Inbox (2026-06-02 — 경쟁 에이전시 광고)',
+    type: 'vocab_burst',
+    difficulty: 'B1',
+    date: '2026-06-02',
+    fullText: '🇰🇷 韓國合法設立｜醫美整形一站式 VIP 服務。10 年專業資歷．台灣人創辦。韓星名醫團隊．醫院同價 0 加價．1 億醫療觀光保險。翻譯、陪同、酒店、接送、點餐、術後照護。⭐️ 8000+ 華人醫美首選．2024 韓國新銳公司獎。LINE 立即諮詢。',
+    koreanSummary: '🇰🇷 한국 합법 설립｜의료미용·성형 원스톱 VIP 서비스. 10년 전문 경력, 대만인 창업. 한류스타 담당 명의팀, 병원과 동일가·추가요금 0, 1억 의료관광 보험. 통역·동행·호텔·픽업·주문(식사)·시술 후 케어. ⭐️ 8000+ 화교/중화권 의료미용 1순위, 2024 한국 신예기업상. LINE으로 즉시 상담. (※ 경쟁 대행사 광고 — 우리 포지셔닝 비교용으로 읽기)',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '韓國合法設立，醫美整形一站式 VIP 服務',
+        zhuyin: 'ㄏㄢˊ ㄍㄨㄛˊ ㄏㄜˊ ㄈㄚˇ ㄕㄜˋ ㄌㄧˋ ㄧ ㄇㄟˇ ㄓㄥˇ ㄒㄧㄥˊ ㄧˊ ㄓㄢˋ ㄕˋ ㄈㄨˊ ㄨˋ',
+        pinyin: 'Hánguó héfǎ shèlì, yīměi zhěngxíng yízhànshì VIP fúwù',
+        korean: '한국 합법 설립, 의료미용·성형 원스톱 VIP 서비스',
+        wordBreak: '合法(합법) | 設立(설립) | 醫美(의료미용) | 整形(성형) | 一站式(원스톱) | 服務(서비스)',
+        keyPattern: '「合法設立」= 합법 설립 (신뢰 어필 단골). 「一站式」= 원스톱 ⭐ 서비스 광고 빈출. 「醫美」= 醫療美容 줄임 — 우리 업계 핵심어'
+      },
+      {
+        id: 2,
+        hanzi: '10 年專業資歷，台灣人創辦',
+        zhuyin: 'ㄕˊ ㄋㄧㄢˊ ㄓㄨㄢ ㄧㄝˋ ㄗ ㄌㄧˋ ㄊㄞˊ ㄨㄢ ㄖㄣˊ ㄔㄨㄤˋ ㄅㄢˋ',
+        pinyin: 'shí nián zhuānyè zīlì, Táiwān rén chuàngbàn',
+        korean: '10년 전문 경력, 대만인 창업',
+        wordBreak: '專業(전문) | 資歷(경력·이력) | 創辦(창립·창업)',
+        keyPattern: '「資歷」= 경력/이력 (자격 어필). 「台灣人創辦」= "대만인이 창업" → 대만 고객 신뢰 포인트 (경쟁사 핵심 셀링)'
+      },
+      {
+        id: 3,
+        hanzi: '韓星名醫團隊，醫院同價 0 加價，1 億醫療觀光保險',
+        zhuyin: 'ㄏㄢˊ ㄒㄧㄥ ㄇㄧㄥˊ ㄧ ㄊㄨㄢˊ ㄉㄨㄟˋ ㄧ ㄩㄢˋ ㄊㄨㄥˊ ㄐㄧㄚˋ ㄌㄧㄥˊ ㄐㄧㄚ ㄐㄧㄚˋ ㄧˊ ㄧˋ ㄧ ㄌㄧㄠˊ ㄍㄨㄢ ㄍㄨㄤ ㄅㄠˇ ㄒㄧㄢˇ',
+        pinyin: 'Hánxīng míngyī tuánduì, yīyuàn tóngjià líng jiājià, yí yì yīliáo guānguāng bǎoxiǎn',
+        korean: '한류스타 담당 명의팀, 병원과 동일가·추가요금 0, 1억 의료관광 보험',
+        wordBreak: '韓星(한류스타) | 名醫(명의) | 團隊(팀) | 同價(동일 가격) | 加價(추가 요금) | 醫療觀光(의료관광) | 保險(보험)',
+        keyPattern: '「同價 0 加價」= "병원과 같은 가격, 추가요금 없음" — 대행 수수료 우려 차단 카피 ⭐. 「醫療觀光」= 의료관광 (우리 사업 핵심 키워드)'
+      },
+      {
+        id: 4,
+        hanzi: '翻譯、陪同、酒店、接送、點餐、術後照護',
+        zhuyin: 'ㄈㄢ ㄧˋ ㄆㄟˊ ㄊㄨㄥˊ ㄐㄧㄡˇ ㄉㄧㄢˋ ㄐㄧㄝ ㄙㄨㄥˋ ㄉㄧㄢˇ ㄘㄢ ㄕㄨˋ ㄏㄡˋ ㄓㄠˋ ㄏㄨˋ',
+        pinyin: 'fānyì, péitóng, jiǔdiàn, jiēsòng, diǎncān, shùhòu zhàohù',
+        korean: '통역, 동행, 호텔, 픽업(접송), 주문(식사), 시술 후 케어',
+        wordBreak: '翻譯(통역·번역) | 陪同(동행) | 酒店(호텔·대만은 飯店도) | 接送(픽업·송영) | 點餐(주문하기) | 術後照護(시술 후 케어)',
+        keyPattern: '대행 서비스 풀패키지 나열 ⭐. 「陪同」= 동행, 「接送」= 픽업/데려다주기, 「術後照護」= 애프터케어 — 의료관광 서비스 필수어 묶음'
+      },
+      {
+        id: 5,
+        hanzi: '8000+ 華人醫美首選，2024 韓國新銳公司獎，LINE 立即諮詢',
+        zhuyin: 'ㄏㄨㄚˊ ㄖㄣˊ ㄧ ㄇㄟˇ ㄕㄡˇ ㄒㄩㄢˇ ㄒㄧㄣ ㄖㄨㄟˋ ㄍㄨㄥ ㄙ ㄐㄧㄤˇ ㄌㄧˋ ㄐㄧˊ ㄗ ㄒㄩㄣˊ',
+        pinyin: '8000+ Huárén yīměi shǒuxuǎn, 2024 Hánguó xīnruì gōngsī jiǎng, LINE lìjí zīxún',
+        korean: '8000+ 중화권 의료미용 1순위, 2024 한국 신예기업상, LINE으로 즉시 상담',
+        wordBreak: '華人(화교·중화권) | 首選(첫 번째 선택·1순위) | 新銳(신예·떠오르는) | 公司獎(기업상) | 立即(즉시) | 諮詢(상담·문의)',
+        keyPattern: '「首選」= "1순위 선택" ⭐ 광고 단골. 「新銳」= 신예/유망. 「立即諮詢」= "즉시 상담" CTA — 우리 광고에도 그대로 쓸 표현'
+      }
+    ],
+    vocab: [
+      { hanzi: '合法設立', zhuyin: 'ㄏㄜˊ ㄈㄚˇ ㄕㄜˋ ㄌㄧˋ', pinyin: 'héfǎ shèlì', korean: '합법 설립', pos: '구', hsk: '업무', tags: ['업무', '광고'], example: { hanzi: '韓國合法設立。', korean: '한국 합법 설립.' } },
+      { hanzi: '一站式', zhuyin: 'ㄧˊ ㄓㄢˋ ㄕˋ', pinyin: 'yízhànshì', korean: '원스톱', pos: '형용사', hsk: '업계', tags: ['업계', '광고', '필수'], example: { hanzi: '一站式服務。', korean: '원스톱 서비스.' } },
+      { hanzi: '醫美', zhuyin: 'ㄧ ㄇㄟˇ', pinyin: 'yīměi', korean: '의료미용 (醫療美容 줄임)', pos: '명사', hsk: '업계', tags: ['업계', '필수', '시술'], example: { hanzi: '華人醫美首選。', korean: '중화권 의료미용 1순위.' } },
+      { hanzi: '專業資歷', zhuyin: 'ㄓㄨㄢ ㄧㄝˋ ㄗ ㄌㄧˋ', pinyin: 'zhuānyè zīlì', korean: '전문 경력·이력', pos: '명사', hsk: '업무', tags: ['업무', '광고'], example: { hanzi: '10 年專業資歷。', korean: '10년 전문 경력.' } },
+      { hanzi: '創辦', zhuyin: 'ㄔㄨㄤˋ ㄅㄢˋ', pinyin: 'chuàngbàn', korean: '창립, 창업하다', pos: '동사', hsk: 5, tags: ['업무'], example: { hanzi: '台灣人創辦。', korean: '대만인이 창업.' } },
+      { hanzi: '名醫', zhuyin: 'ㄇㄧㄥˊ ㄧ', pinyin: 'míngyī', korean: '명의, 유명 의사', pos: '명사', hsk: '업계', tags: ['업계', '시술'], example: { hanzi: '韓星名醫團隊。', korean: '한류스타 담당 명의팀.' } },
+      { hanzi: '團隊', zhuyin: 'ㄊㄨㄢˊ ㄉㄨㄟˋ', pinyin: 'tuánduì', korean: '팀, 단체', pos: '명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '我們的團隊。', korean: '우리 팀.' } },
+      { hanzi: '加價', zhuyin: 'ㄐㄧㄚ ㄐㄧㄚˋ', pinyin: 'jiājià', korean: '추가 요금, 가격 인상', pos: '명사·동사', hsk: '업무', tags: ['업무', '광고', '필수'], example: { hanzi: '醫院同價 0 加價。', korean: '병원 동일가, 추가요금 0.' } },
+      { hanzi: '醫療觀光', zhuyin: 'ㄧ ㄌㄧㄠˊ ㄍㄨㄢ ㄍㄨㄤ', pinyin: 'yīliáo guānguāng', korean: '의료관광', pos: '명사', hsk: '업계', tags: ['업계', '필수'], example: { hanzi: '醫療觀光保險。', korean: '의료관광 보험.' } },
+      { hanzi: '陪同', zhuyin: 'ㄆㄟˊ ㄊㄨㄥˊ', pinyin: 'péitóng', korean: '동행하다', pos: '동사', hsk: 5, tags: ['업계', '서비스'], example: { hanzi: '提供陪同服務。', korean: '동행 서비스 제공.' } },
+      { hanzi: '接送', zhuyin: 'ㄐㄧㄝ ㄙㄨㄥˋ', pinyin: 'jiēsòng', korean: '픽업·송영 (데려오고 데려다줌)', pos: '동사', hsk: '업계', tags: ['업계', '서비스'], example: { hanzi: '機場接送。', korean: '공항 픽업.' } },
+      { hanzi: '術後照護', zhuyin: 'ㄕㄨˋ ㄏㄡˋ ㄓㄠˋ ㄏㄨˋ', pinyin: 'shùhòu zhàohù', korean: '시술 후 케어, 애프터케어', pos: '명사', hsk: '업계', tags: ['업계', '시술', '필수'], example: { hanzi: '完整術後照護。', korean: '완벽한 애프터케어.' } },
+      { hanzi: '華人', zhuyin: 'ㄏㄨㄚˊ ㄖㄣˊ', pinyin: 'Huárén', korean: '화교, 중화권 사람', pos: '명사', hsk: 4, tags: ['업무'], example: { hanzi: '華人醫美首選。', korean: '중화권 의료미용 1순위.' } },
+      { hanzi: '首選', zhuyin: 'ㄕㄡˇ ㄒㄩㄢˇ', pinyin: 'shǒuxuǎn', korean: '1순위 선택, 최우선', pos: '명사', hsk: '업무', tags: ['업무', '광고', '필수'], example: { hanzi: '醫美首選。', korean: '의료미용 1순위.' } },
+      { hanzi: '新銳', zhuyin: 'ㄒㄧㄣ ㄖㄨㄟˋ', pinyin: 'xīnruì', korean: '신예, 떠오르는', pos: '형용사', hsk: 5, tags: ['업무'], example: { hanzi: '新銳公司獎。', korean: '신예기업상.' } },
+      { hanzi: '諮詢', zhuyin: 'ㄗ ㄒㄩㄣˊ', pinyin: 'zīxún', korean: '상담, 문의', pos: '명사·동사', hsk: 5, tags: ['업무', '광고', '필수'], example: { hanzi: 'LINE 立即諮詢。', korean: 'LINE으로 즉시 상담.' } }
+    ],
+    practice: [
+      {
+        prompt: '우리 서비스/플랫폼을 한 줄 신뢰 카피로 소개하기 (경쟁사 톤 차용)',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: 'UNNI 是華人醫美首選平台，繁中介面、真實評價，立即諮詢!', pinyin: 'UNNI shì Huárén yīměi shǒuxuǎn píngtái, fánzhōng jièmiàn, zhēnshí píngjià, lìjí zīxún!', korean: 'UNNI는 중화권 의료미용 1순위 플랫폼, 번체 인터페이스·진짜 후기, 즉시 상담!' }
+        ]
+      },
+      {
+        prompt: '의료관광 풀패키지 서비스를 나열하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '我們提供翻譯、接送、術後照護等一站式服務。', pinyin: 'wǒmen tígōng fānyì, jiēsòng, shùhòu zhàohù děng yízhànshì fúwù.', korean: '저희는 통역·픽업·애프터케어 등 원스톱 서비스를 제공해요.' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L22',
+    title: '협업 재제안 follow-up 이메일 (UNNI) ⭐⭐ — 본인 핵심 템플릿',
+    subtitle: '무응답 인플루언서에게 다시 제안하는 메일 — 브랜드 소개 + 협업 형식 + 검기(檔期) 제시. 그대로 외워 활용',
+    source: 'Inbox (2026-06-02 — 본인 발송 템플릿)',
+    type: 'business_email_intro',
+    difficulty: 'B1',
+    date: '2026-06-02',
+    fullText: 'Hi {인플루언서 이름}，上次有寄給妳合作邀約信，不知道是否有看到呢？😊 想再次跟妳介紹 UNNI 這個品牌～我們是韓國用戶數 No.1 的醫美平台，現在也推出繁體中文版了！希望能藉由妳的影響力，讓更多台灣用戶認識我們～合作形式其實很簡單：✨ IG Reels (90秒) + IG Story 一則帶連結。📅 檔期：6 月底前上刊（避開假日）。我們對妳的風格和受眾很感興趣，覺得是個很棒的合作機會！如果有興趣，歡迎直接回覆或加我 LINE：{라인아이디}，期待收到妳的回覆～',
+    koreanSummary: 'Hi {인플루언서 이름}, 지난번에 협업 제안 메일 보냈는데 혹시 보셨을까요?😊 UNNI 브랜드를 다시 한번 소개드리고 싶어요~ 저희는 한국 사용자 수 No.1 의료미용 플랫폼이고, 지금은 번체 중국어 버전도 출시했어요! 당신의 영향력을 통해 더 많은 대만 사용자가 저희를 알게 되길 바라요~ 협업 형식은 사실 간단해요: ✨IG 릴스(90초) + IG 스토리 1건(링크 포함). 📅 검기(일정): 6월 말 전 게재(공휴일 피해서). 당신의 스타일과 오디언스에 정말 관심 있고, 멋진 협업 기회라고 생각해요! 관심 있으시면 바로 회신하시거나 LINE 추가해 주세요: {라인아이디}, 답변 기다릴게요~',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '上次有寄給妳合作邀約信，不知道是否有看到呢？',
+        zhuyin: 'ㄕㄤˋ ㄘˋ ㄧㄡˇ ㄐㄧˋ ㄍㄟˇ ㄋㄧˇ ㄏㄜˊ ㄗㄨㄛˋ ㄧㄠ ㄩㄝ ㄒㄧㄣˋ ㄅㄨˋ ㄓ ㄉㄠˋ ㄕˋ ㄈㄡˇ ㄧㄡˇ ㄎㄢˋ ㄉㄠˋ ㄋㄜ˙',
+        pinyin: 'shàngcì yǒu jì gěi nǐ hézuò yāoyuē xìn, bù zhīdào shìfǒu yǒu kàndào ne?',
+        korean: '지난번에 협업 제안 메일을 보냈는데, 혹시 보셨는지 모르겠어요?',
+        wordBreak: '上次(지난번) | 寄信(메일 보내다) | 邀約信(제안 메일) | 是否(~인지 아닌지) | 看到(보다·확인하다)',
+        keyPattern: '「不知道是否有~呢？」= "혹시 ~하셨는지 모르겠어요?" 무응답 정중 리마인드 공식 ⭐. 추궁 아닌 부드러운 톤'
+      },
+      {
+        id: 2,
+        hanzi: '想再次跟妳介紹 UNNI 這個品牌～',
+        zhuyin: 'ㄒㄧㄤˇ ㄗㄞˋ ㄘˋ ㄍㄣ ㄋㄧˇ ㄐㄧㄝˋ ㄕㄠˋ ㄓㄜˋ ㄍㄜˋ ㄆㄧㄣˇ ㄆㄞˊ',
+        pinyin: 'xiǎng zàicì gēn nǐ jièshào UNNI zhège pǐnpái~',
+        korean: 'UNNI라는 브랜드를 다시 한번 소개드리고 싶어요~',
+        wordBreak: '再次(다시 한번) | 跟妳介紹(당신에게 소개하다) | 品牌(브랜드)',
+        keyPattern: '「想再次跟妳介紹~」= 재컨택 도입 공식 ⭐. 「跟+사람+介紹」= "~에게 소개하다"'
+      },
+      {
+        id: 3,
+        hanzi: '我們是韓國用戶數 No.1 的醫美平台，現在也推出繁體中文版了！',
+        zhuyin: 'ㄨㄛˇ ㄇㄣ˙ ㄕˋ ㄏㄢˊ ㄍㄨㄛˊ ㄩㄥˋ ㄏㄨˋ ㄕㄨˋ ㄉㄜ˙ ㄧ ㄇㄟˇ ㄆㄧㄥˊ ㄊㄞˊ ㄒㄧㄢˋ ㄗㄞˋ ㄧㄝˇ ㄊㄨㄟ ㄔㄨ ㄈㄢˊ ㄊㄧˇ ㄓㄨㄥ ㄨㄣˊ ㄅㄢˇ ㄌㄜ˙',
+        pinyin: 'wǒmen shì Hánguó yònghùshù No.1 de yīměi píngtái, xiànzài yě tuīchū fántǐ zhōngwén bǎn le!',
+        korean: '저희는 한국 사용자 수 No.1 의료미용 플랫폼이고, 지금은 번체 중국어 버전도 출시했어요!',
+        wordBreak: '用戶數(사용자 수) | 平台(플랫폼) | 推出(출시·선보이다) | 繁體中文版(번체 중국어 버전)',
+        keyPattern: '「用戶數 No.1 的~平台」= 한 줄 브랜드 권위 소개 ⭐. 「推出~了」= "~를 출시했어요" 신규 런칭 알림 공식'
+      },
+      {
+        id: 4,
+        hanzi: '希望能藉由妳的影響力，讓更多台灣用戶認識我們～',
+        zhuyin: 'ㄒㄧ ㄨㄤˋ ㄋㄥˊ ㄐㄧㄝˋ ㄧㄡˊ ㄋㄧˇ ㄉㄜ˙ ㄧㄥˇ ㄒㄧㄤˇ ㄌㄧˋ ㄖㄤˋ ㄍㄥ ㄉㄨㄛ ㄊㄞˊ ㄨㄢ ㄩㄥˋ ㄏㄨˋ ㄖㄣˋ ㄕˋ ㄨㄛˇ ㄇㄣ˙',
+        pinyin: 'xīwàng néng jièyóu nǐ de yǐngxiǎnglì, ràng gèng duō Táiwān yònghù rènshì wǒmen~',
+        korean: '당신의 영향력을 통해 더 많은 대만 사용자가 저희를 알게 되길 바라요~',
+        wordBreak: '藉由(~을 통해) | 影響力(영향력) | 讓(~하게 하다) | 更多(더 많은) | 認識(알다·인지하다)',
+        keyPattern: '「藉由妳的影響力，讓~認識我們」= 인플 협업 제안의 핵심 가치 문장 ⭐. 「藉由」= "~을 통해/매개로" (격식, =透過)'
+      },
+      {
+        id: 5,
+        hanzi: '合作形式其實很簡單：IG Reels (90秒) + IG Story 一則帶連結',
+        zhuyin: 'ㄏㄜˊ ㄗㄨㄛˋ ㄒㄧㄥˊ ㄕˋ ㄑㄧˊ ㄕˊ ㄏㄣˇ ㄐㄧㄢˇ ㄉㄢ ㄧˋ ㄗㄜˊ ㄉㄞˋ ㄌㄧㄢˋ ㄐㄧㄝˊ',
+        pinyin: 'hézuò xíngshì qíshí hěn jiǎndān: IG Reels (90 miǎo) + IG Story yì zé dài liánjié',
+        korean: '협업 형식은 사실 간단해요: IG 릴스(90초) + IG 스토리 1건(링크 포함)',
+        wordBreak: '合作形式(협업 형식) | 其實(사실) | 簡單(간단) | 一則(한 건·게시물 단위) | 帶連結(링크 포함·링크 달기)',
+        keyPattern: '「合作形式其實很簡單：~」= 협업 부담 낮추는 제안 공식 ⭐. 「一則」= 스토리/포스트 세는 양사. 「帶連結」= 링크 포함'
+      },
+      {
+        id: 6,
+        hanzi: '檔期：6 月底前上刊（避開假日），期待收到妳的回覆～',
+        zhuyin: 'ㄉㄤˇ ㄑㄧˊ ㄌㄧㄡˋ ㄩㄝˋ ㄉㄧˇ ㄑㄧㄢˊ ㄕㄤˋ ㄎㄢ ㄅㄧˋ ㄎㄞ ㄐㄧㄚˋ ㄖˋ ㄑㄧˊ ㄉㄞˋ ㄕㄡ ㄉㄠˋ ㄋㄧˇ ㄉㄜ˙ ㄏㄨㄟˊ ㄈㄨˋ',
+        pinyin: 'dàngqí: 6 yuè dǐ qián shàngkān (bìkāi jiàrì), qídài shōudào nǐ de huífù~',
+        korean: '검기(일정): 6월 말 전 게재(공휴일 피해서), 답변 기다릴게요~',
+        wordBreak: '檔期(일정·게재 기간) | 月底(월말) | 上刊(게재·업로드) | 避開(피하다) | 假日(공휴일) | 期待(기대) | 回覆(회신)',
+        keyPattern: '「檔期」= 콘텐츠 게재 일정 ⭐ 업계 필수. 「上刊」= 게재/업로드(대만식). 「期待收到妳的回覆」= 메일 맺음말 공식'
+      }
+    ],
+    vocab: [
+      { hanzi: '邀約信', zhuyin: 'ㄧㄠ ㄩㄝ ㄒㄧㄣˋ', pinyin: 'yāoyuē xìn', korean: '제안 메일, 초청장', pos: '명사', hsk: '업무', tags: ['업무', '이메일', '필수', '인플루언서'], example: { hanzi: '上次寄了邀約信。', korean: '지난번에 제안 메일 보냈어요.' } },
+      { hanzi: '是否', zhuyin: 'ㄕˋ ㄈㄡˇ', pinyin: 'shìfǒu', korean: '~인지 아닌지 (격식)', pos: '부사', hsk: 5, tags: ['이메일', '격식', '필수'], example: { hanzi: '不知道是否有看到。', korean: '보셨는지 모르겠어요.' } },
+      { hanzi: '品牌', zhuyin: 'ㄆㄧㄣˇ ㄆㄞˊ', pinyin: 'pǐnpái', korean: '브랜드', pos: '명사', hsk: 4, tags: ['업무', '필수', '인플루언서'], example: { hanzi: '介紹這個品牌。', korean: '이 브랜드를 소개해요.' } },
+      { hanzi: '用戶數', zhuyin: 'ㄩㄥˋ ㄏㄨˋ ㄕㄨˋ', pinyin: 'yònghùshù', korean: '사용자 수', pos: '명사', hsk: '업무', tags: ['업무', '인플루언서'], example: { hanzi: '用戶數 No.1。', korean: '사용자 수 1위.' } },
+      { hanzi: '平台', zhuyin: 'ㄆㄧㄥˊ ㄊㄞˊ', pinyin: 'píngtái', korean: '플랫폼', pos: '명사', hsk: 4, tags: ['업무', '필수', '인플루언서'], example: { hanzi: '醫美平台。', korean: '의료미용 플랫폼.' } },
+      { hanzi: '推出', zhuyin: 'ㄊㄨㄟ ㄔㄨ', pinyin: 'tuīchū', korean: '출시하다, 선보이다', pos: '동사', hsk: 5, tags: ['업무', '필수'], example: { hanzi: '推出繁中版了。', korean: '번체 버전을 출시했어요.' } },
+      { hanzi: '繁體中文', zhuyin: 'ㄈㄢˊ ㄊㄧˇ ㄓㄨㄥ ㄨㄣˊ', pinyin: 'fántǐ zhōngwén', korean: '번체 중국어 (대만식 한자)', pos: '명사', hsk: '업무', tags: ['업무', '대만식', '필수'], example: { hanzi: '繁體中文版。', korean: '번체 중국어 버전.' } },
+      { hanzi: '藉由', zhuyin: 'ㄐㄧㄝˋ ㄧㄡˊ', pinyin: 'jièyóu', korean: '~을 통해·매개로 (격식, =透過)', pos: '전치사', hsk: 5, tags: ['이메일', '격식', '필수'], example: { hanzi: '藉由妳的影響力。', korean: '당신의 영향력을 통해.' } },
+      { hanzi: '影響力', zhuyin: 'ㄧㄥˇ ㄒㄧㄤˇ ㄌㄧˋ', pinyin: 'yǐngxiǎnglì', korean: '영향력', pos: '명사', hsk: 5, tags: ['인플루언서', '필수'], example: { hanzi: '妳的影響力很大。', korean: '당신의 영향력이 커요.' } },
+      { hanzi: '合作形式', zhuyin: 'ㄏㄜˊ ㄗㄨㄛˋ ㄒㄧㄥˊ ㄕˋ', pinyin: 'hézuò xíngshì', korean: '협업 형식·방식', pos: '명사', hsk: '업무', tags: ['업무', '인플루언서', '필수'], example: { hanzi: '合作形式很簡單。', korean: '협업 형식은 간단해요.' } },
+      { hanzi: '一則', zhuyin: 'ㄧˋ ㄗㄜˊ', pinyin: 'yì zé', korean: '한 건 (게시물·메시지 양사)', pos: '양사', hsk: 5, tags: ['인플루언서'], example: { hanzi: 'IG Story 一則。', korean: 'IG 스토리 1건.' } },
+      { hanzi: '帶連結', zhuyin: 'ㄉㄞˋ ㄌㄧㄢˋ ㄐㄧㄝˊ', pinyin: 'dài liánjié', korean: '링크 포함, 링크 달기', pos: '동사구', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: 'Story 帶連結。', korean: '스토리에 링크 달기.' } },
+      { hanzi: '檔期', zhuyin: 'ㄉㄤˇ ㄑㄧˊ', pinyin: 'dàngqí', korean: '일정, 게재 기간', pos: '명사', hsk: '업계', tags: ['업계', '필수', '인플루언서'], example: { hanzi: '檔期 6 月底前。', korean: '일정은 6월 말 전.' } },
+      { hanzi: '上刊', zhuyin: 'ㄕㄤˋ ㄎㄢ', pinyin: 'shàngkān', korean: '게재, 업로드 (대만식)', pos: '동사', hsk: '업계', tags: ['업계', '대만식', '필수', '인플루언서'], example: { hanzi: '6 月底前上刊。', korean: '6월 말 전 게재.' } },
+      { hanzi: '避開', zhuyin: 'ㄅㄧˋ ㄎㄞ', pinyin: 'bìkāi', korean: '피하다', pos: '동사', hsk: 5, tags: ['업무', '회화'], example: { hanzi: '避開假日。', korean: '공휴일을 피해서.' } },
+      { hanzi: '期待', zhuyin: 'ㄑㄧˊ ㄉㄞˋ', pinyin: 'qídài', korean: '기대하다', pos: '동사', hsk: 4, tags: ['이메일', '필수'], example: { hanzi: '期待妳的回覆。', korean: '답변 기다릴게요.' } }
+    ],
+    practice: [
+      {
+        prompt: '무응답 인플루언서에게 다시 제안 메일 보내기 (follow-up 도입)',
+        modelAnswers: [
+          { level: '템플릿', hanzi: 'Hi {이름}，上次有寄給妳合作邀約信，不知道是否有看到呢？😊 想再次跟妳介紹 UNNI～我們是韓國用戶數 No.1 的醫美平台，現在也推出繁體中文版了！', pinyin: '(템플릿)', korean: '템플릿 — 이름만 바꿔 재제안 도입에 그대로 ⭐' }
+        ]
+      },
+      {
+        prompt: '협업 형식·검기를 간단히 제시하고 회신 요청하기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '合作形式很簡單：IG Reels + Story 帶連結，檔期希望 6 月底前上刊（避開假日）。有興趣的話歡迎回覆或加 LINE，期待收到妳的回覆～', pinyin: 'hézuò xíngshì hěn jiǎndān: IG Reels + Story dài liánjié, dàngqí xīwàng 6 yuè dǐ qián shàngkān (bìkāi jiàrì). yǒu xìngqù dehuà huānyíng huífù huò jiā LINE, qídài shōudào nǐ de huífù~', korean: '협업 형식 간단해요: IG 릴스+스토리 링크, 일정은 6월 말 전 게재(공휴일 피해서)요. 관심 있으면 회신하거나 LINE 추가해 주세요, 답변 기다릴게요~' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L23',
+    title: '협업 진행 일정표 ⭐ — 腳本→上刊→付款 단계별 용어',
+    subtitle: '촬영 스크립트부터 게재·결제까지 협업 진행 스케줄 — 정산·납품 용어 위주 (시유=대행/크리에이터 측)',
+    source: 'Inbox (2026-06-02 — 협업 일정표)',
+    type: 'business_email_terms',
+    difficulty: 'B1-B2',
+    date: '2026-06-02',
+    fullText: '협업 진행 일정: 시유 제공 拍攝腳本初稿 → 品牌回應腳本 → 시유 提供 Acopy + REELS 文案 → 品牌回應 Acopy → 시유 提供 Bcopy → 品牌回應 Bcopy → 시유 上刊 + 提供品牌影片原始檔 + 廣告授權代碼 → 品牌付款。',
+    koreanSummary: '협업 진행 일정 흐름: ①시유(크리에이터/대행 측)가 촬영 스크립트 초안 제공 → ②브랜드가 스크립트 회신 → ③시유가 A카피+릴스 문안 제공 → ④브랜드가 A카피 회신 → ⑤시유가 B카피 제공 → ⑥브랜드가 B카피 회신 → ⑦시유 게재 + 브랜드용 영상 원본 파일·광고 사용권 코드 제공 → ⑧브랜드 결제. (※ 원문 날짜에 06/02가 화·금 두 번 표기된 오타 있음 — 순서 흐름 위주로 학습)',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '시유提供拍攝腳本初稿，品牌回應腳本',
+        zhuyin: 'ㄊㄧˊ ㄍㄨㄥ ㄆㄞ ㄕㄜˋ ㄐㄧㄠˇ ㄅㄣˇ ㄔㄨ ㄍㄠˇ ㄆㄧㄣˇ ㄆㄞˊ ㄏㄨㄟˊ ㄧㄥˋ ㄐㄧㄠˇ ㄅㄣˇ',
+        pinyin: 'tígōng pāishè jiǎoběn chūgǎo, pǐnpái huíyìng jiǎoběn',
+        korean: '촬영 스크립트 초안 제공, 브랜드가 스크립트 회신',
+        wordBreak: '提供(제공) | 拍攝(촬영) | 腳本(스크립트·대본) | 初稿(초안) | 品牌(브랜드) | 回應(회신·응답)',
+        keyPattern: '「腳本初稿」= 대본 초안 ⭐ 콘텐츠 제작 빈출. 「回應」= 피드백/회신 (=回覆보다 검토·반응 뉘앙스). 협업 1단계'
+      },
+      {
+        id: 2,
+        hanzi: '시유提供 Acopy + REELS 文案，品牌回應 Acopy',
+        zhuyin: 'ㄊㄧˊ ㄍㄨㄥ ㄨㄣˊ ㄢˋ ㄆㄧㄣˇ ㄆㄞˊ ㄏㄨㄟˊ ㄧㄥˋ',
+        pinyin: 'tígōng Acopy + REELS wén\'àn, pǐnpái huíyìng Acopy',
+        korean: 'A카피 + 릴스 문안 제공, 브랜드가 A카피 회신',
+        wordBreak: '文案(카피·문안) | Acopy/Bcopy(1차/2차 카피안) | 回應(회신)',
+        keyPattern: '「文案」= 광고 카피/문안 ⭐ 초빈출. Acopy→Bcopy = 카피 1차안→2차안 수정 라운드 (제작 협업 표준 흐름)'
+      },
+      {
+        id: 3,
+        hanzi: '시유提供 Bcopy，品牌回應 Bcopy',
+        zhuyin: 'ㄊㄧˊ ㄍㄨㄥ ㄆㄧㄣˇ ㄆㄞˊ ㄏㄨㄟˊ ㄧㄥˋ',
+        pinyin: 'tígōng Bcopy, pǐnpái huíyìng Bcopy',
+        korean: 'B카피 제공, 브랜드가 B카피 회신',
+        wordBreak: '提供(제공) | Bcopy(2차 카피안) | 回應(회신)',
+        keyPattern: '카피 수정 2라운드. 「A안 피드백 → B안 → 최종 확정」이 콘텐츠 협업의 전형적 검수 사이클 ⭐'
+      },
+      {
+        id: 4,
+        hanzi: '시유上刊，提供品牌影片原始檔 + 廣告授權代碼',
+        zhuyin: 'ㄕㄤˋ ㄎㄢ ㄊㄧˊ ㄍㄨㄥ ㄆㄧㄣˇ ㄆㄞˊ ㄧㄥˇ ㄆㄧㄢˋ ㄩㄢˊ ㄕˇ ㄉㄤˋ ㄍㄨㄤˇ ㄍㄠˋ ㄕㄡˋ ㄑㄩㄢˊ ㄉㄞˋ ㄇㄚˇ',
+        pinyin: 'shàngkān, tígōng pǐnpái yǐngpiàn yuánshǐ dàng + guǎnggào shòuquán dàimǎ',
+        korean: '게재, 브랜드용 영상 원본 파일 + 광고 사용권 코드 제공',
+        wordBreak: '上刊(게재) | 影片(영상) | 原始檔(원본 파일) | 廣告授權(광고 사용권) | 代碼(코드)',
+        keyPattern: '「原始檔」= 원본 파일(raw/소스) ⭐ 납품 필수어. 「廣告授權代碼」= 광고 집행용 사용권 코드 (브랜드가 광고 돌릴 권한). 납품 단계 핵심'
+      },
+      {
+        id: 5,
+        hanzi: '品牌付款',
+        zhuyin: 'ㄆㄧㄣˇ ㄆㄞˊ ㄈㄨˋ ㄎㄨㄢˇ',
+        pinyin: 'pǐnpái fùkuǎn',
+        korean: '브랜드 결제 (대금 지급)',
+        wordBreak: '品牌(브랜드) | 付款(결제·대금 지급)',
+        keyPattern: '「付款」= 결제/대금 지급 ⭐ 정산 필수어. 일반적으로 납품(上刊+원본+授權代碼) 완료 후 결제가 마지막 단계'
+      }
+    ],
+    vocab: [
+      { hanzi: '提供', zhuyin: 'ㄊㄧˊ ㄍㄨㄥ', pinyin: 'tígōng', korean: '제공하다', pos: '동사', hsk: 4, tags: ['업무', '이메일', '필수'], example: { hanzi: '提供拍攝腳本。', korean: '촬영 스크립트를 제공해요.' } },
+      { hanzi: '腳本', zhuyin: 'ㄐㄧㄠˇ ㄅㄣˇ', pinyin: 'jiǎoběn', korean: '스크립트, 대본', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '拍攝腳本初稿。', korean: '촬영 대본 초안.' } },
+      { hanzi: '初稿', zhuyin: 'ㄔㄨ ㄍㄠˇ', pinyin: 'chūgǎo', korean: '초안, 초고', pos: '명사', hsk: '업무', tags: ['업무', '필수'], example: { hanzi: '先給初稿。', korean: '먼저 초안 드려요.' } },
+      { hanzi: '回應', zhuyin: 'ㄏㄨㄟˊ ㄧㄥˋ', pinyin: 'huíyìng', korean: '회신, 응답, 피드백', pos: '명사·동사', hsk: 5, tags: ['업무', '이메일', '필수'], example: { hanzi: '品牌回應腳本。', korean: '브랜드가 스크립트에 피드백.' } },
+      { hanzi: '文案', zhuyin: 'ㄨㄣˊ ㄢˋ', pinyin: 'wén\'àn', korean: '카피, 문안', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: 'REELS 文案。', korean: '릴스 카피(문안).' } },
+      { hanzi: '原始檔', zhuyin: 'ㄩㄢˊ ㄕˇ ㄉㄤˋ', pinyin: 'yuánshǐ dàng', korean: '원본 파일 (raw/소스)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '提供影片原始檔。', korean: '영상 원본 파일 제공.' } },
+      { hanzi: '影片', zhuyin: 'ㄧㄥˇ ㄆㄧㄢˋ', pinyin: 'yǐngpiàn', korean: '영상, 동영상 (대만식)', pos: '명사', hsk: 4, tags: ['인플루언서', '대만식', '필수'], example: { hanzi: '品牌影片原始檔。', korean: '브랜드 영상 원본.' } },
+      { hanzi: '授權代碼', zhuyin: 'ㄕㄡˋ ㄑㄩㄢˊ ㄉㄞˋ ㄇㄚˇ', pinyin: 'shòuquán dàimǎ', korean: '사용권 코드 (광고 집행용)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '提供廣告授權代碼。', korean: '광고 사용권 코드 제공.' } },
+      { hanzi: '付款', zhuyin: 'ㄈㄨˋ ㄎㄨㄢˇ', pinyin: 'fùkuǎn', korean: '결제, 대금 지급', pos: '명사·동사', hsk: 4, tags: ['업무', '정산', '필수'], example: { hanzi: '上刊後付款。', korean: '게재 후 결제.' } },
+      { hanzi: '品牌', zhuyin: 'ㄆㄧㄣˇ ㄆㄞˊ', pinyin: 'pǐnpái', korean: '브랜드 (여기선 발주처)', pos: '명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '品牌回應。', korean: '브랜드(발주처) 회신.' } },
+      { hanzi: '拍攝', zhuyin: 'ㄆㄞ ㄕㄜˋ', pinyin: 'pāishè', korean: '촬영', pos: '동사', hsk: 5, tags: ['인플루언서', '필수'], example: { hanzi: '拍攝腳本。', korean: '촬영 대본.' } }
+    ],
+    practice: [
+      {
+        prompt: '협업 진행 일정을 단계별로 안내하기 (스케줄 공유)',
+        modelAnswers: [
+          { level: '템플릿', hanzi: '進行流程：① 我們提供拍攝腳本初稿 → ② 品牌回應 → ③ 提供文案 (Acopy/Bcopy) → ④ 上刊並提供影片原始檔與授權代碼 → ⑤ 品牌付款。', pinyin: '(템플릿)', korean: '템플릿 — 협업 흐름 단계별 안내에 그대로 ⭐' }
+        ]
+      },
+      {
+        prompt: '납품 완료 후 결제를 정중히 안내·요청하기',
+        modelAnswers: [
+          { level: '자연스러움', hanzi: '影片已上刊，原始檔與廣告授權代碼也一併提供給您了，再麻煩您安排付款，謝謝!', pinyin: 'yǐngpiàn yǐ shàngkān, yuánshǐ dàng yǔ guǎnggào shòuquán dàimǎ yě yībìng tígōng gěi nín le, zài máfan nín ānpái fùkuǎn, xièxie!', korean: '영상 게재 완료했고, 원본 파일과 광고 사용권 코드도 함께 전달드렸어요. 결제 진행 부탁드려요, 감사합니다!' }
+        ]
+      }
+    ]
   }
 ];
 
