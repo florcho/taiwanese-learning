@@ -50,8 +50,8 @@
       <h3>빠른 도구</h3>
       <div class="quick-tools">
         <button class="tool-card" data-action="vocab-all">
-          <span class="tool-icon">📚</span>
-          <span class="tool-label">전체 단어장</span>
+          <span class="tool-icon">🃏</span>
+          <span class="tool-label">플래시카드</span>
           <span class="tool-sub" id="vocab-count">0개</span>
         </button>
         <button class="tool-card" data-action="quiz-random">
@@ -171,6 +171,21 @@
     <div id="vocab-all-list" class="vocab-list"></div>
   </main>
 
+  <!-- ================= 플래시카드 화면 ================= -->
+  <main id="screen-flashcard" class="screen hidden">
+    <div class="lesson-head">
+      <button class="back-btn" data-back="home">← 홈</button>
+      <h2>🃏 플래시카드</h2>
+      <p class="subtitle">탭하면 뒤집혀요</p>
+    </div>
+    <div class="fc-decks" id="fc-decks"></div>
+    <div id="fc-stage"></div>
+    <div class="fc-footer">
+      <button id="fc-sync-btn" class="btn">☁️ 분류상태 동기화(올리기)</button>
+      <button id="fc-pull-btn" class="btn">📥 다른 기기 상태 받기</button>
+    </div>
+  </main>
+
   <!-- ================= 퀴즈 화면 ================= -->
   <main id="screen-quiz" class="screen hidden">
     <div class="lesson-head">
@@ -229,6 +244,19 @@
         <button id="test-gh-btn" class="btn">연결 테스트</button>
       </div>
       <p id="gh-status" class="form-help"></p>
+    </div>
+
+    <div class="card">
+      <p class="label">🔊 발음 음성</p>
+      <p style="font-size:13px;color:var(--text-dim);margin:0 0 8px;line-height:1.6">
+        현재 음성: <span id="tts-voice-label" style="color:var(--text)">확인 중...</span>
+      </p>
+      <p style="font-size:12px;color:var(--text-dim);margin:0 0 10px;line-height:1.7">
+        로봇처럼 들리면 <b>고품질 음성</b>을 한 번만 받으면 훨씬 자연스러워져요:<br/>
+        iOS 설정 → 손쉬운 사용 → 음성 콘텐츠 → 음성 → 中文(台灣) →
+        <b>「고품질(Enhanced)」</b> 다운로드. (받은 뒤 이 앱 재실행)
+      </p>
+      <button id="tts-test-btn" class="btn">🔊 음성 테스트 (你好，今天天氣很好)</button>
     </div>
 
     <div class="card">

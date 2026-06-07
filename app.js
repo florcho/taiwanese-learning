@@ -14,6 +14,7 @@ const state = {
   quiz: null,
   recorder: null,
   isRecording: false,
+  fc: null,
   progress: loadProgress()
 };
 
@@ -252,14 +253,23 @@ function prevSent() {
 // ============================================================
 // TTS (브라우저 음성)
 // ============================================================
+// 고품질 음성 우선: Enhanced/Premium > 알려진 좋은 이름 > 일반 zh-TW > zh
 function getVoice() {
   const voices = speechSynthesis.getVoices();
-  // 우선순위: zh-TW > zh-HK > zh-CN
-  return voices.find(v => v.lang === 'zh-TW') ||
-         voices.find(v => v.lang.startsWith('zh-TW')) ||
-         voices.find(v => v.lang === 'zh-HK') ||
-         voices.find(v => v.lang.startsWith('zh')) ||
-         null;
+  if (!voices.length) return null;
+  const tw = voices.filter(v => v.lang && v.lang.replace('_', '-').toLowerCase().startsWith('zh-tw'));
+  const pool = tw.length ? tw : voices.filter(v => v.lang && v.lang.toLowerCase().startsWith('zh'));
+  if (!pool.length) return null;
+  const score = (v) => {
+    const n = (v.name || '').toLowerCase();
+    let s = 0;
+    if (/enhanced|premium|neural|natural/.test(n)) s += 100; // iOS/크롬 고품질
+    if (/meijia|mei-?jia|美佳|ya-?ling|雅琳|yu-?shu|google/.test(n)) s += 30; // 알려진 좋은 음성
+    if (v.lang && v.lang.replace('_', '-').toLowerCase() === 'zh-tw') s += 10;
+    if (v.localService) s += 1;
+    return s;
+  };
+  return pool.slice().sort((a, b) => score(b) - score(a))[0] || null;
 }
 
 function speak(text, rate = state.ttsRate) {
@@ -271,41 +281,88 @@ function speak(text, rate = state.ttsRate) {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = 'zh-TW';
   utter.rate = rate;
+  utter.pitch = 1.0;
   const voice = getVoice();
-  if (voice) utter.voice = voice;
+  if (voice) { utter.voice = voice; utter.lang = voice.lang; }
   speechSynthesis.speak(utter);
+}
+
+// 현재 잡힌 음성 이름 (설정 화면 안내용)
+function currentVoiceLabel() {
+  const v = getVoice();
+  if (!v) return '음성 없음 — 아래 안내대로 다운로드해주세요';
+  const enhanced = /enhanced|premium|neural|natural/i.test(v.name || '');
+  return `${v.name} (${v.lang})${enhanced ? ' · 고품질 ✅' : ' · 기본품질'}`;
 }
 
 // ============================================================
 // 녹음 (MediaRecorder API)
 // ============================================================
+// iOS Safari는 audio/webm을 지원하지 않음 → 지원되는 mimeType을 런타임에 탐지
+function pickRecorderMime() {
+  if (typeof MediaRecorder === 'undefined' || !MediaRecorder.isTypeSupported) return '';
+  const candidates = [
+    'audio/mp4',            // iOS Safari (aac)
+    'audio/mp4;codecs=mp4a.40.2',
+    'audio/webm;codecs=opus', // Chrome/Firefox/Android
+    'audio/webm',
+    'audio/aac'
+  ];
+  return candidates.find(t => MediaRecorder.isTypeSupported(t)) || '';
+}
+
 async function toggleRecord() {
   const btn = document.getElementById('record-toggle');
   if (state.isRecording) {
-    state.recorder.stop();
+    try { state.recorder.stop(); } catch (e) {}
     state.isRecording = false;
     btn.classList.remove('recording');
     btn.textContent = '🎤 따라말하기';
     return;
   }
+  // 사전 점검: getUserMedia / MediaRecorder 사용 가능 여부
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    toast('이 브라우저는 녹음을 지원하지 않아요 (HTTPS에서만 가능)');
+    return;
+  }
+  if (typeof MediaRecorder === 'undefined') {
+    toast('이 브라우저는 MediaRecorder를 지원하지 않아요');
+    return;
+  }
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    state.recorder = new MediaRecorder(stream);
+    const mime = pickRecorderMime();
+    state.recorder = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
     const chunks = [];
-    state.recorder.ondataavailable = (e) => chunks.push(e.data);
+    state.recorder.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
     state.recorder.onstop = () => {
-      const blob = new Blob(chunks, { type: 'audio/webm' });
+      // 실제 녹음에 쓰인 mimeType으로 Blob 생성 (iOS는 mp4)
+      const type = state.recorder.mimeType || mime || 'audio/mp4';
+      const blob = new Blob(chunks, { type });
       const url = URL.createObjectURL(blob);
       document.getElementById('my-audio').src = url;
       document.getElementById('recording-result').classList.remove('hidden');
       stream.getTracks().forEach(t => t.stop());
+    };
+    state.recorder.onerror = () => {
+      toast('녹음 중 오류가 발생했어요');
+      stream.getTracks().forEach(t => t.stop());
+      state.isRecording = false;
+      btn.classList.remove('recording');
+      btn.textContent = '🎤 따라말하기';
     };
     state.recorder.start();
     state.isRecording = true;
     btn.classList.add('recording');
     btn.textContent = '⏹ 정지';
   } catch (err) {
-    toast('마이크 권한이 필요해요');
+    if (err && (err.name === 'NotAllowedError' || err.name === 'SecurityError')) {
+      toast('마이크 권한이 필요해요 (설정에서 허용)');
+    } else if (err && err.name === 'NotFoundError') {
+      toast('마이크를 찾을 수 없어요');
+    } else {
+      toast('녹음을 시작할 수 없어요: ' + (err && err.name || ''));
+    }
   }
 }
 
@@ -326,6 +383,211 @@ function renderAllVocab() {
   filtered.forEach(v => container.appendChild(makeVocabItem(v)));
   if (filtered.length === 0) {
     container.innerHTML = '<div class="card"><p>해당 카테고리 단어가 없습니다.</p></div>';
+  }
+}
+
+// ============================================================
+// 플래시카드 (반복학습 + 분류) — 기존 '전체 단어장' 대체
+// ============================================================
+const FC_KEY = 'taiwanese-flashcards-v1';
+
+function getFCState() {
+  try { return JSON.parse(localStorage.getItem(FC_KEY)) || {}; } catch { return {}; }
+}
+function saveFCState(s) { localStorage.setItem(FC_KEY, JSON.stringify(s)); }
+
+// 모든 레슨의 단어를 hanzi 기준 중복제거하여 카드 풀 생성
+function buildAllCards() {
+  const map = new Map();
+  LESSONS.forEach(l => {
+    (l.vocab || []).forEach(v => {
+      if (!v.hanzi || map.has(v.hanzi)) return;
+      map.set(v.hanzi, {
+        hanzi: v.hanzi,
+        zhuyin: v.zhuyin || '',
+        pinyin: v.pinyin || '',
+        korean: v.korean || '',
+        example: v.example || null,
+        lessonId: l.id
+      });
+    });
+  });
+  return Array.from(map.values());
+}
+
+// 카드의 현재 분류: 'new' | 'unknown' | 'known'
+function fcBox(hanzi) {
+  const s = getFCState();
+  return (s[hanzi] && s[hanzi].box) || 'new';
+}
+function fcSetBox(card, box) {
+  const s = getFCState();
+  s[card.hanzi] = { box, ts: new Date().toISOString(), lessonId: card.lessonId };
+  saveFCState(s);
+}
+
+function fcCounts() {
+  const all = buildAllCards();
+  const c = { all: all.length, new: 0, unknown: 0, known: 0 };
+  all.forEach(card => { c[fcBox(card.hanzi)]++; });
+  return c;
+}
+
+function openFlashcards() {
+  show('screen-flashcard');
+  // 기본 덱: 못맞춘 있으면 못맞춘, 없으면 미학습, 둘 다 없으면 전체
+  const c = fcCounts();
+  const def = c.unknown ? 'unknown' : (c.new ? 'new' : 'all');
+  fcStartDeck(def);
+}
+
+function renderFCDecks(active) {
+  const c = fcCounts();
+  const decks = [
+    { key: 'all', label: '전체', n: c.all },
+    { key: 'new', label: '미학습', n: c.new },
+    { key: 'unknown', label: '못맞춘', n: c.unknown },
+    { key: 'known', label: '맞춘(복습)', n: c.known }
+  ];
+  document.getElementById('fc-decks').innerHTML = decks.map(d =>
+    `<button class="fc-chip ${d.key === active ? 'active' : ''}" data-deck="${d.key}">${d.label} <b>${d.n}</b></button>`
+  ).join('');
+  document.querySelectorAll('#fc-decks .fc-chip').forEach(b => {
+    b.onclick = () => fcStartDeck(b.dataset.deck);
+  });
+}
+
+function fcStartDeck(deck) {
+  const all = buildAllCards();
+  let cards = deck === 'all' ? all : all.filter(c => fcBox(c.hanzi) === deck);
+  // 셔플
+  cards = cards.slice().sort(() => Math.random() - 0.5);
+  state.fc = { deck, cards, idx: 0, flipped: false, studied: 0 };
+  renderFCDecks(deck);
+  renderFlashcard();
+}
+
+function renderFlashcard() {
+  const fc = state.fc;
+  const stage = document.getElementById('fc-stage');
+  if (!fc.cards.length) {
+    const msg = fc.deck === 'unknown' ? '못맞춘 단어가 없어요! 👏'
+      : fc.deck === 'new' ? '미학습 단어가 없어요. 다 봤네요!'
+      : fc.deck === 'known' ? '아직 맞춘 단어가 없어요.'
+      : '단어가 없어요.';
+    stage.innerHTML = `<div class="fc-empty"><div class="big-emoji">🎉</div><p>${msg}</p></div>`;
+    return;
+  }
+  if (fc.idx >= fc.cards.length) {
+    stage.innerHTML = `
+      <div class="fc-empty">
+        <div class="big-emoji">✅</div>
+        <p>이 덱 ${fc.cards.length}장 끝!<br/><span style="color:var(--text-dim);font-size:13px">${fc.studied}장 분류함</span></p>
+        <button class="btn btn-primary" id="fc-restart" style="margin-top:12px">다시 섞기</button>
+      </div>`;
+    document.getElementById('fc-restart').onclick = () => fcStartDeck(fc.deck);
+    renderFCDecks(fc.deck);
+    return;
+  }
+  const card = fc.cards[fc.idx];
+  const box = fcBox(card.hanzi);
+  const boxBadge = box === 'known' ? '<span class="fc-badge known">맞춘</span>'
+    : box === 'unknown' ? '<span class="fc-badge unknown">못맞춘</span>'
+    : '<span class="fc-badge new">미학습</span>';
+  stage.innerHTML = `
+    <div class="fc-progress">${fc.idx + 1} / ${fc.cards.length} ${boxBadge}</div>
+    <div class="fc-card ${fc.flipped ? 'flipped' : ''}" id="fc-card">
+      <div class="fc-face fc-front">
+        <p class="fc-hanzi">${card.hanzi}</p>
+        ${card.example ? `<p class="fc-example">${card.example.hanzi}</p>` : ''}
+        <p class="fc-hint">탭해서 뜻 보기</p>
+      </div>
+      <div class="fc-face fc-back">
+        <p class="fc-korean">${card.korean}</p>
+        <p class="fc-phon">${card.pinyin}${card.zhuyin ? ' · ' + card.zhuyin : ''}</p>
+        ${card.example ? `<p class="fc-ex-ko">${card.example.korean}</p>` : ''}
+        <button class="fc-tts" id="fc-tts">🔊 다시 듣기</button>
+      </div>
+    </div>
+    <div class="fc-controls">
+      ${fc.flipped ? `
+        <button class="btn fc-no" id="fc-no">❌ 몰라요</button>
+        <button class="btn fc-yes" id="fc-yes">✅ 알아요</button>
+      ` : `<button class="btn btn-primary" id="fc-flip-btn">뒤집기</button>`}
+    </div>
+  `;
+  const cardEl = document.getElementById('fc-card');
+  cardEl.onclick = (e) => { if (e.target.id !== 'fc-tts') fcFlip(); };
+  if (fc.flipped) {
+    speak(card.hanzi, 1.0); // 뒤집으면 자동 발음
+    document.getElementById('fc-tts').onclick = (e) => { e.stopPropagation(); speak(card.hanzi, 1.0); };
+    document.getElementById('fc-no').onclick = () => fcMark(false);
+    document.getElementById('fc-yes').onclick = () => fcMark(true);
+  } else {
+    document.getElementById('fc-flip-btn').onclick = fcFlip;
+  }
+}
+
+function fcFlip() {
+  if (!state.fc) return;
+  state.fc.flipped = !state.fc.flipped;
+  renderFlashcard();
+}
+
+function fcMark(known) {
+  const fc = state.fc;
+  const card = fc.cards[fc.idx];
+  fcSetBox(card, known ? 'known' : 'unknown');
+  fc.studied++;
+  fc.idx++;
+  fc.flipped = false;
+  renderFlashcard();
+  renderFCDecks(fc.deck);
+}
+
+// GitHub 동기화 (올리기)
+async function syncFlashcardsToGitHub() {
+  const btn = document.getElementById('fc-sync-btn');
+  if (!getGHConfig().pat) { toast('설정에서 PAT를 먼저 넣어주세요'); show('screen-settings'); renderSettings(); return; }
+  const orig = btn.textContent;
+  btn.disabled = true; btn.textContent = '⏳ 업로드 중...';
+  try {
+    const payload = { updatedAt: new Date().toISOString(), cards: getFCState() };
+    const json = JSON.stringify(payload, null, 2);
+    const path = 'data/flashcard_state.json';
+    let sha;
+    try { const ex = await ghGetFile(path); sha = ex && ex.sha; } catch (e) {}
+    await ghPutFile(path, utf8Base64(json), 'Update flashcard state', sha);
+    toast('✅ 분류상태 동기화 완료');
+  } catch (e) {
+    toast('실패: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = orig;
+  }
+}
+
+// GitHub에서 받아 로컬에 병합 (최신 ts 우선)
+async function pullFlashcardsFromGitHub() {
+  const btn = document.getElementById('fc-pull-btn');
+  if (!getGHConfig().pat) { toast('설정에서 PAT를 먼저 넣어주세요'); show('screen-settings'); renderSettings(); return; }
+  const orig = btn.textContent;
+  btn.disabled = true; btn.textContent = '⏳ 받는 중...';
+  try {
+    const f = await ghGetFile('data/flashcard_state.json');
+    if (!f) { toast('아직 동기화된 상태가 없어요'); return; }
+    const remote = (JSON.parse(f.text).cards) || {};
+    const local = getFCState();
+    let merged = 0;
+    Object.keys(remote).forEach(h => {
+      if (!local[h] || (remote[h].ts || '') > (local[h].ts || '')) { local[h] = remote[h]; merged++; }
+    });
+    saveFCState(local);
+    toast(`📥 ${merged}개 항목 반영됨`);
+    if (state.fc) fcStartDeck(state.fc.deck);
+  } catch (e) {
+    toast('실패: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = orig;
   }
 }
 
@@ -574,11 +836,13 @@ function utf8Base64(str) {
   return btoa(unescape(encodeURIComponent(str)));
 }
 
-// GitHub API: 파일 업로드 (PUT contents)
-async function ghPutFile(path, contentBase64, message) {
+// GitHub API: 파일 업로드 (PUT contents). 기존 파일 갱신 시 sha 필요.
+async function ghPutFile(path, contentBase64, message, sha) {
   const cfg = getGHConfig();
   if (!cfg.pat) throw new Error('PAT이 설정되지 않았어요. 설정 화면에서 입력해주세요.');
   const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+  const body = { message: message || `Add ${path}`, content: contentBase64, branch: 'main' };
+  if (sha) body.sha = sha;
   const res = await fetch(url, {
     method: 'PUT',
     headers: {
@@ -586,17 +850,28 @@ async function ghPutFile(path, contentBase64, message) {
       'Accept': 'application/vnd.github+json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      message: message || `Add ${path}`,
-      content: contentBase64,
-      branch: 'main'
-    })
+    body: JSON.stringify(body)
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(`${res.status} ${res.statusText}: ${err.message || ''}`);
   }
   return res.json();
+}
+
+// GitHub API: 파일 읽기 (GET contents). 없으면 null. {text, sha} 반환.
+async function ghGetFile(path) {
+  const cfg = getGHConfig();
+  if (!cfg.pat) throw new Error('PAT이 설정되지 않았어요.');
+  const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}?ref=main`;
+  const res = await fetch(url, {
+    headers: { 'Authorization': `Bearer ${cfg.pat}`, 'Accept': 'application/vnd.github+json' }
+  });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`${res.status}: 읽기 실패`);
+  const data = await res.json();
+  const text = data.content ? decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))) : '';
+  return { text, sha: data.sha };
 }
 
 // 연결 테스트
@@ -862,6 +1137,8 @@ function renderSettings() {
     s.textContent = '';
     s.className = 'form-help';
   }
+  const vl = document.getElementById('tts-voice-label');
+  if (vl) vl.textContent = currentVoiceLabel();
   updateInboxBadge();
 }
 
@@ -910,7 +1187,7 @@ function bindEvents() {
   document.querySelectorAll('[data-action]').forEach(btn => {
     btn.onclick = () => {
       const a = btn.dataset.action;
-      if (a === 'vocab-all') { show('screen-vocab-all'); renderAllVocab(); }
+      if (a === 'vocab-all') openFlashcards();
       else if (a === 'quiz-random') startQuiz();
       else if (a === 'review-vocab') showReviewVocab();
       else if (a === 'plaud-prompts') { show('screen-plaud'); renderPlaud(); }
@@ -963,6 +1240,12 @@ function bindEvents() {
       s.className = 'form-help error';
     }
   };
+  const ttsTestBtn = document.getElementById('tts-test-btn');
+  if (ttsTestBtn) ttsTestBtn.onclick = () => {
+    speak('你好，今天天氣很好', 1.0);
+    const vl = document.getElementById('tts-voice-label');
+    if (vl) vl.textContent = currentVoiceLabel();
+  };
   document.getElementById('view-inbox-btn').onclick = () => {
     show('screen-inbox');
     renderInboxScreen();
@@ -992,6 +1275,10 @@ function bindEvents() {
   };
   document.getElementById('submit-upload-btn').onclick = submitUpload;
 
+  // 플래시카드 동기화
+  document.getElementById('fc-sync-btn').onclick = syncFlashcardsToGitHub;
+  document.getElementById('fc-pull-btn').onclick = pullFlashcardsFromGitHub;
+
   // 인박스 화면: 전체 동기화 / 전체 삭제
   document.getElementById('sync-all-btn').onclick = syncAllToGitHub;
   document.getElementById('clear-all-btn').onclick = () => {
@@ -1010,7 +1297,12 @@ function bindEvents() {
 window.addEventListener('DOMContentLoaded', () => {
   // 음성 로드를 위해 대기 (iOS는 초기에 voices 비어있음)
   if ('speechSynthesis' in window) {
-    speechSynthesis.onvoiceschanged = () => {};
+    speechSynthesis.onvoiceschanged = () => {
+      const vl = document.getElementById('tts-voice-label');
+      if (vl && !document.getElementById('screen-settings').classList.contains('hidden')) {
+        vl.textContent = currentVoiceLabel();
+      }
+    };
     // 트리거
     speechSynthesis.getVoices();
   }
