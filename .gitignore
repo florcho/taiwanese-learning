@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 *.log
 .env
+scripts/
+scripts/.auto_lesson_state.json
