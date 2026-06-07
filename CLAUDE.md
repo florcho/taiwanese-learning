@@ -20,12 +20,16 @@
 ├── styles.css
 ├── manifest.json
 ├── data/lessons.js                  # 모든 레슨 (LESSONS 배열)
+├── data/flashcard_state.json        # 🃏 플래시카드 분류 상태 (앱이 GitHub 동기화로 push)
 ├── inbox/                           # 처리 대기 자료
+├── scripts/                         # 자동화 파이썬 (auto_lesson.py 등) — .gitignore 처리, 로컬 전용
 ├── icons/
 ├── README.md
 ├── PLAUD_PROMPTS.md
 └── CLAUDE_PROJECT_INSTRUCTIONS.md   # claude.ai 프로젝트 지침
 ```
+
+⚠️ `scripts/` 는 `.gitignore` 에 있어 **git에 안 올라감**(로컬 전용 자동화). 커밋/리포에서 안 보여도 정상.
 
 - **GitHub**: `florcho/taiwanese-learning`
 - **라이브 URL**: https://florcho.github.io/taiwanese-learning/
@@ -70,6 +74,22 @@
 ```
 
 자세한 스키마와 태그 옵션은 `CLAUDE_PROJECT_INSTRUCTIONS.md` 참고.
+
+## 🃏 플래시카드 (반복학습) — 2026-06-07 추가
+
+홈 빠른도구 **🃏 플래시카드** (= 기존 '전체 단어장'을 대체). 모든 레슨 vocab을 `hanzi` 기준 중복제거해 카드 풀 생성.
+
+- **앞면**: 단어(hanzi) + 예문(example.hanzi) / **뒷면**: 한국어 뜻 + 拼音(·注音) + 뒤집으면 자동 발음(TTS)
+- **분류(Leitner 2단계)**: `미학습(new)` → ✅알아요 `맞춘(known)` / ❌몰라요 `못맞춘(unknown)`. 못맞춘 덱에서 맞추면 known으로 이동
+- **로컬 저장**: `localStorage['taiwanese-flashcards-v1']`. 키가 `hanzi` 라서 **레슨 갱신돼도 분류 유지**, 새 단어는 자동 '미학습'
+- **GitHub 동기화**: 카드화면 하단 버튼으로 `data/flashcard_state.json` push(올리기)/pull(받기). PAT 필요. SHA 갱신 지원
+
+### 📥 분류 상태 읽는 법 (레슨 추가/추천 시 활용)
+사용자가 "동기화했다"고 하면 `data/flashcard_state.json` 을 읽어 어떤 단어가 `unknown`(못 외운 것)인지 파악 가능. 형식:
+```json
+{ "updatedAt": "ISO", "cards": { "業配": { "box": "unknown|known|new", "ts": "ISO", "lessonId": "L20" } } }
+```
+→ `unknown` 단어를 새 레슨 예문에 의도적으로 재등장시키거나 복습 우선순위로 쓸 수 있음.
 
 ## 🎨 콘텐츠 스타일 규칙
 
@@ -142,6 +162,11 @@ print(fixed.decode('utf-8', errors='replace'))
 다음 추가될 레슨 ID는 **L24**.
 
 ⚠️ **이 표는 자주 뒤처짐.** 새 세션에선 표를 믿지 말고 항상 `grep "id: 'L" data/lessons.js` 로 마지막 ID를 직접 확인할 것 (= "다음 ID" 결정 방법).
+
+## 🎤🔊 녹음 · TTS (2026-06-07 개선)
+
+- **녹음**: iOS Safari는 `audio/webm` 미지원 → `MediaRecorder.isTypeSupported`로 mp4/aac/webm 자동탐지하고 실제 mimeType으로 Blob 생성(`toggleRecord`/`pickRecorderMime`). HTTPS(라이브)에서만 마이크 동작
+- **TTS**: `getVoice()` 가 Enhanced/Premium/Neural 고품질 음성을 우선 선택. iOS 기본 음성이 로봇 같으면 **설정 → 손쉬운 사용 → 음성 콘텐츠 → 음성 → 中文(台灣) → 고품질** 1회 다운로드 필요(설정 화면에 안내·현재 음성·테스트 버튼 있음)
 
 ## ⚠️ 알려진 이슈
 
