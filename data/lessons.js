@@ -1725,6 +1725,350 @@ const LESSONS = [
         ]
       }
     ]
+  },
+  {
+    id: 'L24',
+    title: '醫美 앱 광고 카피 ⭐ — 價格透明·高CP值 (소비자 어필)',
+    subtitle: 'UNNI 같은 의료미용 앱의 소비자 대상 광고 카피 — 가격 투명성·가성비 어필 정형 표현',
+    source: '대만어 번역 채팅 corpus (2026-06-01·06-05)',
+    type: 'vocab_burst',
+    difficulty: 'A2-B1',
+    date: '2026-06-05',
+    fullText: '韓國診所的實際價格，打開就看得到。不用一間一間問，也不用怕踩雷。價格透明，還能直接按照價位高低排序。高CP值療程。',
+    koreanSummary: '의료미용 앱이 소비자에게 강조하는 핵심 셀링 포인트 모음: ①한국 병원 실제 가격을 앱 열면 바로 확인 ②일일이 문의할 필요 없고 잘못 고를(踩雷) 걱정 없음 ③가격 투명 + 가격대별 정렬 가능 ④가성비(高CP值) 좋은 시술. 소비자 어필 광고 카피의 정형구를 익히는 레슨.',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '韓國診所的實際價格，打開就看得到',
+        zhuyin: 'ㄏㄢˊ ㄍㄨㄛˊ ㄓㄣˇ ㄙㄨㄛˇ ㄉㄜ˙ ㄕˊ ㄐㄧˋ ㄐㄧㄚˋ ㄍㄜˊ，ㄉㄚˇ ㄎㄞ ㄐㄧㄡˋ ㄎㄢˋ ㄉㄜˊ ㄉㄠˋ',
+        pinyin: 'Hánguó zhěnsuǒ de shíjì jiàgé, dǎkāi jiù kàn dé dào',
+        korean: '한국 병원 실제 가격, (앱을) 열면 바로 보여요',
+        wordBreak: '診所(병원·의원) | 實際(실제) | 價格(가격) | 打開(열다) | 看得到(볼 수 있다)',
+        keyPattern: '「打開就看得到」= 열면 바로 보인다 ⭐ 앱 편의성 어필 광고 정형구. 「就」= 곧/바로 (즉시성 강조)'
+      },
+      {
+        id: 2,
+        hanzi: '不用一間一間問，也不用怕踩雷',
+        zhuyin: 'ㄅㄨˊ ㄩㄥˋ ㄧˋ ㄐㄧㄢ ㄧˋ ㄐㄧㄢ ㄨㄣˋ，ㄧㄝˇ ㄅㄨˊ ㄩㄥˋ ㄆㄚˋ ㄘㄞˇ ㄌㄟˊ',
+        pinyin: 'búyòng yì jiān yì jiān wèn, yě búyòng pà cǎiléi',
+        korean: '일일이 (병원마다) 물어볼 필요 없고, 잘못 고를 걱정도 없어요',
+        wordBreak: '不用(~할 필요 없다) | 一間一間(한 곳 한 곳·일일이) | 問(묻다) | 怕(두려워하다) | 踩雷(지뢰 밟다→실패하다)',
+        keyPattern: '「踩雷」= 지뢰를 밟다 → 잘못된 선택/지뢰 제품에 당하다 ⭐ 대만 구어 초빈출. 「不用怕…」= ~할 걱정 없다 (안심 어필)'
+      },
+      {
+        id: 3,
+        hanzi: '價格透明，還能直接按照價位高低排序',
+        zhuyin: 'ㄐㄧㄚˋ ㄍㄜˊ ㄊㄡˋ ㄇㄧㄥˊ，ㄏㄞˊ ㄋㄥˊ ㄓˊ ㄐㄧㄝ ㄢˋ ㄓㄠˋ ㄐㄧㄚˋ ㄨㄟˋ ㄍㄠ ㄉㄧ ㄆㄞˊ ㄒㄩˋ',
+        pinyin: 'jiàgé tòumíng, hái néng zhíjiē ànzhào jiàwèi gāodī páixù',
+        korean: '가격이 투명하고, 가격대 높낮이로 바로 정렬도 가능해요',
+        wordBreak: '透明(투명) | 還能(게다가 ~할 수 있다) | 直接(직접·바로) | 按照(~에 따라) | 價位(가격대) | 高低(높낮이) | 排序(정렬)',
+        keyPattern: '「按照 A 排序」= A 기준으로 정렬 ⭐ 앱 기능 설명 정형구. 「還能」= 게다가/추가로 ~까지 된다 (장점 누적)'
+      },
+      {
+        id: 4,
+        hanzi: '高CP值療程',
+        zhuyin: 'ㄍㄠ CP ㄓˊ ㄌㄧㄠˊ ㄔㄥˊ',
+        pinyin: 'gāo CP zhí liáochéng',
+        korean: '가성비 좋은 시술',
+        wordBreak: '高(높다) | CP值(가성비, cost-performance) | 療程(시술·치료 코스)',
+        keyPattern: '「CP值」= 가성비 ⭐⭐ 대만 광고·구어 초빈출 (영어 cost-performance에서). 「高CP值」= 가성비 갑. 「療程」= 1회성 施術보다 코스/회차 개념'
+      }
+    ],
+    vocab: [
+      { hanzi: '診所', zhuyin: 'ㄓㄣˇ ㄙㄨㄛˇ', pinyin: 'zhěnsuǒ', korean: '병원, 의원, 클리닉', pos: '명사', hsk: '업계', tags: ['업계', '의료미용', '필수'], example: { hanzi: '韓國診所價格。', korean: '한국 병원 가격.' } },
+      { hanzi: '踩雷', zhuyin: 'ㄘㄞˇ ㄌㄟˊ', pinyin: 'cǎiléi', korean: '지뢰 밟다 → 잘못 골라 실패하다', pos: '동사', hsk: '대만구어', tags: ['대만식', '구어', '필수'], example: { hanzi: '不用怕踩雷。', korean: '잘못 고를 걱정 없어요.' } },
+      { hanzi: '透明', zhuyin: 'ㄊㄡˋ ㄇㄧㄥˊ', pinyin: 'tòumíng', korean: '투명하다', pos: '형용사', hsk: 4, tags: ['업무', '마케팅', '필수'], example: { hanzi: '價格透明。', korean: '가격이 투명해요.' } },
+      { hanzi: '按照', zhuyin: 'ㄢˋ ㄓㄠˋ', pinyin: 'ànzhào', korean: '~에 따라, ~기준으로', pos: '전치사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '按照價位排序。', korean: '가격대 기준으로 정렬.' } },
+      { hanzi: '排序', zhuyin: 'ㄆㄞˊ ㄒㄩˋ', pinyin: 'páixù', korean: '정렬, 순서대로 나열', pos: '명사·동사', hsk: '업계', tags: ['업계', 'IT', '필수'], example: { hanzi: '高低排序。', korean: '높낮이로 정렬.' } },
+      { hanzi: '價位', zhuyin: 'ㄐㄧㄚˋ ㄨㄟˋ', pinyin: 'jiàwèi', korean: '가격대', pos: '명사', hsk: 5, tags: ['업무', '마케팅'], example: { hanzi: '不同價位。', korean: '다양한 가격대.' } },
+      { hanzi: 'CP值', zhuyin: 'CP ㄓˊ', pinyin: 'CP zhí', korean: '가성비 (cost-performance)', pos: '명사', hsk: '대만구어', tags: ['대만식', '마케팅', '필수'], example: { hanzi: '高CP值！', korean: '가성비 갑!' } },
+      { hanzi: '療程', zhuyin: 'ㄌㄧㄠˊ ㄔㄥˊ', pinyin: 'liáochéng', korean: '시술, 치료 코스', pos: '명사', hsk: '업계', tags: ['업계', '의료미용', '필수'], example: { hanzi: '高CP值療程。', korean: '가성비 좋은 시술.' } },
+      { hanzi: '實際', zhuyin: 'ㄕˊ ㄐㄧˋ', pinyin: 'shíjì', korean: '실제(의)', pos: '형용사', hsk: 4, tags: ['업무'], example: { hanzi: '實際價格。', korean: '실제 가격.' } }
+    ],
+    practice: [
+      {
+        prompt: '앱의 「가격 투명성」 장점을 대만 소비자에게 어필하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '價格很透明，打開就看得到。', pinyin: 'jiàgé hěn tòumíng, dǎkāi jiù kàn dé dào.', korean: '가격이 투명해서 열면 바로 보여요.' },
+          { level: '중간', hanzi: '不用一間一間問，價格透明，還能按價位排序。', pinyin: 'búyòng yì jiān yì jiān wèn, jiàgé tòumíng, hái néng àn jiàwèi páixù.', korean: '일일이 물어볼 필요 없고, 가격 투명에 가격대별 정렬까지 돼요.' },
+          { level: '자연스러움', hanzi: '韓國診所的實際價格，打開App就看得到，不用怕踩雷，還能找到高CP值的療程！', pinyin: 'Hánguó zhěnsuǒ de shíjì jiàgé, dǎkāi App jiù kàn dé dào, búyòng pà cǎiléi, hái néng zhǎodào gāo CP zhí de liáochéng!', korean: '한국 병원 실제 가격을 앱 열면 바로 확인, 잘못 고를 걱정 없이 가성비 시술까지 찾을 수 있어요! ⭐' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L25',
+    title: '크리에이터·매니저 측 견적·협업형식 설명 ⭐ — 工商·廣告主',
+    subtitle: '인플루언서/매니저가 보내오는 비즈니스 제안 — 단가 패키지, PPL(工商) 형식 설명 읽기',
+    source: '대만어 번역 채팅 corpus (2026-06-02·06-05)',
+    type: 'business_email_terms',
+    difficulty: 'B1-B2',
+    date: '2026-06-05',
+    fullText: '初次合作建議您先購買一個月的廣告主，屆時看成效再決定是否加買。這邊最多能給到的優惠是 IG reels 一分鐘以內 + 一個月廣告主，費用 $18000，贈2則限動（不過稿、可帶連結）。YouTube 合作形式，是在影片主題中自然包裝工商段落的內容，影片全長大約15分鐘，其中工商段落至少約3分鐘。',
+    koreanSummary: '협업 상대(크리에이터/매니저)가 보내오는 견적·형식 안내를 읽고 이해하는 레슨. ①초회 협업은 1개월 광고주(廣告主) 먼저 구매하고 성과 보고 추가 결정 권유 ②최대 할인 패키지 제시(릴스+광고주+한정스토리 증정, 不過稿=원고검토 생략) ③유튜브 협업은 영상 주제 안에 工商(=업체광고/PPL) 구간을 자연스럽게 녹이는 형식, 15분 중 최소 3분 광고. 「工商」「廣告主」「不過稿」 등 대만 업계어가 핵심.',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '初次合作建議您先購買一個月的廣告主，屆時看成效再決定是否加買',
+        zhuyin: 'ㄔㄨ ㄘˋ ㄏㄜˊ ㄗㄨㄛˋ ㄐㄧㄢˋ ㄧˋ ㄋㄧㄣˊ ㄒㄧㄢ ㄍㄡˋ ㄇㄞˇ ㄍㄨㄤˇ ㄍㄠˋ ㄓㄨˇ，ㄐㄧㄝˋ ㄕˊ ㄎㄢˋ ㄔㄥˊ ㄒㄧㄠˋ ㄗㄞˋ ㄐㄩㄝˊ ㄉㄧㄥˋ ㄕˋ ㄈㄡˇ ㄐㄧㄚ ㄇㄞˇ',
+        pinyin: 'chūcì hézuò jiànyì nín xiān gòumǎi yí ge yuè de guǎnggàozhǔ, jièshí kàn chéngxiào zài juédìng shìfǒu jiāmǎi',
+        korean: '초회 협업은 1개월 광고주 권한을 먼저 구매하시길 권하고, 그때 성과를 보고 추가 구매 여부를 결정하시면 됩니다',
+        wordBreak: '初次(초회·처음) | 建議(권하다) | 購買(구매) | 廣告主(광고주 권한) | 屆時(그때) | 成效(성과) | 是否(~인지 아닌지) | 加買(추가 구매)',
+        keyPattern: '「廣告主」= 광고주(권한) ⭐ — 콘텐츠를 광고로 돌릴 수 있는 사용권. 「屆時」= 그때 가서 (격식 문어). 「是否」= ~인지 (격식, =要不要)'
+      },
+      {
+        id: 2,
+        hanzi: '最多能給到的優惠是 IG reels 一分鐘以內 + 一個月廣告主，贈2則限動（不過稿、可帶連結）',
+        zhuyin: 'ㄗㄨㄟˋ ㄉㄨㄛ ㄋㄥˊ ㄍㄟˇ ㄉㄠˋ ㄉㄜ˙ ㄧㄡ ㄏㄨㄟˋ … ㄗㄥˋ ㄦˋ ㄗㄜˊ ㄒㄧㄢˋ ㄉㄨㄥˋ',
+        pinyin: 'zuìduō néng gěi dào de yōuhuì shì IG reels yì fēnzhōng yǐnèi + yí ge yuè guǎnggàozhǔ, zèng 2 zé xiàndòng (búguògǎo, kě dài liánjié)',
+        korean: '최대로 드릴 수 있는 혜택은 IG 릴스 1분 이내 + 1개월 광고주이고, 한정스토리 2개 증정(원고 검토 없음, 링크 삽입 가능)이에요',
+        wordBreak: '優惠(혜택·할인) | 以內(이내) | 贈(증정) | 則(개·건, 글 세는 단위) | 限動(한정스토리=IG스토리) | 不過稿(원고 검토 안 함) | 帶連結(링크 포함)',
+        keyPattern: '「限動」= 限時動態 줄임말, IG 스토리 ⭐⭐ 대만 필수. 「不過稿」= 원고 사전검토 생략 ⭐ 업계어. 「則」= 글/스토리 세는 양사'
+      },
+      {
+        id: 3,
+        hanzi: 'YouTube 合作形式，是在影片主題中自然包裝工商段落的內容',
+        zhuyin: 'ㄏㄜˊ ㄗㄨㄛˋ ㄒㄧㄥˊ ㄕˋ，ㄗㄞˋ ㄧㄥˇ ㄆㄧㄢˋ ㄓㄨˇ ㄊㄧˊ ㄓㄨㄥ ㄗˋ ㄖㄢˊ ㄅㄠ ㄓㄨㄤ ㄍㄨㄥ ㄕㄤ ㄉㄨㄢˋ ㄌㄨㄛˋ',
+        pinyin: 'hézuò xíngshì, shì zài yǐngpiàn zhǔtí zhōng zìrán bāozhuāng gōngshāng duànluò de nèiróng',
+        korean: '협업 형식은 영상 주제 안에 工商(광고) 구간을 자연스럽게 녹여 넣는 방식이에요',
+        wordBreak: '合作形式(협업 형식) | 影片(영상) | 主題(주제) | 自然(자연스럽게) | 包裝(포장→녹여넣다) | 工商(업체광고·협찬·PPL) | 段落(구간·단락)',
+        keyPattern: '「工商」= 업체 광고/협찬 구간 ⭐⭐ 대만 크리에이터 필수어 (한국 "유료광고/PPL"). 「包裝」= 직역 포장 → 콘텐츠에 자연스럽게 녹이다'
+      },
+      {
+        id: 4,
+        hanzi: '影片全長大約15分鐘，其中工商段落至少約3分鐘的完整介紹時間',
+        zhuyin: 'ㄧㄥˇ ㄆㄧㄢˋ ㄑㄩㄢˊ ㄔㄤˊ ㄉㄚˋ ㄩㄝ … ㄑㄧˊ ㄓㄨㄥ ㄍㄨㄥ ㄕㄤ ㄉㄨㄢˋ ㄌㄨㄛˋ ㄓˋ ㄕㄠˇ',
+        pinyin: 'yǐngpiàn quáncháng dàyuē 15 fēnzhōng, qízhōng gōngshāng duànluò zhìshǎo yuē 3 fēnzhōng de wánzhěng jièshào shíjiān',
+        korean: '영상 전체 길이는 약 15분이고, 그중 광고 구간은 최소 약 3분의 완전한 소개 시간이 있어요',
+        wordBreak: '全長(전체 길이) | 大約(대략) | 其中(그중) | 至少(최소) | 完整(완전한) | 介紹(소개)',
+        keyPattern: '「其中…至少約」= 그중 ~만큼은 최소 (협업 보장 분량 명시 정형구). 「完整介紹」= 풀 소개분량 ⭐ 협업 견적 협상에서 노출 시간 보장 표현'
+      }
+    ],
+    vocab: [
+      { hanzi: '廣告主', zhuyin: 'ㄍㄨㄤˇ ㄍㄠˋ ㄓㄨˇ', pinyin: 'guǎnggàozhǔ', korean: '광고주 (권한), 광고 사용권', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '一個月廣告主。', korean: '1개월 광고주 권한.' } },
+      { hanzi: '工商', zhuyin: 'ㄍㄨㄥ ㄕㄤ', pinyin: 'gōngshāng', korean: '업체광고·협찬·PPL 구간', pos: '명사', hsk: '대만구어', tags: ['대만식', '인플루언서', '필수'], example: { hanzi: '工商段落3分鐘。', korean: '광고 구간 3분.' } },
+      { hanzi: '限動', zhuyin: 'ㄒㄧㄢˋ ㄉㄨㄥˋ', pinyin: 'xiàndòng', korean: 'IG 스토리 (限時動態)', pos: '명사', hsk: '대만구어', tags: ['대만식', '인플루언서', '필수'], example: { hanzi: '贈2則限動。', korean: '스토리 2개 증정.' } },
+      { hanzi: '不過稿', zhuyin: 'ㄅㄨˊ ㄍㄨㄛˋ ㄍㄠˇ', pinyin: 'búguògǎo', korean: '원고 사전검토 생략', pos: '동사구', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '限動不過稿。', korean: '스토리는 원고 검토 안 함.' } },
+      { hanzi: '優惠', zhuyin: 'ㄧㄡ ㄏㄨㄟˋ', pinyin: 'yōuhuì', korean: '혜택, 할인', pos: '명사', hsk: 4, tags: ['업무', '마케팅', '필수'], example: { hanzi: '最多的優惠。', korean: '최대 혜택.' } },
+      { hanzi: '成效', zhuyin: 'ㄔㄥˊ ㄒㄧㄠˋ', pinyin: 'chéngxiào', korean: '성과, 효과', pos: '명사', hsk: 5, tags: ['업무', '필수'], example: { hanzi: '看成效再決定。', korean: '성과 보고 결정.' } },
+      { hanzi: '建議', zhuyin: 'ㄐㄧㄢˋ ㄧˋ', pinyin: 'jiànyì', korean: '권하다, 제안하다', pos: '동사', hsk: 4, tags: ['업무', '이메일', '필수'], example: { hanzi: '建議您先購買。', korean: '먼저 구매를 권해요.' } },
+      { hanzi: '屆時', zhuyin: 'ㄐㄧㄝˋ ㄕˊ', pinyin: 'jièshí', korean: '그때 (가서)', pos: '부사', hsk: 6, tags: ['업무', '격식'], example: { hanzi: '屆時看成效。', korean: '그때 성과를 봐요.' } },
+      { hanzi: '包裝', zhuyin: 'ㄅㄠ ㄓㄨㄤ', pinyin: 'bāozhuāng', korean: '포장 → (콘텐츠에) 녹여넣다', pos: '동사', hsk: 5, tags: ['인플루언서', '마케팅'], example: { hanzi: '自然包裝工商。', korean: '광고를 자연스럽게 녹이다.' } },
+      { hanzi: '其中', zhuyin: 'ㄑㄧˊ ㄓㄨㄥ', pinyin: 'qízhōng', korean: '그중', pos: '대명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '其中3分鐘。', korean: '그중 3분.' } }
+    ],
+    practice: [
+      {
+        prompt: '상대 견적을 받고, 조건을 한 번 더 확인·재협상하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '請問廣告主可以延長到3個月嗎？', pinyin: 'qǐngwèn guǎnggàozhǔ kěyǐ yáncháng dào 3 ge yuè ma?', korean: '광고주 권한을 3개월로 늘릴 수 있을까요?' },
+          { level: '중간', hanzi: '了解，那這個價格有包含2次加工嗎？', pinyin: 'liǎojiě, nà zhège jiàgé yǒu bāohán liǎngcì jiāgōng ma?', korean: '이해했어요, 그럼 이 가격에 2차 가공도 포함인가요?' },
+          { level: '자연스러움', hanzi: '謝謝您的報價！想確認一下，工商段落能不能保留至少3分鐘？另外廣告主希望能延長到3個月～', pinyin: 'xièxie nín de bàojià! xiǎng quèrèn yíxià, gōngshāng duànluò néng bùnéng bǎoliú zhìshǎo 3 fēnzhōng? lìngwài guǎnggàozhǔ xīwàng néng yáncháng dào 3 ge yuè~', korean: '견적 감사해요! 광고 구간 최소 3분 보장 가능한지, 광고주 권한은 3개월로 늘릴 수 있는지 확인하고 싶어요~ ⭐' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L26',
+    title: '협업 응답 ⭐ — 수락·거절·일정조율 (구어 비즈)',
+    subtitle: '인플루언서가 보내오는 협업 응답 4종 — 관심 수락, 정중한 거절, 일정 불가, 인바운드 제안',
+    source: '대만어 번역 채팅 corpus (2026-06-02·06-07)',
+    type: 'casual_work_chat',
+    difficulty: 'B1',
+    date: '2026-06-07',
+    fullText: '你好～謝謝您的合邀！！我有興趣喔，工作排期由經紀人幫忙。謝謝您的合作邀約，不過該合作檔期已排滿，祝福您找到合適的創作者！日期的部分沒有辦法唷，小藍要7／8才會回到台灣，一切的拍攝工作都只能在這之後進行。你好～我目前7月會去首爾，我有使用你們app覺得喜歡，目前你們有合作項目嗎？',
+    koreanSummary: '인플루언서 측에서 오는 협업 응답을 빠르게 알아듣는 레슨. ①관심 수락 + 일정은 매니저(經紀人)가 담당 ②정중한 거절: 該檔期已排滿(일정 다 참) + 祝福您(잘 되길 바람) ③일정 불가: 7/8에야 대만 복귀 → 그 이후 촬영 가능 ④인바운드 제안: 7월 서울行 + 앱 잘 써봄 → 협업 가능한지 먼저 물어옴. 구어 어조사 「喔/唷」와 경어가 섞인 비즈니스 회화체가 포인트.',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '你好～謝謝您的合邀！！我有興趣喔，工作排期由經紀人幫忙',
+        zhuyin: 'ㄋㄧˇ ㄏㄠˇ ㄒㄧㄝˋ ㄒㄧㄝ˙ ㄋㄧㄣˊ ㄉㄜ˙ ㄏㄜˊ ㄧㄠ，ㄨㄛˇ ㄧㄡˇ ㄒㄧㄥˋ ㄑㄩˋ ㄛ˙，ㄍㄨㄥ ㄗㄨㄛˋ ㄆㄞˊ ㄑㄧˊ ㄧㄡˊ ㄐㄧㄥ ㄐㄧˋ ㄖㄣˊ ㄅㄤ ㄇㄤˊ',
+        pinyin: 'nǐ hǎo, xièxie nín de héyāo! wǒ yǒu xìngqù o, gōngzuò páiqí yóu jīngjìrén bāngmáng',
+        korean: '안녕하세요~ 협업 제안 감사해요!! 관심 있어요, 작업 일정은 매니저가 담당해요',
+        wordBreak: '合邀(협업 초대) | 有興趣(관심 있다) | 喔(~요, 어조사) | 排期(일정) | 由(~가) | 經紀人(매니저·에이전트) | 幫忙(돕다·담당)',
+        keyPattern: '「我有興趣喔」= 관심 있어요~ ⭐ 긍정 답변. 「由 A 幫忙」= A가 담당/처리한다. 「經紀人」= 매니저 ⭐ — 일정·계약은 매니저 경유 신호'
+      },
+      {
+        id: 2,
+        hanzi: '謝謝您的合作邀約，不過該合作檔期已排滿，祝福您找到合適的創作者！',
+        zhuyin: 'ㄒㄧㄝˋ ㄒㄧㄝ˙ ㄋㄧㄣˊ ㄉㄜ˙ ㄏㄜˊ ㄗㄨㄛˋ ㄧㄠ ㄩㄝ，ㄅㄨˊ ㄍㄨㄛˋ ㄍㄞ ㄏㄜˊ ㄗㄨㄛˋ ㄉㄤˋ ㄑㄧˊ ㄧˇ ㄆㄞˊ ㄇㄢˇ，ㄓㄨˋ ㄈㄨˊ ㄋㄧㄣˊ ㄓㄠˇ ㄉㄠˋ ㄏㄜˊ ㄕˋ ㄉㄜ˙ ㄔㄨㄤˋ ㄗㄨㄛˋ ㄓㄜˇ',
+        pinyin: 'xièxie nín de hézuò yāoyuē, búguò gāi hézuò dàngqī yǐ páimǎn, zhùfú nín zhǎodào héshì de chuàngzuòzhě',
+        korean: '협업 제안 감사합니다, 다만 해당 협업 일정이 이미 다 차서, 적합한 크리에이터 찾으시길 바랄게요!',
+        wordBreak: '邀約(제안·초청) | 不過(다만·그런데) | 該(해당) | 檔期(일정·스케줄) | 已排滿(이미 가득 차다) | 祝福(축복·바라다) | 合適(적합한) | 創作者(크리에이터)',
+        keyPattern: '정중한 거절 정형구 ⭐ 「該檔期已排滿」(일정 다 참) + 「祝福您找到合適的…」(잘 되길). 「檔期」= 스케줄/방영 일정 ⭐ 업계어'
+      },
+      {
+        id: 3,
+        hanzi: '日期的部分沒有辦法唷，小藍要7／8才會回到台灣，拍攝只能在這之後進行',
+        zhuyin: 'ㄖˋ ㄑㄧ ㄉㄜ˙ ㄅㄨˋ ㄈㄣˋ ㄇㄟˊ ㄧㄡˇ ㄅㄢˋ ㄈㄚˇ ㄧㄡ˙，ㄒㄧㄠˇ ㄌㄢˊ ㄧㄠˋ ㄘㄞˊ ㄏㄨㄟˋ ㄏㄨㄟˊ ㄉㄠˋ ㄊㄞˊ ㄨㄢ',
+        pinyin: 'rìqī de bùfen méiyǒu bànfǎ o, xiǎo Lán yào 7／8 cái huì huídào Táiwān, pāishè zhǐ néng zài zhè zhīhòu jìnxíng',
+        korean: '일정 쪽은 안 돼요~ 샤오란이 7/8은 돼야 대만에 돌아와서, 촬영은 그 이후에만 가능해요',
+        wordBreak: '日期(일정·날짜) | 沒有辦法(방법이 없다·안 된다) | 唷(~요, 어조사) | 才(~에야 비로소) | 回到(돌아오다) | 之後(이후) | 進行(진행)',
+        keyPattern: '「沒有辦法唷」= 안 돼요~ (唷로 부드럽게). 「要 7/8 才會…」= 7/8은 돼야 비로소 ~ ⭐ 「才」= 늦게서야 (예상보다 늦음 뉘앙스)'
+      },
+      {
+        id: 4,
+        hanzi: '你好～我目前7月會去首爾，有使用你們app覺得喜歡，目前你們有合作項目嗎？',
+        zhuyin: 'ㄋㄧˇ ㄏㄠˇ ㄨㄛˇ ㄇㄨˋ ㄑㄧㄢˊ ㄑㄧ ㄩㄝˋ ㄏㄨㄟˋ ㄑㄩˋ ㄕㄡˇ ㄦˇ，ㄧㄡˇ ㄕˇ ㄩㄥˋ ㄋㄧˇ ㄇㄣ˙ app ㄐㄩㄝˊ ㄉㄜ˙ ㄒㄧˇ ㄏㄨㄢ',
+        pinyin: 'nǐ hǎo, wǒ mùqián 7 yuè huì qù Shǒu\'ěr, yǒu shǐyòng nǐmen app juéde xǐhuān, mùqián nǐmen yǒu hézuò xiàngmù ma?',
+        korean: '안녕하세요~ 저 7월에 서울 가는데, 앱 써봤더니 마음에 들어요. 지금 협업 프로젝트 있으세요?',
+        wordBreak: '目前(현재) | 會去(갈 예정) | 首爾(서울) | 使用(사용) | 覺得(느끼다·~인 것 같다) | 喜歡(좋아하다) | 合作項目(협업 프로젝트)',
+        keyPattern: '인바운드(먼저 들어온) 제안 ⭐. 「有使用…覺得喜歡」= 써봤더니 좋더라 (호감 신호). 「有合作項目嗎」= 협업 건 있냐 (먼저 협업 의향 타진)'
+      }
+    ],
+    vocab: [
+      { hanzi: '經紀人', zhuyin: 'ㄐㄧㄥ ㄐㄧˋ ㄖㄣˊ', pinyin: 'jīngjìrén', korean: '매니저, 에이전트', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '排期由經紀人。', korean: '일정은 매니저가.' } },
+      { hanzi: '檔期', zhuyin: 'ㄉㄤˋ ㄑㄧˊ', pinyin: 'dàngqī', korean: '일정, 스케줄 (방영·게시)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '檔期已排滿。', korean: '일정이 다 찼어요.' } },
+      { hanzi: '排滿', zhuyin: 'ㄆㄞˊ ㄇㄢˇ', pinyin: 'páimǎn', korean: '가득 차다 (일정)', pos: '동사', hsk: '업무', tags: ['업무', '필수'], example: { hanzi: '行程排滿了。', korean: '일정이 꽉 찼어요.' } },
+      { hanzi: '邀約', zhuyin: 'ㄧㄠ ㄩㄝ', pinyin: 'yāoyuē', korean: '제안, 초청', pos: '명사·동사', hsk: '업무', tags: ['업무', '이메일', '필수'], example: { hanzi: '合作邀約。', korean: '협업 제안.' } },
+      { hanzi: '創作者', zhuyin: 'ㄔㄨㄤˋ ㄗㄨㄛˋ ㄓㄜˇ', pinyin: 'chuàngzuòzhě', korean: '크리에이터, 창작자', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서'], example: { hanzi: '合適的創作者。', korean: '적합한 크리에이터.' } },
+      { hanzi: '合適', zhuyin: 'ㄏㄜˊ ㄕˋ', pinyin: 'héshì', korean: '적합하다, 알맞다', pos: '형용사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '合適的人選。', korean: '적합한 인선.' } },
+      { hanzi: '辦法', zhuyin: 'ㄅㄢˋ ㄈㄚˇ', pinyin: 'bànfǎ', korean: '방법, 수', pos: '명사', hsk: 4, tags: ['일상', '필수'], example: { hanzi: '沒有辦法。', korean: '방법이 없어요.' } },
+      { hanzi: '項目', zhuyin: 'ㄒㄧㄤˋ ㄇㄨˋ', pinyin: 'xiàngmù', korean: '프로젝트, 항목', pos: '명사', hsk: 4, tags: ['업무', '필수'], example: { hanzi: '合作項目。', korean: '협업 프로젝트.' } },
+      { hanzi: '才', zhuyin: 'ㄘㄞˊ', pinyin: 'cái', korean: '~에야 비로소 (늦음)', pos: '부사', hsk: 3, tags: ['일상', '문법', '필수'], example: { hanzi: '7號才回來。', korean: '7일은 돼야 돌아와요.' } },
+      { hanzi: '喔', zhuyin: 'ㄛ˙', pinyin: 'o', korean: '~요/~네 (대만 구어 어조사)', pos: '조사', hsk: '대만구어', tags: ['대만식', '구어', '필수'], example: { hanzi: '我有興趣喔。', korean: '관심 있어요~.' } }
+    ],
+    practice: [
+      {
+        prompt: '인바운드로 들어온 협업 제안에 답하며 시술 영상 가능 여부 확인하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '太好了！您有施術的影片嗎？', pinyin: 'tài hǎo le! nín yǒu shīshù de yǐngpiàn ma?', korean: '잘됐네요! 시술 영상 있으세요?' },
+          { level: '중간', hanzi: '謝謝您主動聯絡！我們很有興趣，想確認您有沒有施術影片素材～', pinyin: 'xièxie nín zhǔdòng liánluò! wǒmen hěn yǒu xìngqù, xiǎng quèrèn nín yǒu méiyǒu shīshù yǐngpiàn sùcái~', korean: '먼저 연락 주셔서 감사해요! 관심 많고, 시술 영상 소재 있으신지 확인하고 싶어요~' },
+          { level: '자연스러움', hanzi: '太好了！能直接從您這邊聽到真的很開心～想問您7月在首爾有沒有要做施術呢？我們的影片需要包含施術畫面唷！', pinyin: 'tài hǎo le! néng zhíjiē cóng nín zhèbiān tīngdào zhēnde hěn kāixīn~ xiǎng wèn nín 7 yuè zài Shǒu\'ěr yǒu méiyǒu yào zuò shīshù ne? wǒmen de yǐngpiàn xūyào bāohán shīshù huàmiàn o!', korean: '잘됐어요! 직접 연락 주셔서 기뻐요~ 7월 서울에서 시술 받으실 계획 있는지 궁금해요. 저희 영상엔 시술 장면이 꼭 들어가야 하거든요! ⭐' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L27',
+    title: '일상·구어 어조사 ⭐ — 唷·誒·囉·把자문',
+    subtitle: '대만 구어 감각 — 어조사(唷·喔·誒·囉)와 把자문, 공동구매(團購) 멘트',
+    source: '대만어 번역 채팅 corpus (2026-05-31·06-01·06-05)',
+    type: 'casual_compliment',
+    difficulty: 'A2-B1',
+    date: '2026-06-05',
+    fullText: '我馬上把銀幕線拔掉。哈囉～目前沒有要前往韓國唷。有誒，我朋友最近剛好跟我說到這個平台很方便。親愛的來囉！連結傳送門奉上，這裡通通都可以買！',
+    koreanSummary: '대만 구어 특유의 어조사와 문형을 익히는 레슨. ①把자문(我把…拔掉)으로 처리·동작 강조 ②哈囉(hello)+唷로 부드러운 거절 ③有誒(있어!)의 誒, 剛好(때마침) ④인플루언서 공동구매(團購) 멘트의 來囉/通通/奉上. 어조사 喔·唷·誒·囉·啦가 문장 끝에서 만드는 뉘앙스 차이가 핵심.',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '我馬上把銀幕線拔掉',
+        zhuyin: 'ㄨㄛˇ ㄇㄚˇ ㄕㄤˋ ㄅㄚˇ ㄧㄣˊ ㄇㄨˋ ㄒㄧㄢˋ ㄅㄚˊ ㄉㄧㄠˋ',
+        pinyin: 'wǒ mǎshàng bǎ yínmù xiàn bádiào',
+        korean: '나 지금 바로 모니터 선을 뽑을게',
+        wordBreak: '馬上(곧·바로) | 把(~을, 처치문) | 銀幕(스크린·모니터) | 線(선·케이블) | 拔掉(뽑아버리다)',
+        keyPattern: '「把 A 拔掉」= A를 뽑아버리다 ⭐ 把자문 — 「대상을 어떻게 처리한다」 강조. 「動詞+掉」= ~해버리다 (완료·제거). 대만 구어 빈출'
+      },
+      {
+        id: 2,
+        hanzi: '哈囉～目前沒有要前往韓國唷',
+        zhuyin: 'ㄏㄚ ㄌㄨㄛ˙ ㄇㄨˋ ㄑㄧㄢˊ ㄇㄟˊ ㄧㄡˇ ㄧㄠˋ ㄑㄧㄢˊ ㄨㄤˇ ㄏㄢˊ ㄍㄨㄛˊ ㄧㄡ˙',
+        pinyin: 'hāluō, mùqián méiyǒu yào qiánwǎng Hánguó o',
+        korean: '안녕하세요~ 지금은 한국 갈 계획 없어요~',
+        wordBreak: '哈囉(헬로·hello) | 目前(현재) | 沒有要(~할 (계획이) 없다) | 前往(향하다·가다) | 唷(~요, 부드러운 어조사)',
+        keyPattern: '「唷」= 문장 끝 부드러운 어조사 ⭐ (=喔, 거절·안내를 덜 딱딱하게). 「沒有要+동사」= ~할 생각/계획 없다. 「哈囉」= 캐주얼 인사'
+      },
+      {
+        id: 3,
+        hanzi: '有誒，我朋友最近剛好跟我說到這個平台很方便',
+        zhuyin: 'ㄧㄡˇ ㄟ˙ ㄨㄛˇ ㄆㄥˊ ㄧㄡˇ ㄗㄨㄟˋ ㄐㄧㄣˋ ㄍㄤ ㄏㄠˇ ㄍㄣ ㄨㄛˇ ㄕㄨㄛ ㄉㄠˋ ㄓㄜˋ ㄍㄜ˙ ㄆㄧㄥˊ ㄊㄞˊ ㄏㄣˇ ㄈㄤ ㄅㄧㄢˋ',
+        pinyin: 'yǒu ei, wǒ péngyǒu zuìjìn gānghǎo gēn wǒ shuōdào zhège píngtái hěn fāngbiàn',
+        korean: '있어요! 제 친구가 마침 요즘 이 플랫폼 진짜 편하다고 얘기했어요',
+        wordBreak: '有誒(있어!·맞아!) | 最近(요즘) | 剛好(때마침·딱) | 跟我說(나에게 말하다) | 說到(언급하다) | 平台(플랫폼) | 方便(편하다)',
+        keyPattern: '「誒」(ei) = 가벼운 감탄 어조사 ⭐ (有誒=있어!의 발랄한 톤). 「剛好」= 때마침/공교롭게 ⭐ 구어 필수. 입소문(口碑) 신호'
+      },
+      {
+        id: 4,
+        hanzi: '親愛的來囉！連結傳送門奉上，這裡通通都可以買！',
+        zhuyin: 'ㄑㄧㄣ ㄞˋ ㄉㄜ˙ ㄌㄞˊ ㄌㄨㄛ˙ ㄌㄧㄢˊ ㄐㄧㄝˊ ㄔㄨㄢˊ ㄙㄨㄥˋ ㄇㄣˊ ㄈㄥˋ ㄕㄤˋ ㄓㄜˋ ㄌㄧˇ ㄊㄨㄥ ㄊㄨㄥ ㄉㄡ ㄎㄜˇ ㄧˇ ㄇㄞˇ',
+        pinyin: 'qīn\'ài de lái lo! liánjié chuánsòngmén fèngshàng, zhèlǐ tōngtōng dōu kěyǐ mǎi!',
+        korean: '여러분 왔어요~! 링크 띄워드려요, 여기서 전부 다 살 수 있어요!',
+        wordBreak: '親愛的(여러분·애칭) | 來囉(왔어요~) | 連結(링크) | 傳送門(포털·바로가기) | 奉上(올려드리다) | 通通(전부·몽땅) | 都可以買(다 살 수 있다)',
+        keyPattern: '공동구매(團購) 멘트 정형구 ⭐. 「來囉」의 囉(lo)= 등장·완료 알리는 발랄한 어조사. 「通通」= 전부·몽땅 ⭐ 구어. 「傳送門」= (게임용어→) 링크 바로가기'
+      }
+    ],
+    vocab: [
+      { hanzi: '把', zhuyin: 'ㄅㄚˇ', pinyin: 'bǎ', korean: '~을 (처치문 표지)', pos: '전치사', hsk: 3, tags: ['문법', '필수'], example: { hanzi: '把線拔掉。', korean: '선을 뽑아버려요.' } },
+      { hanzi: '拔掉', zhuyin: 'ㄅㄚˊ ㄉㄧㄠˋ', pinyin: 'bádiào', korean: '뽑아버리다', pos: '동사', hsk: '업무', tags: ['일상', '구어'], example: { hanzi: '把插頭拔掉。', korean: '플러그를 뽑아버려요.' } },
+      { hanzi: '前往', zhuyin: 'ㄑㄧㄢˊ ㄨㄤˇ', pinyin: 'qiánwǎng', korean: '향하다, 가다 (격식)', pos: '동사', hsk: 5, tags: ['업무', '격식'], example: { hanzi: '前往韓國。', korean: '한국으로 가다.' } },
+      { hanzi: '剛好', zhuyin: 'ㄍㄤ ㄏㄠˇ', pinyin: 'gānghǎo', korean: '때마침, 딱, 공교롭게', pos: '부사', hsk: 4, tags: ['일상', '구어', '필수'], example: { hanzi: '剛好跟我說。', korean: '마침 나한테 말했어.' } },
+      { hanzi: '通通', zhuyin: 'ㄊㄨㄥ ㄊㄨㄥ', pinyin: 'tōngtōng', korean: '전부, 몽땅', pos: '부사', hsk: '대만구어', tags: ['대만식', '구어', '필수'], example: { hanzi: '通通都可以買。', korean: '전부 다 살 수 있어요.' } },
+      { hanzi: '方便', zhuyin: 'ㄈㄤ ㄅㄧㄢˋ', pinyin: 'fāngbiàn', korean: '편하다, 편리하다', pos: '형용사', hsk: 3, tags: ['일상', '필수'], example: { hanzi: '這個平台很方便。', korean: '이 플랫폼 편해요.' } },
+      { hanzi: '奉上', zhuyin: 'ㄈㄥˋ ㄕㄤˋ', pinyin: 'fèngshàng', korean: '올려드리다 (공손)', pos: '동사', hsk: '업무', tags: ['구어', '마케팅'], example: { hanzi: '連結奉上。', korean: '링크 올려드려요.' } },
+      { hanzi: '唷', zhuyin: 'ㄧㄡ˙', pinyin: 'yo', korean: '~요 (부드러운 어조사)', pos: '조사', hsk: '대만구어', tags: ['대만식', '구어', '필수'], example: { hanzi: '沒有要去唷。', korean: '안 갈 거예요~.' } },
+      { hanzi: '囉', zhuyin: 'ㄌㄨㄛ˙', pinyin: 'lo', korean: '~네/~어요 (완료·발랄)', pos: '조사', hsk: '대만구어', tags: ['대만식', '구어', '필수'], example: { hanzi: '來囉！', korean: '왔어요~!' } },
+      { hanzi: '誒', zhuyin: 'ㄟ˙', pinyin: 'ei', korean: '어!/있어! (감탄 어조사)', pos: '조사', hsk: '대만구어', tags: ['대만식', '구어'], example: { hanzi: '有誒！', korean: '있어!' } }
+    ],
+    practice: [
+      {
+        prompt: '어조사로 같은 거절을 톤만 바꿔 말해보기 (딱딱함 → 부드러움)',
+        modelAnswers: [
+          { level: '딱딱함', hanzi: '目前沒有要去韓國。', pinyin: 'mùqián méiyǒu yào qù Hánguó.', korean: '지금 한국 갈 계획 없습니다. (건조)' },
+          { level: '부드러움', hanzi: '哈囉～目前沒有要去韓國唷！', pinyin: 'hāluō, mùqián méiyǒu yào qù Hánguó o!', korean: '안녕하세요~ 지금은 한국 갈 계획 없어요~ (唷로 부드럽게) ⭐' },
+          { level: '발랄함', hanzi: '哈囉哈囉～最近沒有要飛韓國啦，下次有機會再約囉！', pinyin: 'hāluō hāluō, zuìjìn méiyǒu yào fēi Hánguó la, xiàcì yǒu jīhuì zài yuē lo!', korean: '안녕안녕~ 요즘 한국 갈 일 없어요~ 다음에 기회되면 또 얘기해요! (啦·囉 활용)' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'L28',
+    title: '협업 세부개념 ⭐ — 2次加工·授權·施術商談',
+    subtitle: '협업 실무 핵심 개념어 — 2차 가공(재편집)의 정의, 영상 소재·후반작업·시술 상담',
+    source: '대만어 번역 채팅 corpus (2026-06-04·06-07)',
+    type: 'business_email_terms',
+    difficulty: 'B1-B2',
+    date: '2026-06-07',
+    fullText: '2次加工的意思是：您提供原始影片素材，我們會對該影片進行特定部分的剪切、編輯等後製工作。針對施術內容商談。因為還有授權廣告的部分。',
+    koreanSummary: '협업 계약에서 반복되는 핵심 개념어를 정리하는 레슨. ①2次加工(2차 가공)=인플루언서가 原始素材(원본 소재)를 주면 브랜드가 剪切·編輯·後製(컷·편집·후반작업)하는 것 ②針對…商談=~을 대상으로 상담/협의 ③授權廣告=광고 사용권 부분. 정산·계약 협상 시 정확히 알아야 하는 업계 용어 묶음.',
+    sentences: [
+      {
+        id: 1,
+        hanzi: '2次加工的意思是：您提供原始影片素材，我們會對該影片進行剪切、編輯',
+        zhuyin: 'ㄦˋ ㄘˋ ㄐㄧㄚ ㄍㄨㄥ ㄉㄜ˙ ㄧˋ ㄙ˙ ㄕˋ ㄋㄧㄣˊ ㄊㄧˊ ㄍㄨㄥ ㄩㄢˊ ㄕˇ ㄧㄥˇ ㄆㄧㄢˋ ㄙㄨˋ ㄘㄞˊ',
+        pinyin: 'liǎngcì jiāgōng de yìsi shì: nín tígōng yuánshǐ yǐngpiàn sùcái, wǒmen huì duì gāi yǐngpiàn jìnxíng jiǎnqiē, biānjí',
+        korean: '2차 가공이란: 원본 영상 소재를 주시면, 저희가 그 영상을 컷 편집·편집하는 거예요',
+        wordBreak: '2次加工(2차 가공·재편집) | 意思(뜻·의미) | 提供(제공) | 原始(원본) | 影片素材(영상 소재) | 進行(진행) | 剪切(컷·자르기) | 編輯(편집)',
+        keyPattern: '「2次加工」= 2차 가공 ⭐⭐ — 원본을 받아 브랜드가 재편집. 「A 的意思是…」= A란 ~라는 뜻이다 (개념 정의 정형구). 「對 A 進行 B」= A에 B를 가하다'
+      },
+      {
+        id: 2,
+        hanzi: '針對施術內容商談',
+        zhuyin: 'ㄓㄣ ㄉㄨㄟˋ ㄕ ㄕㄨˋ ㄋㄟˋ ㄖㄨㄥˊ ㄕㄤ ㄊㄢˊ',
+        pinyin: 'zhēnduì shīshù nèiróng shāngtán',
+        korean: '시술 내용에 대한 상담',
+        wordBreak: '針對(~을 대상으로·~에 관해) | 施術(시술) | 內容(내용) | 商談(상담·협의)',
+        keyPattern: '「針對 A」= A를 겨냥/대상으로 ⭐ 비즈니스 격식 (=關於보다 초점 강조). 「商談」= 상담/협의 (=洽談). 앱 UI·문의 카테고리에도 자주 등장'
+      },
+      {
+        id: 3,
+        hanzi: '因為還有授權廣告的部分',
+        zhuyin: 'ㄧㄣ ㄨㄟˋ ㄏㄞˊ ㄧㄡˇ ㄕㄡˋ ㄑㄩㄢˊ ㄍㄨㄤˇ ㄍㄠˋ ㄉㄜ˙ ㄅㄨˋ ㄈㄣˋ',
+        pinyin: 'yīnwèi háiyǒu shòuquán guǎnggào de bùfen',
+        korean: '아직 광고 사용권 부분이 남아 있어서요',
+        wordBreak: '因為(~때문에) | 還有(아직 ~있다) | 授權(사용권·권한 부여) | 廣告(광고) | 部分(부분)',
+        keyPattern: '「還有…的部分」= 아직 ~ 부분이 남아 있다 ⭐ 미해결 항목 짚는 정형구. 「授權」= 사용권 부여 ⭐ 계약 핵심어 (廣告主授權=광고 집행권)'
+      }
+    ],
+    vocab: [
+      { hanzi: '2次加工', zhuyin: 'ㄦˋ ㄘˋ ㄐㄧㄚ ㄍㄨㄥ', pinyin: 'liǎngcì jiāgōng', korean: '2차 가공, 재편집', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '需要2次加工。', korean: '2차 가공이 필요해요.' } },
+      { hanzi: '原始', zhuyin: 'ㄩㄢˊ ㄕˇ', pinyin: 'yuánshǐ', korean: '원본의, 원시의', pos: '형용사', hsk: 5, tags: ['업계', '필수'], example: { hanzi: '原始影片素材。', korean: '원본 영상 소재.' } },
+      { hanzi: '素材', zhuyin: 'ㄙㄨˋ ㄘㄞˊ', pinyin: 'sùcái', korean: '소재, 자료(원본)', pos: '명사', hsk: '업계', tags: ['업계', '인플루언서', '필수'], example: { hanzi: '提供影片素材。', korean: '영상 소재 제공.' } },
+      { hanzi: '剪切', zhuyin: 'ㄐㄧㄢˇ ㄑㄧㄝ', pinyin: 'jiǎnqiē', korean: '컷, 잘라내기', pos: '동사', hsk: '업계', tags: ['업계', '영상편집'], example: { hanzi: '進行剪切。', korean: '컷 편집을 해요.' } },
+      { hanzi: '編輯', zhuyin: 'ㄅㄧㄢ ㄐㄧˊ', pinyin: 'biānjí', korean: '편집(하다)', pos: '동사·명사', hsk: 5, tags: ['업계', '영상편집', '필수'], example: { hanzi: '剪切、編輯。', korean: '컷, 편집.' } },
+      { hanzi: '後製', zhuyin: 'ㄏㄡˋ ㄓˋ', pinyin: 'hòuzhì', korean: '후반 작업 (post-production)', pos: '명사', hsk: '업계', tags: ['업계', '영상편집', '필수'], example: { hanzi: '後製工作。', korean: '후반 작업.' } },
+      { hanzi: '針對', zhuyin: 'ㄓㄣ ㄉㄨㄟˋ', pinyin: 'zhēnduì', korean: '~을 대상으로, ~에 관해', pos: '전치사', hsk: 5, tags: ['업무', '이메일', '필수'], example: { hanzi: '針對內容商談。', korean: '내용에 대해 상담.' } },
+      { hanzi: '商談', zhuyin: 'ㄕㄤ ㄊㄢˊ', pinyin: 'shāngtán', korean: '상담, 협의', pos: '명사·동사', hsk: '업무', tags: ['업무', '이메일'], example: { hanzi: '進一步商談。', korean: '추가 협의.' } },
+      { hanzi: '授權', zhuyin: 'ㄕㄡˋ ㄑㄩㄢˊ', pinyin: 'shòuquán', korean: '사용권 부여, 권한 위임', pos: '명사·동사', hsk: '업계', tags: ['업계', '계약', '필수'], example: { hanzi: '授權廣告。', korean: '광고 사용권.' } }
+    ],
+    practice: [
+      {
+        prompt: '인플루언서에게 「2차 가공」 조건을 정확히 설명하고 동의 구하기',
+        modelAnswers: [
+          { level: '간단', hanzi: '2次加工就是我們會幫您剪輯影片。', pinyin: 'liǎngcì jiāgōng jiùshì wǒmen huì bāng nín jiǎnjí yǐngpiàn.', korean: '2차 가공은 저희가 영상을 편집해드리는 거예요.' },
+          { level: '중간', hanzi: '2次加工是指您提供原始素材，我們進行剪切和編輯，這樣可以嗎？', pinyin: 'liǎngcì jiāgōng shì zhǐ nín tígōng yuánshǐ sùcái, wǒmen jìnxíng jiǎnqiē hé biānjí, zhèyàng kěyǐ ma?', korean: '2차 가공은 원본 소재를 주시면 저희가 컷·편집하는 건데, 괜찮으세요?' },
+          { level: '자연스러움', hanzi: '想再確認一下2次加工的部分：您提供原始影片素材後，我們會針對特定段落進行剪切、編輯等後製，這樣的合作方式您OK嗎？', pinyin: 'xiǎng zài quèrèn yíxià liǎngcì jiāgōng de bùfen: nín tígōng yuánshǐ yǐngpiàn sùcái hòu, wǒmen huì zhēnduì tèdìng duànluò jìnxíng jiǎnqiē, biānjí děng hòuzhì, zhèyàng de hézuò fāngshì nín OK ma?', korean: '2차 가공 부분 다시 확인하고 싶어요: 원본 영상 소재 주시면 특정 구간을 컷·편집 등 후반작업하는 방식인데, 이런 협업 괜찮으세요? ⭐' }
+        ]
+      }
+    ]
   }
 ];
 
