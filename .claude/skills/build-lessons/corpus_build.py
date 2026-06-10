@@ -54,7 +54,14 @@ def list_unprocessed():
 def append_lesson(lesson):
     content = LESSONS.read_text()
     entry = json.dumps(lesson, ensure_ascii=False, indent=4)
-    new = re.sub(r"\s*\];\s*$", f",\n  {entry}\n];\n", content)
+    # lessons.js: LESSONS array ends with \n];\n\n (blank line follows).
+    # Use lambda to avoid re.sub processing backslash escapes in replacement.
+    new = re.sub(r"\n\];\n\n",
+                 lambda m: f",\n  {entry}\n];\n\n", content, count=1)
+    if new == content:
+        # fallback: end-of-file pattern
+        new = re.sub(r"\s*\];\s*$",
+                     lambda m: f",\n  {entry}\n];\n", content)
     if new == content:
         sys.exit("ERROR: LESSONS 배열 끝(];)을 못 찾음")
     LESSONS.write_text(new)
