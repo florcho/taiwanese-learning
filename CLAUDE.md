@@ -20,32 +20,49 @@
 ├── styles.css
 ├── manifest.json
 ├── data/lessons.js                  # 모든 레슨 (LESSONS 배열)
+├── data/corpus.jsonl                # 🆕 번역 버퍼 (대만어→한국어 원문 누적, processed 플래그)
 ├── data/flashcard_state.json        # 🃏 플래시카드 분류 상태 (앱이 GitHub 동기화로 push)
-├── inbox/                           # 처리 대기 자료
-├── scripts/                         # 자동화 파이썬 (auto_lesson.py 등) — .gitignore 처리, 로컬 전용
+├── .claude/agents/                  # 🆕 lesson-builder, taiwanese-verifier (빌드용 서브에이전트)
+├── .claude/skills/build-lessons/    # 🆕 corpus→레슨 빌드 스킬 + corpus_build.py 헬퍼
+├── inbox/                           # 처리 대기 자료 (PWA + 버튼 업로드분)
+├── scripts/                         # 로컬 전용 파이썬 (inbox_to_lesson.py 등) — .gitignore 처리
 ├── icons/
 ├── README.md
 ├── PLAUD_PROMPTS.md
-└── CLAUDE_PROJECT_INSTRUCTIONS.md   # claude.ai 프로젝트 지침
+└── CLAUDE_PROJECT_INSTRUCTIONS.md   # claude.ai/데스크탑앱 프로젝트 지침
 ```
 
-⚠️ `scripts/` 는 `.gitignore` 에 있어 **git에 안 올라감**(로컬 전용 자동화). 커밋/리포에서 안 보여도 정상.
+⚠️ `scripts/` 는 `.gitignore` 라 **git에 안 올라감**(로컬 전용). 단, 빌드에 필요한
+`corpus_build.py` 는 `.claude/skills/build-lessons/` 로 옮겨 **추적된다**(원격 루틴이 써야 하므로).
 
 - **GitHub**: `florcho/taiwanese-learning`
 - **라이브 URL**: https://florcho.github.io/taiwanese-learning/
 - **GitHub Pages 빌드**: main 브랜치 → 자동 (30-60초)
 
-## 🔄 인박스 → 레슨 변환 워크플로우
+## 🔄 데이터 흐름 (2026-06-10 재구조화)
 
-사용자가 폰 PWA에서 자료(Slack/이메일/Reels)를 + 버튼으로 업로드 → GitHub `/inbox/*.md` 에 저장됨.
+번역(데스크탑 앱)과 레슨(PWA)을 **corpus.jsonl** 한 파일로 잇는다.
 
-**사용자가 "인박스 처리해줘" 라고 하면**:
-1. `inbox/*.md` 파일들 읽기 (.gitkeep 제외)
-2. 각각 레슨 객체로 변환 (스키마: 아래)
-3. `data/lessons.js` LESSONS 배열에 append (ID 자동 증가)
-4. 처리한 inbox 파일 삭제
-5. 단일 커밋으로 push
-6. Pages 재배포 (~30초) → 폰 새로고침하면 새 레슨 보임
+```
+[데스크탑 앱 프로젝트]  대만어 던짐 → taiwan-translate 스킬
+   → 번역+단어표 출력 + data/corpus.jsonl 에 한 줄 commit (GitHub 커넥터, processed:false)
+                                  │
+[원격 루틴, 매일 저녁 7시]  build-lessons 스킬 실행
+   1. corpus_build.py --list-unprocessed (processed:false 줄)
+   2. 주제별 클러스터링
+   3. 클러스터별 병렬: lesson-builder → taiwanese-verifier
+   4. lessons.js append → mark processed:true → git push
+   5. 요약 알림 (퇴근길 확인용)
+                                  │
+[폰 PWA]  새로고침 → 새 레슨 ✨
+```
+
+- 캡처 다리는 **GitHub 커넥터**(데스크탑 앱 프로젝트에 연결) 필요.
+- 빌드는 **단일 진실원천 = repo**. 별도 스토리지 없음.
+- ⚠️ 폐기됨: `auto_lesson.py`(로컬 Claude Code 세션 스캔 방식). 번역이 데스크탑 앱으로 옮겨가 로컬 세션에 안 남으므로 무용 → 삭제.
+
+### 수동 빌드
+"인박스 처리해줘" 대신 이제 **`/build-lessons`** (또는 corpus의 특정 줄을 `processed:false`로 뒤집고 실행). PWA + 버튼 인박스(`inbox/*.md`)는 보조 경로로 유지(`scripts/inbox_to_lesson.py`).
 
 ## 📐 레슨 스키마
 
