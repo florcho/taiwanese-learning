@@ -45,21 +45,24 @@
 
 ```
 [데스크탑 앱 프로젝트]  대만어 던짐 → taiwan-translate 스킬
-   → 번역+단어표 출력 + data/corpus.jsonl 에 한 줄 commit (GitHub 커넥터, processed:false)
+   → 번역+단어표 출력 + Google Drive 폴더 taiwanese_corpus_inbox 에 파일 1개 생성
+     (create_file, {source,translation,source_date})
                                   │
-[원격 루틴, 매일 저녁 7시]  build-lessons 스킬 실행
+[원격 루틴, 매일 저녁 7시]  build-lessons 스킬 실행 (Drive + Slack 커넥터 부착)
+   0. Drive 인박스 흡수: search_files → corpus_build.py --ingest (이미 흡수한 건 .drive_ingested.json로 스킵)
    1. corpus_build.py --list-unprocessed (processed:false 줄)
    2. 주제별 클러스터링
    3. 클러스터별 병렬: lesson-builder → taiwanese-verifier
    4. lessons.js append → mark processed:true → git push
-   5. 요약 알림 (퇴근길 확인용)
+   5. 요약 Slack DM (퇴근길 확인용)
                                   │
 [폰 PWA]  새로고침 → 새 레슨 ✨
 ```
 
-- 캡처 다리는 **GitHub 커넥터**(데스크탑 앱 프로젝트에 연결) 필요.
-- 빌드는 **단일 진실원천 = repo**. 별도 스토리지 없음.
-- ⚠️ 폐기됨: `auto_lesson.py`(로컬 Claude Code 세션 스캔 방식). 번역이 데스크탑 앱으로 옮겨가 로컬 세션에 안 남으므로 무용 → 삭제.
+- 캡처 다리 = **Google Drive 커넥터** (데스크탑 앱 채팅엔 GitHub 쓰기 커넥터가 없어서 Drive 경유). Drive 폴더 id `1cqGR1gu0Tsxw4ZTVnOWkTyWNbpqw9tTC`.
+- 빌드 후 단일 진실원천 = repo의 `data/corpus.jsonl`. Drive는 임시 인박스(파일 누적돼도 id로 중복방지).
+- 원격 루틴 id: `trig_018MdMhKTtbZeAzukqjgmJfY` (매일 19:00 KST). Claude GitHub App으로 repo clone/push.
+- ⚠️ 폐기됨: `auto_lesson.py`(로컬 세션 스캔). 번역이 데스크탑 앱으로 옮겨가 무용 → 삭제.
 
 ### 수동 빌드
 "인박스 처리해줘" 대신 이제 **`/build-lessons`** (또는 corpus의 특정 줄을 `processed:false`로 뒤집고 실행). PWA + 버튼 인박스(`inbox/*.md`)는 보조 경로로 유지(`scripts/inbox_to_lesson.py`).

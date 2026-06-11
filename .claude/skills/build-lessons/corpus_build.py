@@ -21,9 +21,10 @@ import sys, re, json, argparse, subprocess
 from pathlib import Path
 
 # 이 파일: <repo>/.claude/skills/build-lessons/corpus_build.py → repo = parents[3]
-PROJECT = Path(__file__).resolve().parents[3]
-LESSONS = PROJECT / "data" / "lessons.js"
-CORPUS  = PROJECT / "data" / "corpus.jsonl"
+PROJECT  = Path(__file__).resolve().parents[3]
+LESSONS  = PROJECT / "data" / "lessons.js"
+CORPUS   = PROJECT / "data" / "corpus.jsonl"
+INGESTED = PROJECT / "data" / ".drive_ingested.json"   # 이미 흡수한 Drive 파일 id 기록
 
 
 def read_corpus():
@@ -49,6 +50,34 @@ def next_id():
 def list_unprocessed():
     rows = [r for r in read_corpus() if not r.get("processed")]
     print(json.dumps(rows, ensure_ascii=False, indent=2))
+
+
+def ingest(items):
+    """Drive 인박스에서 읽은 항목을 corpus.jsonl에 흡수.
+    items: [{drive_id, source, translation, source_date}, ...]
+    이미 흡수한 drive_id는 .drive_ingested.json 기준으로 스킵(중복 방지)."""
+    seen = set()
+    if INGESTED.exists():
+        seen = set(json.loads(INGESTED.read_text()).get("ingested", []))
+    rows = read_corpus()
+    nums = [int(r["id"][1:]) for r in rows if re.match(r"c\d+$", r.get("id", ""))]
+    n = max(nums) + 1 if nums else 1
+    added = 0
+    for it in items:
+        did = it.get("drive_id")
+        if not did or did in seen:
+            continue
+        src = (it.get("source") or "").strip()
+        if not src:
+            continue
+        rows.append({"id": f"c{n:04d}", "source": src,
+                     "translation": (it.get("translation") or "").strip(),
+                     "source_date": it.get("source_date", ""),
+                     "processed": False, "lessonId": None, "driveId": did})
+        seen.add(did); n += 1; added += 1
+    write_corpus(rows)
+    INGESTED.write_text(json.dumps({"ingested": sorted(seen)}, ensure_ascii=False, indent=2) + "\n")
+    print(f"✅ ingested {added} new (skipped {len(items) - added} already-seen)")
 
 
 def append_lesson(lesson):
@@ -88,7 +117,7 @@ def mark(ids, lesson_id):
 
 
 def push(msg):
-    for args in (["git", "add", "data/lessons.js", "data/corpus.jsonl"],
+    for args in (["git", "add", "data/lessons.js", "data/corpus.jsonl", "data/.drive_ingested.json"],
                  ["git", "commit", "-q", "-m", msg]):
         subprocess.run(args, cwd=PROJECT, check=True)
     r = subprocess.run(["git", "push", "origin", "main"],
@@ -99,6 +128,7 @@ def push(msg):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--list-unprocessed", action="store_true")
+    p.add_argument("--ingest", action="store_true", help="stdin: Drive 항목 JSON 배열 → corpus 흡수")
     p.add_argument("--next-id", action="store_true")
     p.add_argument("--append-lesson", action="store_true")
     p.add_argument("--mark")
@@ -107,6 +137,7 @@ if __name__ == "__main__":
     a = p.parse_args()
 
     if a.list_unprocessed: list_unprocessed()
+    elif a.ingest:         ingest(json.load(sys.stdin))
     elif a.next_id:        print(next_id())
     elif a.append_lesson:  append_lesson(json.load(sys.stdin))
     elif a.mark:           mark(a.mark, a.lesson or "")

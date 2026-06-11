@@ -12,6 +12,15 @@ user-invocable: true
 
 > 헬퍼 경로: `.claude/skills/build-lessons/corpus_build.py` (이하 `$CB` 로 표기). repo 루트에서 실행.
 
+0. **Google Drive 인박스 흡수** (Drive 커넥터 필요)
+   - `search_files` 로 폴더 안 파일을 모두 나열: query `parentId = '1cqGR1gu0Tsxw4ZTVnOWkTyWNbpqw9tTC'`
+   - 각 파일에서 JSON(`{source,translation,source_date}`)을 파싱한다. 작은 파일은 `contentSnippet` 에 내용이 들어오고, 잘렸으면 `read_file_content` 로 전체를 읽는다.
+   - `{drive_id: <파일 id>, source, translation, source_date}` 배열을 만들어 흡수:
+     ```bash
+     echo '<JSON array>' | python3 .claude/skills/build-lessons/corpus_build.py --ingest
+     ```
+   - 이미 흡수한 파일은 `data/.drive_ingested.json` 기준으로 자동 스킵된다 (Drive 파일은 지우지 않아도 됨).
+
 1. **새 번역 수집**
    ```bash
    python3 .claude/skills/build-lessons/corpus_build.py --list-unprocessed

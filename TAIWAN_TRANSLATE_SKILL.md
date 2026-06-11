@@ -66,38 +66,39 @@ MCP 서버를 사용하지 않고 직접 번역한다 — 속도가 최우선.
 - 대만 특유 어휘/구어는 뜻 칸에 `(대만 구어)` 같은 짧은 라벨을 덧붙인다.
 - 정리할 단어가 하나도 없으면 테이블을 생략한다.
 
-## 학습 데이터 누적 → GitHub repo (append)
+## 학습 데이터 누적 → Google Drive 인박스 (파일 1개 생성)
 
 `--no-log` 플래그가 없는 한, **B 방향(대만어→한국어)** 번역의 원문을
-**GitHub 리포 `florcho/taiwanese-learning` 의 `data/corpus.jsonl`** 에 한 줄
-append한다. A 방향(한→대만어)은 적재하지 않는다.
+**Google Drive 폴더 `taiwanese_corpus_inbox`** 에 **새 파일 1개**로 적재한다.
+A 방향(한→대만어)은 적재하지 않는다.
 
-⚠️ 옛 방식(`/mnt/user-data/outputs/...` 샌드박스 파일)은 **쓰지 않는다.** 그건
-세션 끝나면 사라져서 PWA가 못 읽었다. 이제 **GitHub 커넥터**로 repo에 직접
-커밋해야 학습 PWA의 자동 빌드(`build-lessons`)가 집어간다.
+⚠️ 옛 방식(`/mnt/user-data/outputs/...` 샌드박스)은 **쓰지 않는다.** 세션 끝나면
+사라져서 PWA가 못 읽었다. 또한 이 채팅 환경엔 GitHub 쓰기 커넥터가 없으므로,
+**Google Drive 커넥터**로 적재한다. 매일 저녁 7시 repo의 자동 빌드 루틴이 이
+폴더를 읽어 레슨으로 만든다. (Drive에 파일이 쌓여도 무방 — 루틴이 흡수한 파일은
+id로 기억해 중복 처리하지 않는다.)
 
 스킬은 단어를 쪼개지 않고 **원문 그대로** 적재한다 (단어 정리·注音/拼音·레슨화는
 나중에 repo의 build-lessons 에이전트가 한다).
 
-**절차 (GitHub 커넥터 사용):**
-1. repo에서 `data/corpus.jsonl` 의 현재 내용을 읽는다.
-2. 마지막 줄의 `id`(`cNNNN`)를 보고 다음 번호를 정한다 (없으면 `c0001`).
-3. 아래 형식의 **한 줄(JSON)** 을 파일 끝에 덧붙인다 (기존 내용 절대 덮어쓰기 금지):
-   ```json
-   {"id":"cNNNN","source":"대만어 원문 전체","translation":"한국어 번역문","source_date":"2026-06-10","processed":false,"lessonId":null}
-   ```
-   - `source`: 입력받은 대만어 원문 전체 (가공 X, 그대로)
-   - `translation`: 출력한 한국어 번역문
-   - `source_date`: 오늘 날짜 (YYYY-MM-DD)
-   - `processed`: 항상 `false` (= 아직 레슨 안 됨 → 자동 빌드 대상)
-   - `lessonId`: 항상 `null`
-4. `data/corpus.jsonl` 을 commit (메시지 예: `translate-log: cNNNN`).
-5. 번역 응답 끝에 한 줄로 알린다:
-   `📚 corpus에 적재했어요 (다음 자동 빌드 때 레슨화됨).`
+**절차 (Google Drive 커넥터 `create_file` 사용):**
+1. Drive에 파일 1개를 만든다:
+   - **parentId**: `1cqGR1gu0Tsxw4ZTVnOWkTyWNbpqw9tTC`  (= `taiwanese_corpus_inbox` 폴더)
+   - **title**: `corpus_<오늘 YYYY-MM-DD>_<짧은 키워드>.json` (예: `corpus_2026-06-11_報價.json`)
+   - **contentMimeType**: `text/plain`,  **disableConversionToGoogleType**: `true`  (← JSON 텍스트로 유지, 구글 문서로 변환 금지)
+   - **textContent**: 아래 한 줄 JSON
+     ```json
+     {"source":"대만어 원문 전체","translation":"한국어 번역문","source_date":"2026-06-11"}
+     ```
+     - `source`: 입력받은 대만어 원문 전체 (가공 X, 그대로)
+     - `translation`: 출력한 한국어 번역문
+     - `source_date`: 오늘 날짜 (YYYY-MM-DD)
+2. 번역 응답 끝에 한 줄로 알린다:
+   `📚 corpus 인박스에 적재했어요 (저녁 7시 자동 빌드 때 레슨화됨).`
 
-> 화면에 보여주는 단어 테이블과 적재 줄은 별개다. 테이블은 사용자가 바로
-> 보라고 만드는 것이고, 적재는 원문만 쌓아 repo가 알아서 레슨화하게 한다.
-> 커밋이 실패하면(커넥터 미연결 등) 그 사실을 사용자에게 알린다 — 조용히 넘어가지 말 것.
+> 화면에 보여주는 단어 테이블과 적재 파일은 별개다. 테이블은 사용자가 바로
+> 보라고 만드는 것이고, 적재는 원문만 쌓아 repo 루틴이 알아서 레슨화하게 한다.
+> 파일 생성이 실패하면(커넥터 미연결 등) 그 사실을 사용자에게 알린다 — 조용히 넘어가지 말 것.
 
 ## 예시
 
