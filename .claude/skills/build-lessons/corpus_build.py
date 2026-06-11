@@ -42,7 +42,8 @@ def write_corpus(rows):
 
 
 def next_id():
-    ids = re.findall(r"id: 'L(\d+)'", LESSONS.read_text())
+    # 두 포맷 모두 인식: 손으로 쓴 `id: 'L28'` + 자동추가 JSON `"id": "L29"`
+    ids = re.findall(r"id[\"']?\s*:\s*[\"']L(\d+)", LESSONS.read_text())
     n = int(max(ids, key=int)) + 1 if ids else 1
     return f"L{n:02d}"
 

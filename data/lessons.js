@@ -2558,7 +2558,7 @@ const LESSONS = [
     ]
 },
   {
-    "id": "L29",
+    "id": "L31",
     "title": "협업 견적 재확인 메시지 (短影音·授權)",
     "subtitle": "SNS 콘텐츠 단가·수정·사용권·스토리 추가 업계 표현",
     "source": "Auto-corpus 2026-06-11",
