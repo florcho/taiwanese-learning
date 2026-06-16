@@ -21,19 +21,26 @@ const state = {
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : { completed: [], vocab: {} };
+    const p = raw ? JSON.parse(raw) : {};
+    // 구조 마이그레이션: {completed:[]} → {counts:{id:횟수}}
+    if (!p.counts) {
+      p.counts = {};
+      if (Array.isArray(p.completed)) p.completed.forEach(id => { p.counts[id] = 1; });
+    }
+    if (!p.vocab) p.vocab = {};
+    return p;
   } catch (e) {
-    return { completed: [], vocab: {} };
+    return { counts: {}, vocab: {} };
   }
 }
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
 }
-function markLessonDone(id) {
-  if (!state.progress.completed.includes(id)) {
-    state.progress.completed.push(id);
-    saveProgress();
-  }
+function lessonCount(id) { return state.progress.counts[id] || 0; }
+// 학습 1회 카운트 (명시적 '학습 완료' 버튼)
+function markLessonComplete(id) {
+  state.progress.counts[id] = (state.progress.counts[id] || 0) + 1;
+  saveProgress();
 }
 
 // ============================================================
@@ -49,15 +56,15 @@ function show(screenId) {
 // 홈 화면 렌더
 // ============================================================
 function renderHome() {
-  // 오늘의 레슨 = 첫 미완료 레슨
-  const today = LESSONS.find(l => !state.progress.completed.includes(l.id)) || LESSONS[0];
+  // 오늘의 레슨 = 첫 미학습(0회) 레슨
+  const today = LESSONS.find(l => lessonCount(l.id) === 0) || LESSONS[0];
   state.todayLesson = today;
   document.getElementById('header-subtitle').textContent = `오늘 ${new Date().toLocaleDateString('ko-KR', { month: 'short', day: 'numeric', weekday: 'short' })}`;
   document.getElementById('today-lesson-title').textContent = today.title;
   document.getElementById('today-lesson-subtitle').textContent = today.subtitle;
 
-  // 진행도
-  const done = state.progress.completed.length;
+  // 진행도 = 1회 이상 학습한 레슨 수
+  const done = LESSONS.filter(l => lessonCount(l.id) > 0).length;
   const total = LESSONS.length;
   document.getElementById('progress-pill').textContent = `${done} / ${total}`;
 
@@ -69,20 +76,35 @@ function renderHome() {
   const list = document.getElementById('lesson-list');
   list.innerHTML = '';
   LESSONS.forEach(l => {
-    const isDone = state.progress.completed.includes(l.id);
+    const cnt = lessonCount(l.id);
+    const dateLabel = l.dateLabel || fmtDate(l.date);
     const item = document.createElement('div');
-    item.className = 'lesson-item' + (isDone ? ' done' : '');
+    item.className = 'lesson-item' + (cnt > 0 ? ' done' : '');
+    const countHtml = cnt > 0
+      ? `<span class="study-count done">✓ ${cnt}회 학습</span>`
+      : `<span class="study-count">미학습</span>`;
     item.innerHTML = `
       <span class="lesson-id">${l.id}</span>
       <div class="lesson-meta">
         <h4>${l.title}</h4>
         <p>${l.subtitle}</p>
+        <div class="lesson-sub-row">
+          ${countHtml}
+          ${dateLabel ? `<span class="lesson-date">📅 ${dateLabel} 자료</span>` : ''}
+        </div>
       </div>
       <span class="lesson-badge ${l.difficulty.split('-')[0]}">${l.difficulty}</span>
     `;
     item.onclick = () => openLesson(l.id);
     list.appendChild(item);
   });
+}
+
+// 'YYYY-MM-DD' → 'MM/DD' (레슨 자료 기준일 표시용)
+function fmtDate(d) {
+  if (!d) return '';
+  const p = d.split('-');
+  return p.length === 3 ? `${p[1]}/${p[2]}` : d;
 }
 
 // ============================================================
@@ -97,30 +119,36 @@ function openLesson(id) {
   document.getElementById('lesson-title').textContent = lesson.title;
   document.getElementById('lesson-subtitle').textContent = lesson.subtitle;
 
+  stopSequence();
   renderOverview();
   renderShadow();
   renderVocab();
-  renderPractice();
+  updateMarkDoneBtn();
 
-  // placeholder 레슨은 빈 상태로 안내
-  if (lesson.type === 'placeholder') {
-    switchTab('overview');
-  } else {
-    switchTab('overview');
-  }
+  switchTab('overview');
   show('screen-lesson');
+}
+
+// '학습 완료' 버튼 라벨에 현재 횟수 반영
+function updateMarkDoneBtn() {
+  const btn = document.getElementById('mark-done-btn');
+  if (!btn || !state.currentLesson) return;
+  const cnt = lessonCount(state.currentLesson.id);
+  btn.textContent = cnt > 0 ? `✓ 학습 완료 (현재 ${cnt}회)` : '✓ 학습 완료';
 }
 
 function renderOverview() {
   const l = state.currentLesson;
-  document.getElementById('lesson-fulltext').textContent = l.fullText;
+  // 전체 본문 = 문장별 span (전체 듣기 시 현재 문장 하이라이트)
+  const ft = document.getElementById('lesson-fulltext');
+  ft.innerHTML = (l.sentences || []).map((s, i) =>
+    `<span class="ft-sent" data-i="${i}">${s.hanzi}</span>`).join(' ');
   document.getElementById('lesson-korean-summary').textContent = l.koreanSummary;
   const goals = document.getElementById('lesson-goals');
   goals.innerHTML = '';
   const goalsArr = [
     `${l.sentences.length}개 문장 쉐도잉`,
-    `${l.vocab.length}개 단어 마스터`,
-    `${l.practice.length}개 작문 시뮬레이션`
+    `${l.vocab.length}개 단어 마스터`
   ].filter(g => !g.startsWith('0'));
   goalsArr.forEach(g => {
     const li = document.createElement('li');
@@ -190,39 +218,10 @@ function makeVocabItem(v) {
   return item;
 }
 
-function renderPractice() {
-  const l = state.currentLesson;
-  const container = document.getElementById('practice-list');
-  container.innerHTML = '';
-  if (!l.practice.length) {
-    container.innerHTML = '<div class="card"><p>이 레슨에는 작문 연습이 없습니다.</p></div>';
-    return;
-  }
-  l.practice.forEach((p, i) => {
-    const div = document.createElement('div');
-    div.className = 'practice-item';
-    const modelsHTML = (p.modelAnswers || []).map(m => `
-      <div class="model-answer">
-        <div class="model-level">${m.level}</div>
-        <p class="model-hanzi">${m.hanzi}</p>
-        ${m.pinyin ? `<p class="model-pinyin">${m.pinyin}</p>` : ''}
-        <p class="model-korean">${m.korean}</p>
-      </div>
-    `).join('');
-    div.innerHTML = `
-      <p class="practice-prompt">📝 ${p.prompt}</p>
-      <textarea class="practice-user-input" placeholder="여기에 답을 직접 써보세요..."></textarea>
-      <button class="show-models-btn" data-idx="${i}">💡 모범답안 보기</button>
-      <div class="model-answers">${modelsHTML}</div>
-    `;
-    div.querySelector('.show-models-btn').onclick = () => {
-      div.querySelector('.model-answers').classList.toggle('shown');
-    };
-    container.appendChild(div);
-  });
-}
+// (작문 탭 제거됨 — practice 데이터는 lessons.js에 보존, 화면 렌더만 삭제)
 
 function switchTab(tabName) {
+  stopSequence(); // 탭 이동 시 전체 듣기 정지
   state.currentTab = tabName;
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabName));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-' + tabName));
@@ -238,9 +237,8 @@ function nextSent() {
     state.currentSentenceIdx++;
     renderShadow();
   } else {
-    markLessonDone(l.id);
-    toast('🎉 마지막 문장입니다! 레슨 완료');
-    renderHome();
+    // 학습 횟수는 '학습 완료' 버튼으로만 카운트 (쉐도잉 끝은 안내만)
+    toast('🎉 마지막 문장입니다! 개요의 "학습 완료"를 눌러 횟수를 기록하세요');
   }
 }
 function prevSent() {
@@ -285,6 +283,43 @@ function speak(text, rate = state.ttsRate) {
   const voice = getVoice();
   if (voice) { utter.voice = voice; utter.lang = voice.lang; }
   speechSynthesis.speak(utter);
+}
+
+// 개요 '전체 듣기' — 문장을 끊김 없이 순서대로 재생 (현재 문장 하이라이트)
+function stopSequence() {
+  state.seqPlaying = false;
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  document.querySelectorAll('.ft-sent.speaking').forEach(e => e.classList.remove('speaking'));
+  const btn = document.getElementById('ft-play');
+  if (btn) btn.textContent = '🔊 전체 듣기';
+}
+function speakSequence() {
+  const l = state.currentLesson;
+  if (!l || !(l.sentences || []).length) return;
+  if (state.seqPlaying) { stopSequence(); return; }
+  if (!('speechSynthesis' in window)) { toast('이 브라우저는 음성 합성을 지원하지 않습니다.'); return; }
+  state.seqPlaying = true;
+  const btn = document.getElementById('ft-play');
+  if (btn) btn.textContent = '⏸ 정지';
+  const voice = getVoice();
+  let i = 0;
+  const speakNext = () => {
+    if (!state.seqPlaying) return;
+    if (i >= l.sentences.length) { stopSequence(); return; }
+    document.querySelectorAll('.ft-sent.speaking').forEach(e => e.classList.remove('speaking'));
+    const span = document.querySelector(`.ft-sent[data-i="${i}"]`);
+    if (span) { span.classList.add('speaking'); span.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+    const u = new SpeechSynthesisUtterance(l.sentences[i].hanzi);
+    u.lang = 'zh-TW';
+    u.rate = state.ttsRate;
+    u.pitch = 1.0;
+    if (voice) { u.voice = voice; u.lang = voice.lang; }
+    u.onend = () => { i++; speakNext(); };
+    u.onerror = () => { i++; speakNext(); };
+    speechSynthesis.speak(u);
+  };
+  speechSynthesis.cancel();
+  speakNext();
 }
 
 // 현재 잡힌 음성 이름 (설정 화면 안내용)
@@ -1159,6 +1194,7 @@ function bindEvents() {
   // 뒤로
   document.querySelectorAll('.back-btn').forEach(b => {
     b.onclick = () => {
+      stopSequence();
       const f = document.querySelector('#screen-vocab-all .filter-bar');
       if (f) f.style.display = '';
       const h = document.querySelector('#screen-vocab-all .lesson-head h2');
@@ -1182,6 +1218,23 @@ function bindEvents() {
     speak(l.sentences[state.currentSentenceIdx].hanzi, 0.7);
   };
   document.getElementById('record-toggle').onclick = toggleRecord;
+
+  // 개요: 전체 듣기 / 속도 토글 / 학습 완료
+  document.getElementById('ft-play').onclick = speakSequence;
+  document.getElementById('ft-rate').onclick = () => {
+    state.ttsRate = state.ttsRate === 1.0 ? 0.7 : 1.0;
+    const btn = document.getElementById('ft-rate');
+    btn.textContent = state.ttsRate === 1.0 ? '🐢 0.7x' : '🐢 1.0x';
+    btn.classList.toggle('active', state.ttsRate !== 1.0);
+    if (state.seqPlaying) { stopSequence(); speakSequence(); } // 새 속도로 재시작
+  };
+  document.getElementById('mark-done-btn').onclick = () => {
+    const l = state.currentLesson;
+    if (!l) return;
+    markLessonComplete(l.id);
+    updateMarkDoneBtn();
+    toast(`✓ ${lessonCount(l.id)}회째 학습 기록 완료`);
+  };
 
   // 빠른 도구
   document.querySelectorAll('[data-action]').forEach(btn => {

@@ -1014,3 +1014,19 @@ body {
 .fc-footer { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; }
 .fc-empty { text-align: center; padding: 50px 20px; color: var(--text-dim); }
 .fc-empty .big-emoji { font-size: 48px; margin-bottom: 12px; }
+
+/* ===== 개요 전체 듣기 + 학습횟수/날짜 (2026-06-17) ===== */
+.ft-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+.ft-controls { display: flex; gap: 6px; flex-shrink: 0; }
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.ft-sent { transition: background 0.2s, color 0.2s; border-radius: 3px; padding: 0 1px; }
+.ft-sent.speaking { background: var(--accent); color: #0b0b16; font-weight: 600; }
+#lesson-korean-summary { white-space: pre-line; }
+
+.lesson-sub-row { display: flex; align-items: center; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
+.study-count {
+  font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+  background: var(--bg-card-2); color: var(--text-faint);
+}
+.study-count.done { background: rgba(95, 232, 146, 0.15); color: var(--success); }
+.lesson-date { font-size: 11px; color: var(--text-faint); }

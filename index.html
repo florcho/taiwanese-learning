@@ -85,13 +85,18 @@
       <button class="tab active" data-tab="overview">개요</button>
       <button class="tab" data-tab="shadow">쉐도잉</button>
       <button class="tab" data-tab="vocab">단어장</button>
-      <button class="tab" data-tab="practice">작문</button>
     </nav>
 
     <!-- 개요 탭 -->
     <section id="tab-overview" class="tab-content active">
       <div class="card">
-        <p class="label">전체 본문</p>
+        <div class="ft-head">
+          <p class="label">전체 본문</p>
+          <div class="ft-controls">
+            <button id="ft-play" class="btn btn-primary btn-sm">🔊 전체 듣기</button>
+            <button id="ft-rate" class="btn btn-sm">🐢 0.7x</button>
+          </div>
+        </div>
         <p id="lesson-fulltext" class="hanzi-full"></p>
       </div>
       <div class="card">
@@ -102,6 +107,7 @@
         <p class="label">학습 목표</p>
         <ul id="lesson-goals" class="list"></ul>
       </div>
+      <button id="mark-done-btn" class="btn btn-primary" style="width:100%;margin-top:4px">✓ 학습 완료</button>
     </section>
 
     <!-- 쉐도잉 탭 -->
@@ -144,11 +150,6 @@
     <!-- 단어장 탭 -->
     <section id="tab-vocab" class="tab-content">
       <div id="vocab-list" class="vocab-list"></div>
-    </section>
-
-    <!-- 작문 탭 -->
-    <section id="tab-practice" class="tab-content">
-      <div id="practice-list" class="practice-list"></div>
     </section>
   </main>
 
