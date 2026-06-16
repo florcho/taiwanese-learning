@@ -14,7 +14,7 @@
 ## 🏗 시스템 구조
 
 ```
-/Users/choeunbi/Documents/taiwanese_learning/
+/Users/choeunbi/Documents/Claude/taiwanese_learning/
 ├── index.html                       # PWA 홈
 ├── app.js                           # 로직 (쉐도잉, 단어, 퀴즈, 인박스, GH 연동)
 ├── styles.css
@@ -130,7 +130,7 @@
 
 ### 로컬 서버 (테스트용)
 ```bash
-cd /Users/choeunbi/Documents/taiwanese_learning
+cd /Users/choeunbi/Documents/Claude/taiwanese_learning
 python3 -m http.server 8000
 # 폰에서: http://[Mac IP]:8000
 ```
@@ -144,7 +144,7 @@ git push origin main   # ← 그냥 이걸로 됨!
 ### lessons.js 문법 검증
 ```bash
 osascript -l JavaScript -e '
-const path = "/Users/choeunbi/Documents/taiwanese_learning/data/lessons.js";
+const path = "/Users/choeunbi/Documents/Claude/taiwanese_learning/data/lessons.js";
 const data = $.NSString.stringWithContentsOfFileEncodingError(path, $.NSUTF8StringEncoding, $());
 try { new Function(ObjC.unwrap(data)); "JS_OK"; } catch(e) { "JS_ERR: " + e.message; }'
 ```

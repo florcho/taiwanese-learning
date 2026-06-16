@@ -7,7 +7,7 @@ flor.cho@healingpaper.com 전용 맞춤 학습 도구.
 
 ### 데스크탑에서 미리보기
 ```bash
-cd /Users/choeunbi/Documents/taiwanese_learning
+cd /Users/choeunbi/Documents/Claude/taiwanese_learning
 open index.html
 ```
 
@@ -20,7 +20,7 @@ open index.html
 
 **옵션 B. 로컬 서버 + 같은 Wi-Fi (가장 깔끔)**
 ```bash
-cd /Users/choeunbi/Documents/taiwanese_learning
+cd /Users/choeunbi/Documents/Claude/taiwanese_learning
 python3 -m http.server 8000
 ```
 같은 Wi-Fi에서 폰 Safari로 `http://[맥북IP]:8000` 접속 → 홈화면 추가

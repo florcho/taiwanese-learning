@@ -6,7 +6,7 @@ user-invocable: true
 
 # build-lessons — corpus → 레슨 자동 빌드
 
-대만어 학습 PWA repo(`/Users/choeunbi/Documents/taiwanese_learning`)에서 실행. corpus에 쌓인 새 번역을 검증된 레슨으로 만든다.
+대만어 학습 PWA repo(`/Users/choeunbi/Documents/Claude/taiwanese_learning`)에서 실행. corpus에 쌓인 새 번역을 검증된 레슨으로 만든다.
 
 ## 순서
 
