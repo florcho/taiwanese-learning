@@ -10572,6 +10572,280 @@ const LESSONS = [
             ]
         }
     ]
+},
+  {
+    "id": "L13",
+    "title": "의료미용 시술 브랜드·카테고리 한자 표기",
+    "subtitle": "KOL 소셜 콘텐츠에서 실제로 쓰는 醫美 시술명 읽기",
+    "source": "Auto-corpus 2026-06-22",
+    "type": "vocab_burst",
+    "difficulty": "B1",
+    "date": "2026-06-22",
+    "fullText": "鳳凰電波拉提\n皮秒\nJuvelook喬雅露\n美國音波2代 Ultherapy Prime\n黃金微針POTENZA\nONDA超微波\n眼部整形\n皮膚",
+    "koreanSummary": "대만 의료미용 업계에서 KOL과 클리닉이 소셜에서 실제로 사용하는 시술명·브랜드명 8개. 한자 표기와 발음을 익혀 두면 캡션 작성·업체 커뮤니케이션에서 바로 쓸 수 있다.",
+    "sentences": [
+        {
+            "id": 1,
+            "hanzi": "鳳凰電波拉提",
+            "zhuyin": "ㄈㄥˋ ㄏㄨㄤˊ ㄉㄧㄢˋ ㄅㄛ ㄌㄚ ㄊㄧˊ",
+            "pinyin": "fèng huáng diàn bō lā tí",
+            "korean": "피닉스 써마지 리프팅 (Thermage FLX 계열 전파 리프팅 시술)",
+            "wordBreak": "鳳凰(봉황·브랜드 이미지) | 電波(전파=라디오파 에너지) | 拉提(끌어올리다=리프팅)",
+            "keyPattern": "💡 '써마지(Thermage)'를 직역 대신 '봉황 전파 리프팅'으로 브랜딩한 대만식 명칭. 電波(diàn bō)는 RF(고주파) 에너지를 가리키는 의료미용 업계 공통 용어이며, 拉提(lā tí)는 'lifting'의 의미·음역 합성어. KOL 캡션에 '#鳳凰電波' 해시태그로 자주 등장."
+        },
+        {
+            "id": 2,
+            "hanzi": "皮秒",
+            "zhuyin": "ㄆㄧˊ ㄇㄧㄠˇ",
+            "pinyin": "pí miǎo",
+            "korean": "피코초 레이저 (PicoSure·PicoWay 등 피코초 단위 레이저 시술 통칭)",
+            "wordBreak": "皮(pico 음역 앞부분) | 秒(초=second 시간 단위)",
+            "keyPattern": "💡 'Pico(피코, 10⁻¹²)'의 중국어 음역. 皮(pí)는 'pi'의 음역, 秒(miǎo)는 '초(second)'의 한자. 즉 '피코초 레이저'를 두 글자로 압축한 기술 용어. 대만 의원 홈페이지·IG 캡션에서 '皮秒雷射'로 묶어 쓰는 경우가 많다."
+        },
+        {
+            "id": 3,
+            "hanzi": "Juvelook喬雅露",
+            "zhuyin": "ㄑㄧㄠˊ ㄧㄚˇ ㄌㄨˋ",
+            "pinyin": "qiáo yǎ lù",
+            "korean": "쥬베룩 (PDLLA+HA 함유 스킨부스터 브랜드)",
+            "wordBreak": "Juvelook(브랜드 영문) | 喬(높다·우아하다) | 雅(우아하다) | 露(이슬·에센스)",
+            "keyPattern": "💡 브랜드명 'Juvelook'에 대만식 음역 '喬雅露(qiáo yǎ lù)'를 병기하는 형식. 喬·雅는 '세련되고 품격 있는' 이미지를 주는 한자, 露는 '에센스·물방울' 뉘앙스. 대만 의원 광고에서는 영문과 한자 병기가 표준이므로 두 표기 모두 알아두어야 한다."
+        },
+        {
+            "id": 4,
+            "hanzi": "美國音波2代 Ultherapy Prime",
+            "zhuyin": "ㄇㄟˇ ㄍㄨㄛˊ ㄧㄣ ㄅㄛ ㄦˋ ㄉㄞˋ",
+            "pinyin": "měi guó yīn bō èr dài",
+            "korean": "미국 울쎄라 2세대 Ultherapy Prime (고강도 집속 초음파 리프팅 최신 세대)",
+            "wordBreak": "美國(미국=원산지 강조) | 音波(음파=초음파) | 2代(2세대) | Ultherapy Prime(브랜드·모델명)",
+            "keyPattern": "💡 대만 의원 마케팅에서 '美國'을 앞에 붙여 원산지를 강조하는 것이 관행. 音波(yīn bō)는 초음파(HIFU)를 뜻하며 '音波拉提'로도 자주 쓰인다. '2代'처럼 세대 숫자를 붙여 최신 장비임을 어필하는 표현도 업계 캡션의 전형적 패턴."
+        },
+        {
+            "id": 5,
+            "hanzi": "黃金微針POTENZA",
+            "zhuyin": "ㄏㄨㄤˊ ㄐㄧㄣ ㄨㄟˊ ㄓㄣ",
+            "pinyin": "huáng jīn wēi zhēn",
+            "korean": "골드 마이크로니들 포텐자 (RF 마이크로니들링 장비 POTENZA)",
+            "wordBreak": "黃金(황금=고급·골드 이미지) | 微針(미세 바늘=마이크로니들) | POTENZA(브랜드명)",
+            "keyPattern": "💡 黃金(huáng jīn)은 'gold'의 의역으로 프리미엄 이미지를 강조하는 수식어. 微針(wēi zhēn)은 'micro needle'의 직역. 대만에서 RF 마이크로니들링 장비는 브랜드명 앞에 이 두 글자를 거의 고정적으로 붙여 '黃金微針系列'처럼 카테고리화한다."
+        },
+        {
+            "id": 6,
+            "hanzi": "ONDA超微波",
+            "zhuyin": "ㄔㄠ ㄨㄟˊ ㄅㄛ",
+            "pinyin": "chāo wēi bō",
+            "korean": "ONDA 초미세파 (밀리미터파 에너지 기반 지방·셀룰라이트 시술 장비)",
+            "wordBreak": "ONDA(브랜드명·이탈리아어 '파동') | 超(초월·초-) | 微波(마이크로파=극초단파)",
+            "keyPattern": "💡 超微波(chāo wēi bō)는 'microwave'를 넘어선 밀리미터파 에너지를 묘사하는 조어. 超(chāo)는 'super/ultra' 의미로 의료기기 명칭에 자주 쓰인다. ONDA 앞에 브랜드명을 붙이고 뒤에 기술 방식을 설명하는 '브랜드+기술명' 구조는 대만 의원 마케팅의 표준 포맷."
+        },
+        {
+            "id": 7,
+            "hanzi": "眼部整形",
+            "zhuyin": "ㄧㄢˇ ㄅㄨˋ ㄓㄥˇ ㄒㄧㄥˊ",
+            "pinyin": "yǎn bù zhěng xíng",
+            "korean": "눈 성형 (쌍꺼풀·눈매 교정 등 눈 관련 성형 시술 카테고리)",
+            "wordBreak": "眼部(눈 부위) | 整形(형태를 정돈하다=성형)",
+            "keyPattern": "💡 整形(zhěng xíng)은 대만에서 '성형수술' 카테고리 전체를 아우르는 공식 용어. 한국어의 '성형'과 1:1 대응. 眼部(yǎn bù)처럼 부위명을 앞에 붙여 '코 성형=鼻部整形', '윤곽 성형=輪廓整形'으로 확장 가능. 업계 해시태그·메뉴판에서 가장 빈출하는 기본 단어."
+        },
+        {
+            "id": 8,
+            "hanzi": "皮膚",
+            "zhuyin": "ㄆㄧˊ ㄈㄨ",
+            "pinyin": "pí fū",
+            "korean": "피부",
+            "wordBreak": "皮(피부·껍질) | 膚(살갗·피부)",
+            "keyPattern": "💡 두 글자 모두 '피부'를 뜻하는 동의어 합성. 의료미용 업계에서는 '皮膚科(피부과)', '皮膚管理(피부 관리)', '皮膚屏障(피부 장벽)' 등 핵심 어근으로 활용. A2 수준 기본어지만 '皮秒(레이저)', '皮下(피하)' 등 업계 파생어의 공통 어근이므로 의미 연결로 기억할 것."
+        }
+    ],
+    "vocab": [
+        {
+            "hanzi": "鳳凰電波拉提",
+            "zhuyin": "ㄈㄥˋ ㄏㄨㄤˊ ㄉㄧㄢˋ ㄅㄛ ㄌㄚ ㄊㄧˊ",
+            "pinyin": "fèng huáng diàn bō lā tí",
+            "korean": "피닉스 써마지 리프팅 (RF 전파 리프팅 시술 브랜드명)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "리프팅",
+                "브랜드"
+            ],
+            "example": {
+                "hanzi": "這次診所幫我安排了鳳凰電波拉提的療程。",
+                "korean": "이번에 클리닉에서 저한테 피닉스 써마지 리프팅 코스를 잡아줬어요."
+            }
+        },
+        {
+            "hanzi": "皮秒",
+            "zhuyin": "ㄆㄧˊ ㄇㄧㄠˇ",
+            "pinyin": "pí miǎo",
+            "korean": "피코초 레이저 (피코초 단위 레이저 시술 통칭)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "레이저"
+            ],
+            "example": {
+                "hanzi": "皮秒雷射對淡化斑點效果很好。",
+                "korean": "피코초 레이저는 잡티 완화에 효과가 좋아요."
+            }
+        },
+        {
+            "hanzi": "喬雅露",
+            "zhuyin": "ㄑㄧㄠˊ ㄧㄚˇ ㄌㄨˋ",
+            "pinyin": "qiáo yǎ lù",
+            "korean": "쥬베룩 (PDLLA+HA 스킨부스터 브랜드 대만식 표기)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "브랜드",
+                "스킨부스터"
+            ],
+            "example": {
+                "hanzi": "Juvelook喬雅露最近在診所很夯，很多KOL都有分享。",
+                "korean": "쥬베룩이 요즘 클리닉에서 엄청 핫해서 KOL들이 많이 공유하고 있어요."
+            }
+        },
+        {
+            "hanzi": "音波拉提",
+            "zhuyin": "ㄧㄣ ㄅㄛ ㄌㄚ ㄊㄧˊ",
+            "pinyin": "yīn bō lā tí",
+            "korean": "초음파 리프팅 (HIFU 계열 시술 통칭, 울쎄라 포함)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "리프팅",
+                "초음파"
+            ],
+            "example": {
+                "hanzi": "美國音波2代是目前最新一代的音波拉提療程。",
+                "korean": "미국 울쎄라 2세대는 현재 가장 최신 세대의 초음파 리프팅 시술이에요."
+            }
+        },
+        {
+            "hanzi": "黃金微針",
+            "zhuyin": "ㄏㄨㄤˊ ㄐㄧㄣ ㄨㄟˊ ㄓㄣ",
+            "pinyin": "huáng jīn wēi zhēn",
+            "korean": "골드 마이크로니들 (RF 마이크로니들링 카테고리 통칭)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "마이크로니들"
+            ],
+            "example": {
+                "hanzi": "黃金微針POTENZA可以改善毛孔粗大和膚質。",
+                "korean": "골드 마이크로니들 포텐자는 모공 확대와 피부 결을 개선할 수 있어요."
+            }
+        },
+        {
+            "hanzi": "超微波",
+            "zhuyin": "ㄔㄠ ㄨㄟˊ ㄅㄛ",
+            "pinyin": "chāo wēi bō",
+            "korean": "초미세파 (밀리미터파 에너지 기반 시술 기술 용어)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "에너지 기기"
+            ],
+            "example": {
+                "hanzi": "ONDA超微波主要針對局部脂肪和橘皮問題。",
+                "korean": "ONDA 초미세파는 주로 부분 지방과 셀룰라이트 문제를 타깃으로 해요."
+            }
+        },
+        {
+            "hanzi": "眼部整形",
+            "zhuyin": "ㄧㄢˇ ㄅㄨˋ ㄓㄥˇ ㄒㄧㄥˊ",
+            "pinyin": "yǎn bù zhěng xíng",
+            "korean": "눈 성형 (쌍꺼풀·눈매 교정 등 눈 관련 성형 카테고리)",
+            "pos": "명사",
+            "hsk": "업계",
+            "tags": [
+                "업계",
+                "醫美",
+                "성형",
+                "눈"
+            ],
+            "example": {
+                "hanzi": "這間診所的眼部整形口碑很好，預約要等很久。",
+                "korean": "이 클리닉의 눈 성형 입소문이 좋아서 예약하려면 한참 기다려야 해요."
+            }
+        },
+        {
+            "hanzi": "皮膚",
+            "zhuyin": "ㄆㄧˊ ㄈㄨ",
+            "pinyin": "pí fū",
+            "korean": "피부",
+            "pos": "명사",
+            "hsk": 5,
+            "tags": [
+                "醫美",
+                "기본"
+            ],
+            "example": {
+                "hanzi": "做完療程之後，皮膚狀況明顯改善了。",
+                "korean": "시술 후에 피부 상태가 눈에 띄게 좋아졌어요."
+            }
+        }
+    ],
+    "practice": [
+        {
+            "prompt": "인스타그램 협찬 게시물에 시술명 3개를 자연스럽게 나열해서 소개하는 캡션 첫 문장을 써라. (鳳凰電波拉提, 皮秒, 黃金微針POTENZA 포함)",
+            "modelAnswers": [
+                {
+                    "level": "간단",
+                    "hanzi": "這次做了鳳凰電波拉提、皮秒和黃金微針POTENZA。",
+                    "pinyin": "zhè cì zuò le fèng huáng diàn bō lā tí, pí miǎo hé huáng jīn wēi zhēn POTENZA.",
+                    "korean": "이번에 피닉스 써마지 리프팅, 피코 레이저, 골드 마이크로니들 포텐자를 받았어요."
+                },
+                {
+                    "level": "중간",
+                    "hanzi": "這次在○○診所體驗了三個療程：鳳凰電波拉提、皮秒雷射，還有黃金微針POTENZA，整體效果超出預期！",
+                    "pinyin": "zhè cì zài ○○ zhěn suǒ tǐ yàn le sān gè liáo chéng: fèng huáng diàn bō lā tí, pí miǎo léi shè, hái yǒu huáng jīn wēi zhēn POTENZA, zhěng tǐ xiào guǒ chāo chū yù qī!",
+                    "korean": "이번에 ○○ 클리닉에서 피닉스 써마지 리프팅, 피코 레이저, 골드 마이크로니들 포텐자 세 가지 시술을 체험했는데 전체 효과가 기대 이상이었어요!"
+                },
+                {
+                    "level": "자연스러움",
+                    "hanzi": "最近狂迷醫美✨這次一口氣衝了鳳凰電波拉提＋皮秒雷射＋黃金微針POTENZA，三個療程一起下去，皮膚狀況真的差很多，細節在限動分享給大家！",
+                    "pinyin": "zuì jìn kuáng mí yī měi ✨ zhè cì yī kǒu qì chōng le fèng huáng diàn bō lā tí jiā pí miǎo léi shè jiā huáng jīn wēi zhēn POTENZA, sān gè liáo chéng yī qǐ xià qù, pí fū zhuàng kuàng zhēn de chà hěn duō, xì jié zài xiàn dòng fēn xiǎng gěi dà jiā!",
+                    "korean": "요즘 의료미용에 완전 빠졌어요✨ 이번에 한꺼번에 피닉스 써마지 리프팅+피코 레이저+골드 마이크로니들 포텐자 다 질렀는데, 세 가지 시술 같이 하니까 피부 상태가 진짜 많이 달라졌어요. 자세한 건 스토리로 공유할게요!"
+                }
+            ]
+        },
+        {
+            "prompt": "대만 클리닉 담당자에게 업무 메시지로, 우리 KOL이 眼部整形과 Juvelook喬雅露 체험을 원한다고 협찬 문의를 보내라.",
+            "modelAnswers": [
+                {
+                    "level": "간단",
+                    "hanzi": "您好，我們的KOL想體驗眼部整形和喬雅露，請問可以合作嗎？",
+                    "pinyin": "nín hǎo, wǒ men de KOL xiǎng tǐ yàn yǎn bù zhěng xíng hé qiáo yǎ lù, qǐng wèn kě yǐ hé zuò ma?",
+                    "korean": "안녕하세요, 저희 KOL이 눈 성형과 쥬베룩 체험을 원하는데 협업 가능한지 여쭤봐도 될까요?"
+                },
+                {
+                    "level": "중간",
+                    "hanzi": "您好！我們旗下有一位專注醫美內容的KOL，對貴診所的眼部整形和Juvelook喬雅露療程很有興趣，想詢問業配合作的可能性，方便提供相關資訊嗎？",
+                    "pinyin": "nín hǎo! wǒ men qí xià yǒu yī wèi zhuān zhù yī měi nèi róng de KOL, duì guì zhěn suǒ de yǎn bù zhěng xíng hé Juvelook qiáo yǎ lù liáo chéng hěn yǒu xìng qù, xiǎng xún wèn yè pèi hé zuò de kě néng xìng, fāng biàn tí gōng xiāng guān zī xùn ma?",
+                    "korean": "안녕하세요! 저희 소속 KOL 중에 의료미용 콘텐츠에 집중하는 분이 계신데, 귀 클리닉의 눈 성형과 쥬베룩 시술에 관심이 많아요. 업배 협업 가능성을 문의드리고 싶은데 관련 정보 주실 수 있을까요?"
+                },
+                {
+                    "level": "자연스러움",
+                    "hanzi": "您好，我是韓國MCN Healingpaper的合作窗口。我們旗下有一位粉絲結構以25-35歲女性為主、專注醫美內容的KOL，目前對眼部整形及Juvelook喬雅露療程都很有體驗意願。想請問診所目前是否有開放業配合作？若有興趣，我們可以進一步提供KOL的媒體資料供您參考，期待與貴診所的合作機會！",
+                    "pinyin": "nín hǎo, wǒ shì hán guó MCN Healingpaper de hé zuò chuāng kǒu. wǒ men qí xià yǒu yī wèi fěn sī jié gòu yǐ èr shí wǔ zhì sān shí wǔ suì nǚ xìng wéi zhǔ, zhuān zhù yī měi nèi róng de KOL, mù qián duì yǎn bù zhěng xíng jí Juvelook qiáo yǎ lù liáo chéng dōu hěn yǒu tǐ yàn yì yuàn. xiǎng qǐng wèn zhěn suǒ mù qián shì fǒu yǒu kāi fàng yè pèi hé zuò? ruò yǒu xìng qù, wǒ men kě yǐ jìn yī bù tí gōng KOL de méi tǐ zī liào gōng nín cān kǎo, qī dài yǔ guì zhěn suǒ de hé zuò jī huì!",
+                    "korean": "안녕하세요, 저는 한국 MCN Healingpaper 협업 담당자입니다. 저희 소속에 25-35세 여성 팔로워 중심으로 의료미용 콘텐츠를 전문으로 하는 KOL이 있는데, 현재 눈 성형과 쥬베룩 시술 체험에 모두 강한 의향이 있습니다. 클리닉에서 현재 업배 협업을 열어두고 계신지 여쭤봐도 될까요? 관심이 있으시다면 KOL 미디어 자료를 추가로 제공해 드릴 수 있으며, 귀 클리닉과의 협업 기회를 기대하겠습니다!"
+                }
+            ]
+        }
+    ]
 }
 ];
 
