@@ -69,11 +69,11 @@
 {"id": "c0069", "source": "請協助確認背景音樂是否為無版權配樂，因後續素材會有投廣告需求~謝謝！", "translation": "배경음악이 저작권 없는 음원인지 확인 부탁드려요. 이후 소재를 광고 집행에 사용할 예정이라서요~ 감사합니다!", "source_date": "2026-06-23", "processed": true, "lessonId": "L14", "driveId": "1VklQ22Cc6iHYKn7FQMvlkqPLnYDaELBO"}
 {"id": "c0070", "source": "貼文暫時隱藏處理通知\n您申請的貼文重新發布已通過審核，預計將於 {{restore_date}} (KST) 重新發布。", "translation": "게시글 임시 숨김 처리 안내\n신청하신 게시글의 재게시가 승인되었습니다. {{restore_date}} (KST)에 재게시될 예정입니다.", "source_date": "2026-06-23", "processed": false, "lessonId": null, "driveId": "1yudxH-vXPJFAl301jOijEtnm7OCLN_7B"}
 {"id": "c0071", "source": "貼文暫時隱藏復原駁回通知\n您申請的貼文暫時隱藏復原請求，因有法律糾紛的疑慮，難以重新發布。如有其他疑問，請聯繫客服中心。", "translation": "게시물 임시 숨김 복원 기각 안내\n신청하신 게시물 임시 숨김 복원 요청은 법적 분쟁의 소지가 있어 재게시가 어렵습니다. 추가 문의 사항은 고객센터로 연락 주세요.", "source_date": "2026-06-23", "processed": true, "lessonId": "L14", "driveId": "1pP0IAECIrzVStDxivlsrfru5QUYTf-nc"}
-{"id": "c0072", "source": "鳳凰電波拉提", "translation": "피닉스 써마지 리프팅", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "1W0BaCIlwkIqsSABP7NO3DDgaL6-gLhYy"}
-{"id": "c0073", "source": "皮秒", "translation": "피코 레이저", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "1AZoWh-Z0O5T81r23khxl7r5dPdeeoUyR"}
-{"id": "c0074", "source": "Juvelook喬雅露", "translation": "쥬베룩", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "14C9yjHep5d-_zv2SC0CbWPkW-I3PRleq"}
-{"id": "c0075", "source": "美國音波2代 Ultherapy Prime", "translation": "미국 울쎄라 2세대 Ultherapy Prime", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "130YDTTbAaeRkmBR-lz65osL2dtVrFQQF"}
-{"id": "c0076", "source": "黃金微針POTENZA", "translation": "골드 마이크로니들 포텐자", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "1jWe-BFrdNZi8K4FLp2fpj9CZShe2-ge2"}
-{"id": "c0077", "source": "ONDA超微波", "translation": "ONDA 초미세파", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "1qzVD83PrNYpdQC1tvpV4kAOAl9tV9JES"}
-{"id": "c0078", "source": "眼部整形", "translation": "눈 성형", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "1skJ2Mvx3_VOSz3Gthbu-bOPf4cCEa4yw"}
-{"id": "c0079", "source": "皮膚", "translation": "피부", "source_date": "2026-06-22", "processed": false, "lessonId": null, "driveId": "1fiV7o-1d-qfPMj4h1IMtLamqx19c7y00"}
+{"id": "c0072", "source": "鳳凰電波拉提", "translation": "피닉스 써마지 리프팅", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "1W0BaCIlwkIqsSABP7NO3DDgaL6-gLhYy"}
+{"id": "c0073", "source": "皮秒", "translation": "피코 레이저", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "1AZoWh-Z0O5T81r23khxl7r5dPdeeoUyR"}
+{"id": "c0074", "source": "Juvelook喬雅露", "translation": "쥬베룩", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "14C9yjHep5d-_zv2SC0CbWPkW-I3PRleq"}
+{"id": "c0075", "source": "美國音波2代 Ultherapy Prime", "translation": "미국 울쎄라 2세대 Ultherapy Prime", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "130YDTTbAaeRkmBR-lz65osL2dtVrFQQF"}
+{"id": "c0076", "source": "黃金微針POTENZA", "translation": "골드 마이크로니들 포텐자", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "1jWe-BFrdNZi8K4FLp2fpj9CZShe2-ge2"}
+{"id": "c0077", "source": "ONDA超微波", "translation": "ONDA 초미세파", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "1qzVD83PrNYpdQC1tvpV4kAOAl9tV9JES"}
+{"id": "c0078", "source": "眼部整形", "translation": "눈 성형", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "1skJ2Mvx3_VOSz3Gthbu-bOPf4cCEa4yw"}
+{"id": "c0079", "source": "皮膚", "translation": "피부", "source_date": "2026-06-22", "processed": true, "lessonId": "L13", "driveId": "1fiV7o-1d-qfPMj4h1IMtLamqx19c7y00"}
