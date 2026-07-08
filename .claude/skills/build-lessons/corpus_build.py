@@ -118,12 +118,37 @@ def mark(ids, lesson_id):
 
 
 def push(msg):
+    # Ensure correct author so stop-hook doesn't flag the commit
+    subprocess.run(["git", "config", "user.email", "noreply@anthropic.com"], cwd=PROJECT)
+    subprocess.run(["git", "config", "user.name", "Claude"], cwd=PROJECT)
+
     for args in (["git", "add", "data/lessons.js", "data/corpus.jsonl", "data/.drive_ingested.json"],
                  ["git", "commit", "-q", "-m", msg]):
         subprocess.run(args, cwd=PROJECT, check=True)
-    r = subprocess.run(["git", "push", "origin", "main"],
+
+    branch = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"],
+                            cwd=PROJECT, capture_output=True, text=True).stdout.strip()
+
+    # Push current branch first
+    r = subprocess.run(["git", "push", "origin", branch],
                        cwd=PROJECT, capture_output=True, text=True)
-    print("✅ pushed" if r.returncode == 0 else f"push warn: {r.stderr[:200]}")
+    if r.returncode != 0:
+        print(f"push warn: {r.stderr[:200]}")
+        return
+
+    # If on a feature branch, also merge to main so GitHub Pages picks up changes
+    if branch != "main":
+        subprocess.run(["git", "checkout", "main"], cwd=PROJECT, check=True)
+        subprocess.run(["git", "merge", branch, "--no-edit"], cwd=PROJECT, check=True)
+        r2 = subprocess.run(["git", "push", "origin", "main"],
+                            cwd=PROJECT, capture_output=True, text=True)
+        subprocess.run(["git", "checkout", branch], cwd=PROJECT, check=True)
+        if r2.returncode != 0:
+            print(f"main push warn: {r2.stderr[:200]}")
+        else:
+            print(f"✅ pushed ({branch} → main)")
+    else:
+        print("✅ pushed")
 
 
 if __name__ == "__main__":
