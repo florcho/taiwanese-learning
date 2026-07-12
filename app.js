@@ -431,13 +431,29 @@ function getFCState() {
 }
 function saveFCState(s) { localStorage.setItem(FC_KEY, JSON.stringify(s)); }
 
-// 모든 레슨의 단어를 hanzi 기준 중복제거하여 카드 풀 생성
+// ===== 카드 세트 =====
+// 종합(레슨 vocab) · 번↔간(번체↔간체 대치) · 시술명
+const FC_SETS = [
+  { id: 'all',  label: '종합' },
+  { id: 't2s',  label: '번↔간' },
+  { id: 'proc', label: '시술명' }
+];
+
+// 세트별 카드 풀. 각 카드는 고유 key(분류 저장용)와 type(렌더 분기용)을 가짐.
+function fcCardsForSet(setId) {
+  if (setId === 't2s') return buildT2SCards();
+  if (setId === 'proc') return buildProcCards();
+  return buildAllCards();
+}
+
+// 종합: 모든 레슨 단어를 hanzi 기준 중복제거. key=hanzi (기존 분류 상태와 호환)
 function buildAllCards() {
   const map = new Map();
   LESSONS.forEach(l => {
     (l.vocab || []).forEach(v => {
       if (!v.hanzi || map.has(v.hanzi)) return;
       map.set(v.hanzi, {
+        key: v.hanzi, type: 'vocab',
         hanzi: v.hanzi,
         zhuyin: v.zhuyin || '',
         pinyin: v.pinyin || '',
@@ -450,34 +466,76 @@ function buildAllCards() {
   return Array.from(map.values());
 }
 
+// 번↔간 대치: data/t2s.js (자동 생성). key='t2s:'+번체
+function buildT2SCards() {
+  if (typeof T2S_CARDS === 'undefined') return [];
+  return T2S_CARDS.map(c => ({
+    key: 't2s:' + c.hanzi, type: 't2s',
+    hanzi: c.hanzi, simp: c.simp,
+    pinyin: c.pinyin || '', zhuyin: c.zhuyin || '',
+    korean: c.korean || '', pairs: c.pairs || [], lessonId: c.lessonId || ''
+  }));
+}
+
+// 시술명: data/procedures.js. key='proc:'+번체
+function buildProcCards() {
+  if (typeof PROCEDURES === 'undefined') return [];
+  return PROCEDURES.filter(p => p.hanzi).map(p => ({
+    key: 'proc:' + p.hanzi, type: 'proc',
+    hanzi: p.hanzi, pinyin: p.pinyin || '', zhuyin: p.zhuyin || '',
+    koreanName: p.koreanName || '', desc: p.desc || '', img: p.img || '', lessonId: 'proc'
+  }));
+}
+
 // 카드의 현재 분류: 'new' | 'unknown' | 'known'
-function fcBox(hanzi) {
+function fcBox(key) {
   const s = getFCState();
-  return (s[hanzi] && s[hanzi].box) || 'new';
+  return (s[key] && s[key].box) || 'new';
 }
 function fcSetBox(card, box) {
   const s = getFCState();
-  s[card.hanzi] = { box, ts: new Date().toISOString(), lessonId: card.lessonId };
+  s[card.key] = { box, ts: new Date().toISOString(), lessonId: card.lessonId };
   saveFCState(s);
 }
 
-function fcCounts() {
-  const all = buildAllCards();
+function fcCounts(setId) {
+  const all = fcCardsForSet(setId);
   const c = { all: all.length, new: 0, unknown: 0, known: 0 };
-  all.forEach(card => { c[fcBox(card.hanzi)]++; });
+  all.forEach(card => { c[fcBox(card.key)]++; });
   return c;
+}
+
+// 세트의 기본 시작 덱: 미학습 우선 → 못맞춘 → 전체
+function fcDefaultDeck(setId) {
+  const c = fcCounts(setId);
+  return c.new ? 'new' : (c.unknown ? 'unknown' : 'all');
 }
 
 function openFlashcards() {
   show('screen-flashcard');
-  // 기본 덱: 못맞춘 있으면 못맞춘, 없으면 미학습, 둘 다 없으면 전체
-  const c = fcCounts();
-  const def = c.unknown ? 'unknown' : (c.new ? 'new' : 'all');
-  fcStartDeck(def);
+  const setId = (state.fc && state.fc.setId) || 'all';
+  renderFCSets(setId);
+  fcStartDeck(fcDefaultDeck(setId), setId);
 }
 
-function renderFCDecks(active) {
-  const c = fcCounts();
+function renderFCSets(activeSet) {
+  const el = document.getElementById('fc-sets');
+  if (!el) return;
+  el.innerHTML = FC_SETS.map(s =>
+    `<button class="fc-set ${s.id === activeSet ? 'active' : ''}" data-set="${s.id}">${s.label} <b>${fcCardsForSet(s.id).length}</b></button>`
+  ).join('');
+  el.querySelectorAll('.fc-set').forEach(b => {
+    b.onclick = () => {
+      const setId = b.dataset.set;
+      renderFCSets(setId);
+      fcStartDeck(fcDefaultDeck(setId), setId);
+    };
+  });
+}
+
+function renderFCDecks(active, setId) {
+  setId = setId || (state.fc && state.fc.setId) || 'all';
+  const c = fcCounts(setId);
   const decks = [
     { key: 'all', label: '전체', n: c.all },
     { key: 'new', label: '미학습', n: c.new },
@@ -488,18 +546,69 @@ function renderFCDecks(active) {
     `<button class="fc-chip ${d.key === active ? 'active' : ''}" data-deck="${d.key}">${d.label} <b>${d.n}</b></button>`
   ).join('');
   document.querySelectorAll('#fc-decks .fc-chip').forEach(b => {
-    b.onclick = () => fcStartDeck(b.dataset.deck);
+    b.onclick = () => fcStartDeck(b.dataset.deck, setId);
   });
 }
 
-function fcStartDeck(deck) {
-  const all = buildAllCards();
-  let cards = deck === 'all' ? all : all.filter(c => fcBox(c.hanzi) === deck);
+function fcStartDeck(deck, setId) {
+  setId = setId || (state.fc && state.fc.setId) || 'all';
+  const all = fcCardsForSet(setId);
+  let cards = deck === 'all' ? all : all.filter(c => fcBox(c.key) === deck);
   // 셔플
   cards = cards.slice().sort(() => Math.random() - 0.5);
-  state.fc = { deck, cards, idx: 0, flipped: false, studied: 0 };
-  renderFCDecks(deck);
+  state.fc = { setId, deck, cards, idx: 0, flipped: false, studied: 0 };
+  renderFCDecks(deck, setId);
   renderFlashcard();
+}
+
+// 카드 타입별 앞/뒤 면 HTML
+function fcFaces(card) {
+  if (card.type === 't2s') {
+    const pairs = card.pairs || [];
+    const hlTrad = [...card.hanzi].map(ch =>
+      pairs.some(p => p[0] === ch) ? `<span class="t2s-diff">${ch}</span>` : ch).join('');
+    const hlSimp = [...card.simp].map(ch =>
+      pairs.some(p => p[1] === ch) ? `<span class="t2s-diff">${ch}</span>` : ch).join('');
+    const mapping = pairs.map(p => `${p[0]}→${p[1]}`).join('　');
+    return {
+      front: `
+        <p class="fc-tag">번체</p>
+        <p class="fc-hanzi">${hlTrad}</p>
+        <p class="fc-hint">탭해서 간체·뜻 보기</p>`,
+      back: `
+        <p class="fc-tag">간체</p>
+        <p class="fc-hanzi fc-simp">${hlSimp}</p>
+        <p class="fc-korean">${card.korean}</p>
+        <p class="fc-phon">${card.pinyin}${card.zhuyin ? ' · ' + card.zhuyin : ''}</p>
+        ${mapping ? `<p class="t2s-map">${mapping}</p>` : ''}
+        <button class="fc-tts" id="fc-tts">🔊 다시 듣기</button>`
+    };
+  }
+  if (card.type === 'proc') {
+    return {
+      front: `
+        <p class="fc-hanzi">${card.hanzi}</p>
+        <p class="fc-phon">${card.pinyin}${card.zhuyin ? ' · ' + card.zhuyin : ''}</p>
+        <p class="fc-hint">탭해서 뜻·설명 보기</p>`,
+      back: `
+        <p class="fc-korean">${card.koreanName}</p>
+        ${card.img ? `<img class="fc-img" src="${card.img}" alt="${card.koreanName}"/>` : ''}
+        <p class="fc-desc">${card.desc}</p>
+        <button class="fc-tts" id="fc-tts">🔊 다시 듣기</button>`
+    };
+  }
+  // vocab (기본)
+  return {
+    front: `
+      <p class="fc-hanzi">${card.hanzi}</p>
+      ${card.example ? `<p class="fc-example">${card.example.hanzi}</p>` : ''}
+      <p class="fc-hint">탭해서 뜻 보기</p>`,
+    back: `
+      <p class="fc-korean">${card.korean}</p>
+      <p class="fc-phon">${card.pinyin}${card.zhuyin ? ' · ' + card.zhuyin : ''}</p>
+      ${card.example ? `<p class="fc-ex-ko">${card.example.korean}</p>` : ''}
+      <button class="fc-tts" id="fc-tts">🔊 다시 듣기</button>`
+  };
 }
 
 function renderFlashcard() {
@@ -520,29 +629,21 @@ function renderFlashcard() {
         <p>이 덱 ${fc.cards.length}장 끝!<br/><span style="color:var(--text-dim);font-size:13px">${fc.studied}장 분류함</span></p>
         <button class="btn btn-primary" id="fc-restart" style="margin-top:12px">다시 섞기</button>
       </div>`;
-    document.getElementById('fc-restart').onclick = () => fcStartDeck(fc.deck);
-    renderFCDecks(fc.deck);
+    document.getElementById('fc-restart').onclick = () => fcStartDeck(fc.deck, fc.setId);
+    renderFCDecks(fc.deck, fc.setId);
     return;
   }
   const card = fc.cards[fc.idx];
-  const box = fcBox(card.hanzi);
+  const box = fcBox(card.key);
   const boxBadge = box === 'known' ? '<span class="fc-badge known">맞춘</span>'
     : box === 'unknown' ? '<span class="fc-badge unknown">못맞춘</span>'
     : '<span class="fc-badge new">미학습</span>';
+  const faces = fcFaces(card);
   stage.innerHTML = `
     <div class="fc-progress">${fc.idx + 1} / ${fc.cards.length} ${boxBadge}</div>
     <div class="fc-card ${fc.flipped ? 'flipped' : ''}" id="fc-card">
-      <div class="fc-face fc-front">
-        <p class="fc-hanzi">${card.hanzi}</p>
-        ${card.example ? `<p class="fc-example">${card.example.hanzi}</p>` : ''}
-        <p class="fc-hint">탭해서 뜻 보기</p>
-      </div>
-      <div class="fc-face fc-back">
-        <p class="fc-korean">${card.korean}</p>
-        <p class="fc-phon">${card.pinyin}${card.zhuyin ? ' · ' + card.zhuyin : ''}</p>
-        ${card.example ? `<p class="fc-ex-ko">${card.example.korean}</p>` : ''}
-        <button class="fc-tts" id="fc-tts">🔊 다시 듣기</button>
-      </div>
+      <div class="fc-face fc-front">${faces.front}</div>
+      <div class="fc-face fc-back">${faces.back}</div>
     </div>
     <div class="fc-controls">
       ${fc.flipped ? `
@@ -577,7 +678,8 @@ function fcMark(known) {
   fc.idx++;
   fc.flipped = false;
   renderFlashcard();
-  renderFCDecks(fc.deck);
+  renderFCDecks(fc.deck, fc.setId);
+  renderFCSets(fc.setId);
 }
 
 // GitHub 동기화 (올리기)
@@ -618,7 +720,7 @@ async function pullFlashcardsFromGitHub() {
     });
     saveFCState(local);
     toast(`📥 ${merged}개 항목 반영됨`);
-    if (state.fc) fcStartDeck(state.fc.deck);
+    if (state.fc) { renderFCSets(state.fc.setId); fcStartDeck(state.fc.deck, state.fc.setId); }
   } catch (e) {
     toast('실패: ' + e.message);
   } finally {

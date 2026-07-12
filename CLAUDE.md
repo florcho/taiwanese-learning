@@ -104,6 +104,14 @@
 - **로컬 저장**: `localStorage['taiwanese-flashcards-v1']`. 키가 `hanzi` 라서 **레슨 갱신돼도 분류 유지**, 새 단어는 자동 '미학습'
 - **GitHub 동기화**: 카드화면 하단 버튼으로 `data/flashcard_state.json` push(올리기)/pull(받기). PAT 필요. SHA 갱신 지원
 
+### 🗂 3개 세트 (2026-07-12 추가)
+플래시카드 화면 상단에 **세트 선택 줄**(종합/번↔간/시술명) + 기존 상태 칩(전체/미학습/못맞춘/맞춘). Leitner 분류는 세트별 네임스페이스 key로 저장:
+- **종합**: 모든 레슨 vocab. key=`hanzi` (기존과 동일 → 분류 유실 없음)
+- **번↔간**: `data/t2s.js` (자동 생성). 레슨 vocab 중 번↔간이 다른 단어만. 앞=번체(글자 하이라이트)/뒤=간체+뜻+글자매핑. key=`t2s:번체`
+  - 생성/갱신: `python3 scripts/build_t2s.py` (opencc t2s). **레슨 단어 늘면 재실행.** 의존성 `pip3 install opencc-python-reimplemented`
+- **시술명**: `data/procedures.js` (72개, `scripts/build_procedures.py`의 ENTRIES 편집→재생성. pypinyin으로 拼音·注音 자동). 강남언니 대만 이벤트 목록에서 추출한 핵심 시술 용어. 앞=시술명 번체+拼音 / 뒤=한국어명+한글설명+옵셔널 `img`. key=`proc:번체`
+- 세 데이터 파일 모두 `index.html`에서 `document.write`로 로드(전역 `LESSONS`/`T2S_CARDS`/`PROCEDURES`)
+
 ### 📥 분류 상태 읽는 법 (레슨 추가/추천 시 활용)
 사용자가 "동기화했다"고 하면 `data/flashcard_state.json` 을 읽어 어떤 단어가 `unknown`(못 외운 것)인지 파악 가능. 형식:
 ```json

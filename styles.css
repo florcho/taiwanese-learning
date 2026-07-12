@@ -923,11 +923,38 @@ body {
 }
 
 /* ================= 플래시카드 ================= */
+/* 세트 선택 (종합 / 번↔간 / 시술명) */
+.fc-sets {
+  display: flex;
+  gap: 8px;
+  padding: 4px 0 10px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--border);
+}
+.fc-set {
+  flex: 1 1 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 12px;
+  padding: 10px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.fc-set b { color: var(--text-dim); margin-left: 2px; font-weight: 700; }
+.fc-set.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0f0f1a;
+}
+.fc-set.active b { color: #0f0f1a; }
+
 .fc-decks {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 4px 0 12px;
+  padding: 10px 0 12px;
   -webkit-overflow-scrolling: touch;
 }
 .fc-chip {
@@ -997,6 +1024,28 @@ body {
 .fc-korean { font-size: 30px; font-weight: 700; margin: 0 0 10px; color: var(--accent); }
 .fc-phon { font-size: 17px; color: var(--text-dim); margin: 0 0 14px; }
 .fc-ex-ko { font-size: 14px; color: var(--text-faint); margin: 0 0 16px; }
+
+/* 번↔간 세트 */
+.fc-tag {
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  color: var(--text-faint); margin: 0 0 6px;
+}
+.t2s-diff { color: var(--accent-2); }
+.fc-simp { color: var(--text); }
+.t2s-map {
+  font-size: 20px; color: var(--text-dim); margin: 12px 0 14px;
+  letter-spacing: 1px;
+}
+
+/* 시술명 세트 */
+.fc-desc {
+  font-size: 15px; line-height: 1.65; color: var(--text-dim);
+  margin: 4px 0 16px; text-align: left; max-width: 320px;
+}
+.fc-img {
+  max-width: 100%; max-height: 160px; border-radius: 12px;
+  margin: 0 0 12px; object-fit: cover;
+}
 .fc-tts {
   background: var(--bg-card-2);
   border: 1px solid var(--border);

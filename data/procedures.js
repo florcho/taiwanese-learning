@@ -1,0 +1,88 @@
+// 시술명 플래시카드 데이터 — scripts/build_procedures.py 로 생성
+// 강남언니 대만 이벤트 목록에서 추출한 핵심 시술 용어. 용어 추가/수정은 스크립트 ENTRIES 편집 후 재생성.
+// 앞면: 시술명(번체)+拼音  /  뒷면: 한국어명 + 설명 + 사진(옵셔널 img)
+
+const PROCEDURES = [
+  // 에너지 리프팅
+  { hanzi: '音波拉提', pinyin: 'yīn bō lā tí', zhuyin: 'ㄧㄣ ㄅㄛ ㄌㄚ ㄊㄧˊ', koreanName: '울쎄라(초음파 리프팅)', desc: '초음파(HIFU)를 근막층(SMAS)까지 전달해 당기는 리프팅. 美國音波·Ultherapy로도 표기', img: '' },
+  { hanzi: '美國音波2代', pinyin: 'měi guó yīn bō 2 dài', zhuyin: 'ㄇㄟˇ ㄍㄨㄛˊ ㄧㄣ ㄅㄛ ㄉㄞˋ', koreanName: '울쎄라피 프라임', desc: '울쎄라 2세대 장비 (Ultherapy Prime)', img: '' },
+  { hanzi: '海芙音波', pinyin: 'hǎi fú yīn bō', zhuyin: 'ㄏㄞˇ ㄈㄨˊ ㄧㄣ ㄅㄛ', koreanName: '하이푸(HIFU)', desc: '고강도 초음파 탄력 시술, 슈링크 계열', img: '' },
+  { hanzi: '舒麗可', pinyin: 'shū lì kě', zhuyin: 'ㄕㄨ ㄌㄧˋ ㄎㄜˇ', koreanName: '슈링크 유니버스', desc: 'HIFU 초음파 리프팅 장비 (Shurink Universe)', img: '' },
+  { hanzi: '立特拉', pinyin: 'lì tè lā', zhuyin: 'ㄌㄧˋ ㄊㄜˋ ㄌㄚ', koreanName: '리프테라', desc: '볼텍스 방식 초음파 리프팅 (Liftera)', img: '' },
+  { hanzi: '索夫波', pinyin: 'suǒ fū bō', zhuyin: 'ㄙㄨㄛˇ ㄈㄨ ㄅㄛ', koreanName: '소프웨이브', desc: '신형 초음파 리프팅 (Sofwave)', img: '' },
+  { hanzi: '鳳凰電波', pinyin: 'fèng huáng diàn bō', zhuyin: 'ㄈㄥˋ ㄏㄨㄤˊ ㄉㄧㄢˋ ㄅㄛ', koreanName: '써마지', desc: '고주파(RF)로 진피 콜라겐 수축·탄력. 電波·Thermage FLX', img: '' },
+  { hanzi: '海芙電波', pinyin: 'hǎi fú diàn bō', zhuyin: 'ㄏㄞˇ ㄈㄨˊ ㄉㄧㄢˋ ㄅㄛ', koreanName: '볼뉴머', desc: '고주파 리프팅 장비 (Volnewmer)', img: '' },
+  { hanzi: '玩美電波', pinyin: 'wán měi diàn bō', zhuyin: 'ㄨㄢˊ ㄇㄟˇ ㄉㄧㄢˋ ㄅㄛ', koreanName: '올리지오', desc: '고주파 리프팅 장비 (Oligio)', img: '' },
+  { hanzi: '鈦提升', pinyin: 'tài tí shēng', zhuyin: 'ㄊㄞˋ ㄊㄧˊ ㄕㄥ', koreanName: '티타늄 리프팅', desc: '고주파 탄력·타이트닝 (Titanium)', img: '' },
+  { hanzi: 'ONDA超微波', pinyin: 'ONDA chāo wēi bō', zhuyin: 'ㄔㄠ ㄨㄟ ㄅㄛ', koreanName: '온다 리프팅', desc: '마이크로웨이브로 지방분해+탄력', img: '' },
+  { hanzi: '鑽石超塑', pinyin: 'zuān shí chāo sù', zhuyin: 'ㄗㄨㄢ ㄕˊ ㄔㄠ ㄙㄨˋ', koreanName: '인모드', desc: 'RF 지방분해+타이트닝 (InMode FX·FORMA)', img: '' },
+  { hanzi: '埋線拉提', pinyin: 'mái xiàn lā tí', zhuyin: 'ㄇㄞˊ ㄒㄧㄢˋ ㄌㄚ ㄊㄧˊ', koreanName: '실리프팅', desc: '녹는 실로 처짐 리프팅. 線雕·線提拉術', img: '' },
+  { hanzi: '薄荷線', pinyin: 'bò hé xiàn', zhuyin: 'ㄅㄛˋ ㄏㄜˊ ㄒㄧㄢˋ', koreanName: '민트실', desc: '민트 재질 리프팅 실 (Mint)', img: '' },
+  { hanzi: '菲斯波', pinyin: 'fēi sī bō', zhuyin: 'ㄈㄟ ㄙ ㄅㄛ', koreanName: '엠페이스', desc: '근육+피부 동시 리프팅 (Emface)', img: '' },
+  // 주사·필러·부스터
+  { hanzi: '玻尿酸', pinyin: 'bō niào suān', zhuyin: 'ㄅㄛ ㄋㄧㄠˋ ㄙㄨㄢ', koreanName: '히알루론산(필러)', desc: '볼륨·주름 채우는 필러', img: '' },
+  { hanzi: '肉毒桿菌', pinyin: 'ròu dú gǎn jūn', zhuyin: 'ㄖㄡˋ ㄉㄨˊ ㄍㄢˇ ㄐㄩㄣ', koreanName: '보톡스', desc: '근육·주름 이완. 肉毒으로 줄여 씀', img: '' },
+  { hanzi: '咀嚼肌肉毒', pinyin: 'jǔ jué jī ròu dú', zhuyin: 'ㄐㄩˇ ㄐㄩㄝˊ ㄐㄧ ㄖㄡˋ ㄉㄨˊ', koreanName: '사각턱 보톡스', desc: '씹는근육 축소로 얼굴 갸름. 瘦臉針', img: '' },
+  { hanzi: '除皺針', pinyin: 'chú zhòu zhēn', zhuyin: 'ㄔㄨˊ ㄓㄡˋ ㄓㄣ', koreanName: '주름 보톡스', desc: '주름 개선 보톡스', img: '' },
+  { hanzi: '消脂針', pinyin: 'xiāo zhī zhēn', zhuyin: 'ㄒㄧㄠ ㄓ ㄓㄣ', koreanName: '지방분해주사', desc: '국소 지방 분해. 溶脂針·減脂針', img: '' },
+  { hanzi: '輪廓注射', pinyin: 'lún kuò zhù shè', zhuyin: 'ㄌㄨㄣˊ ㄎㄨㄛˋ ㄓㄨˋ ㄕㄜˋ', koreanName: '윤곽주사', desc: '얼굴 지방분해로 V라인', img: '' },
+  { hanzi: '麗珠蘭', pinyin: 'lì zhū lán', zhuyin: 'ㄌㄧˋ ㄓㄨ ㄌㄢˊ', koreanName: '리쥬란', desc: 'PDRN 피부재생 스킨부스터 (Rejuran)', img: '' },
+  { hanzi: '喬雅露', pinyin: 'qiáo yǎ lù', zhuyin: 'ㄑㄧㄠˊ ㄧㄚˇ ㄌㄨˋ', koreanName: '쥬베룩', desc: '콜라겐 생성 촉진 부스터 (Juvelook)', img: '' },
+  { hanzi: '水光針', pinyin: 'shuǐ guāng zhēn', zhuyin: 'ㄕㄨㄟˇ ㄍㄨㄤ ㄓㄣ', koreanName: '물광주사', desc: '피부 속 수분·광채', img: '' },
+  { hanzi: '精靈耳玻尿酸', pinyin: 'jīng líng ěr bō niào suān', zhuyin: 'ㄐㄧㄥ ㄌㄧㄥˊ ㄦˇ ㄅㄛ ㄋㄧㄠˋ ㄙㄨㄢ', koreanName: '귀필러(엘프귀)', desc: '귀 볼륨으로 얼굴 작아보이게', img: '' },
+  { hanzi: '頸紋玻尿酸', pinyin: 'jǐng wén bō niào suān', zhuyin: 'ㄐㄧㄥˇ ㄨㄣˊ ㄅㄛ ㄋㄧㄠˋ ㄙㄨㄢ', koreanName: '목주름 필러', desc: '목주름 채우는 필러', img: '' },
+  { hanzi: '童顏玻尿酸', pinyin: 'tóng yán bō niào suān', zhuyin: 'ㄊㄨㄥˊ ㄧㄢˊ ㄅㄛ ㄋㄧㄠˋ ㄙㄨㄢ', koreanName: '동안 필러', desc: '볼륨 보충 동안 필러', img: '' },
+  { hanzi: '舒顏萃', pinyin: 'shū yán cuì', zhuyin: 'ㄕㄨ ㄧㄢˊ ㄘㄨㄟˋ', koreanName: '스컬트라', desc: 'PLLA 콜라겐 부스터 (Sculptra)', img: '' },
+  { hanzi: '膠原蛋白Booster', pinyin: 'jiāo yuán dàn bái Booster', zhuyin: 'ㄐㄧㄠ ㄩㄢˊ ㄉㄢˋ ㄅㄞˊ', koreanName: 'Re2O(콜라겐 부스터)', desc: 'ECM 콜라겐 부스터', img: '' },
+  { hanzi: '黃金微針', pinyin: 'huáng jīn wēi zhēn', zhuyin: 'ㄏㄨㄤˊ ㄐㄧㄣ ㄨㄟ ㄓㄣ', koreanName: '골드 마이크로니들(포텐자)', desc: 'RF 미세바늘로 모공·재생. Potenza·Sylfirm', img: '' },
+  { hanzi: '靜脈注射', pinyin: 'jìng mài zhù shè', zhuyin: 'ㄐㄧㄥˋ ㄇㄞˋ ㄓㄨˋ ㄕㄜˋ', koreanName: '영양수액', desc: '백옥·신데렐라 등 정맥주사. 營養針', img: '' },
+  { hanzi: '自體血皮膚再生', pinyin: 'zì tǐ xuè pí fū zài shēng', zhuyin: 'ㄗˋ ㄊㄧˇ ㄒㄩㄝˋ ㄆㄧˊ ㄈㄨ ㄗㄞˋ ㄕㄥ', koreanName: 'PRP(자가혈 재생)', desc: '자기 혈소판으로 피부·모발 재생', img: '' },
+  { hanzi: '幹細胞', pinyin: 'gàn xì bāo', zhuyin: 'ㄍㄢˋ ㄒㄧˋ ㄅㄠ', koreanName: '줄기세포', desc: '줄기세포 재생 시술', img: '' },
+  // 눈 성형
+  { hanzi: '雙眼皮', pinyin: 'shuāng yǎn pí', zhuyin: 'ㄕㄨㄤ ㄧㄢˇ ㄆㄧˊ', koreanName: '쌍꺼풀', desc: '쌍꺼풀 수술', img: '' },
+  { hanzi: '自然粘連', pinyin: 'zì rán zhān lián', zhuyin: 'ㄗˋ ㄖㄢˊ ㄓㄢ ㄌㄧㄢˊ', koreanName: '자연유착·매몰', desc: '비절개 쌍꺼풀. 埋線', img: '' },
+  { hanzi: '開眼角', pinyin: 'kāi yǎn jiǎo', zhuyin: 'ㄎㄞ ㄧㄢˇ ㄐㄧㄠˇ', koreanName: '트임(앞·뒤트임)', desc: '눈 가로·세로 확장. 開眼頭', img: '' },
+  { hanzi: '提眼肌矯正', pinyin: 'tí yǎn jī jiǎo zhèng', zhuyin: 'ㄊㄧˊ ㄧㄢˇ ㄐㄧ ㄐㄧㄠˇ ㄓㄥˋ', koreanName: '눈매교정', desc: '안검거상근 조정', img: '' },
+  { hanzi: '眼下脂肪重置', pinyin: 'yǎn xià zhī fáng zhòng zhì', zhuyin: 'ㄧㄢˇ ㄒㄧㄚˋ ㄓ ㄈㄤˊ ㄓㄨㄥˋ ㄓˋ', koreanName: '눈밑지방재배치', desc: '눈밑 지방 재배치로 다크서클 개선. 排列', img: '' },
+  { hanzi: '上眼瞼', pinyin: 'shàng yǎn jiǎn', zhuyin: 'ㄕㄤˋ ㄧㄢˇ ㄐㄧㄢˇ', koreanName: '상안검·하안검', desc: '중년 눈 처짐 교정 (下眼瞼)', img: '' },
+  { hanzi: '提眉', pinyin: 'tí méi', zhuyin: 'ㄊㄧˊ ㄇㄟˊ', koreanName: '눈썹거상', desc: '눈썹 올려 눈꺼풀 처짐 개선. 眉下', img: '' },
+  // 코 성형
+  { hanzi: '鼻整形', pinyin: 'bí zhěng xíng', zhuyin: 'ㄅㄧˊ ㄓㄥˇ ㄒㄧㄥˊ', koreanName: '코성형', desc: '콧대·코끝 성형. 隆鼻', img: '' },
+  { hanzi: '初鼻', pinyin: 'chū bí', zhuyin: 'ㄔㄨ ㄅㄧˊ', koreanName: '첫코성형', desc: '처음 하는 코성형. 首次鼻整形', img: '' },
+  { hanzi: '鼻部重修', pinyin: 'bí bù chóng xiū', zhuyin: 'ㄅㄧˊ ㄅㄨˋ ㄔㄨㄥˊ ㄒㄧㄡ', koreanName: '코재수술', desc: '코 재수술', img: '' },
+  { hanzi: '埋線隆鼻', pinyin: 'mái xiàn lóng bí', zhuyin: 'ㄇㄞˊ ㄒㄧㄢˋ ㄌㄨㄥˊ ㄅㄧˊ', koreanName: '하이코(실코)', desc: '실로 콧대 세우는 비수술 (HIKO)', img: '' },
+  { hanzi: '鼻翼縮小', pinyin: 'bí yì suō xiǎo', zhuyin: 'ㄅㄧˊ ㄧˋ ㄙㄨㄛ ㄒㄧㄠˇ', koreanName: '콧볼축소', desc: '콧볼 너비 축소. 縮鼻翼', img: '' },
+  { hanzi: '自體肋骨', pinyin: 'zì tǐ lèi gǔ', zhuyin: 'ㄗˋ ㄊㄧˇ ㄌㄟˋ ㄍㄨˇ', koreanName: '자가늑연골 코', desc: '갈비연골로 코 재건', img: '' },
+  // 안면윤곽·수술
+  { hanzi: '臉部輪廓', pinyin: 'liǎn bù lún kuò', zhuyin: 'ㄌㄧㄢˇ ㄅㄨˋ ㄌㄨㄣˊ ㄎㄨㄛˋ', koreanName: '안면윤곽', desc: '사각턱·광대·턱끝 축소', img: '' },
+  { hanzi: '顴骨', pinyin: 'quán gǔ', zhuyin: 'ㄑㄩㄢˊ ㄍㄨˇ', koreanName: '광대(축소)', desc: '광대뼈 축소', img: '' },
+  { hanzi: '正頜', pinyin: 'zhèng hé', zhuyin: 'ㄓㄥˋ ㄏㄜˊ', koreanName: '양악수술', desc: '위·아래턱 교정', img: '' },
+  { hanzi: '人中縮短', pinyin: 'rén zhōng suō duǎn', zhuyin: 'ㄖㄣˊ ㄓㄨㄥ ㄙㄨㄛ ㄉㄨㄢˇ', koreanName: '인중축소', desc: '인중 길이 단축', img: '' },
+  { hanzi: '脂肪移植', pinyin: 'zhī fáng yí zhí', zhuyin: 'ㄓ ㄈㄤˊ ㄧˊ ㄓˊ', koreanName: '지방이식', desc: '자가지방 볼륨 이식. 脂肪填充', img: '' },
+  { hanzi: '抽脂', pinyin: 'chōu zhī', zhuyin: 'ㄔㄡ ㄓ', koreanName: '지방흡입', desc: '지방 흡입 제거', img: '' },
+  { hanzi: '臉部抽脂', pinyin: 'liǎn bù chōu zhī', zhuyin: 'ㄌㄧㄢˇ ㄅㄨˋ ㄔㄡ ㄓ', koreanName: '얼굴지방흡입', desc: '볼·이중턱 지방흡입', img: '' },
+  { hanzi: '雙下巴', pinyin: 'shuāng xià bā', zhuyin: 'ㄕㄨㄤ ㄒㄧㄚˋ ㄅㄚ', koreanName: '이중턱', desc: '이중턱 개선', img: '' },
+  { hanzi: '天鵝頸', pinyin: 'tiān é jǐng', zhuyin: 'ㄊㄧㄢ ㄜˊ ㄐㄧㄥˇ', koreanName: '목거상(백조목)', desc: '목주름·목라인 리프팅', img: '' },
+  { hanzi: '精靈耳', pinyin: 'jīng líng ěr', zhuyin: 'ㄐㄧㄥ ㄌㄧㄥˊ ㄦˇ', koreanName: '엘프귀 성형', desc: '누운귀 세우는 귀성형', img: '' },
+  // 바디·가슴
+  { hanzi: '胸部整形', pinyin: 'xiōng bù zhěng xíng', zhuyin: 'ㄒㄩㄥ ㄅㄨˋ ㄓㄥˇ ㄒㄧㄥˊ', koreanName: '가슴성형', desc: '보형물 가슴확대. 隆胸', img: '' },
+  { hanzi: '魔滴', pinyin: 'mó dī', zhuyin: 'ㄇㄛˊ ㄉㄧ', koreanName: '모티바', desc: '가슴 보형물 브랜드 (Motiva)', img: '' },
+  { hanzi: '直角肩', pinyin: 'zhí jiǎo jiān', zhuyin: 'ㄓˊ ㄐㄧㄠˇ ㄐㄧㄢ', koreanName: '직각어깨', desc: '승모근 축소로 어깨라인', img: '' },
+  { hanzi: '臀部', pinyin: 'tún bù', zhuyin: 'ㄊㄨㄣˊ ㄅㄨˋ', koreanName: '힙(엉덩이)', desc: '엉덩이·골반 필러/이식. 蜜桃', img: '' },
+  { hanzi: '小腿', pinyin: 'xiǎo tuǐ', zhuyin: 'ㄒㄧㄠˇ ㄊㄨㄟˇ', koreanName: '종아리', desc: '종아리 보톡스·퇴축', img: '' },
+  // 레이저·피부
+  { hanzi: '皮秒雷射', pinyin: 'pí miǎo léi shè', zhuyin: 'ㄆㄧˊ ㄇㄧㄠˇ ㄌㄟˊ ㄕㄜˋ', koreanName: '피코(레이저)', desc: '색소·문신·토닝 피코초 레이저. 蜂巢皮秒', img: '' },
+  { hanzi: '皮秒飛梭', pinyin: 'pí miǎo fēi suō', zhuyin: 'ㄆㄧˊ ㄇㄧㄠˇ ㄈㄟ ㄙㄨㄛ', koreanName: '피코 프락셀', desc: '피코 프락셔널, 모공·흉터', img: '' },
+  { hanzi: '淨膚雷射', pinyin: 'jìng fū léi shè', zhuyin: 'ㄐㄧㄥˋ ㄈㄨ ㄌㄟˊ ㄕㄜˋ', koreanName: '레이저토닝', desc: '색소·기미 토닝 레이저', img: '' },
+  { hanzi: 'CO2雷射', pinyin: 'CO2 léi shè', zhuyin: 'ㄌㄟˊ ㄕㄜˋ', koreanName: 'CO2 레이저', desc: '점·사마귀 제거', img: '' },
+  { hanzi: '除毛', pinyin: 'chú máo', zhuyin: 'ㄔㄨˊ ㄇㄠˊ', koreanName: '제모', desc: '레이저 제모', img: '' },
+  { hanzi: '水飛梭', pinyin: 'shuǐ fēi suō', zhuyin: 'ㄕㄨㄟˇ ㄈㄟ ㄙㄨㄛ', koreanName: '아쿠아필(물필링)', desc: '각질·모공 클렌징 필링', img: '' },
+  { hanzi: 'LDM', pinyin: 'LDM', zhuyin: '', koreanName: 'LDM(물방울 리프팅)', desc: '초음파 진정·재생', img: '' },
+  // 여성·치과·안과
+  { hanzi: '陰道緊實', pinyin: 'yīn dào jǐn shí', zhuyin: 'ㄧㄣ ㄉㄠˋ ㄐㄧㄣˇ ㄕˊ', koreanName: '질타이트닝', desc: '질 탄력 레이저·고주파', img: '' },
+  { hanzi: '私密除毛', pinyin: 'sī mì chú máo', zhuyin: 'ㄙ ㄇㄧˋ ㄔㄨˊ ㄇㄠˊ', koreanName: '여성 제모', desc: '브라질리언 등 여성 제모', img: '' },
+  { hanzi: '牙齒貼片', pinyin: 'yá chǐ tiē piàn', zhuyin: 'ㄧㄚˊ ㄔˇ ㄊㄧㄝ ㄆㄧㄢˋ', koreanName: '라미네이트', desc: '치아 표면 세라믹 부착. 貼面', img: '' },
+  { hanzi: 'SMILE', pinyin: 'SMILE', zhuyin: '', koreanName: '스마일라식·ICL', desc: '시력교정 수술', img: '' },
+];
+
+if (typeof module !== 'undefined' && module.exports) module.exports = { PROCEDURES };
