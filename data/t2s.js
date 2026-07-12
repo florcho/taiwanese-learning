@@ -2967,6 +2967,1054 @@ const T2S_CARDS = [
    ]
   ],
   "lessonId": "L06"
+ },
+ {
+  "hanzi": "影片拍攝",
+  "simp": "影片拍摄",
+  "pinyin": "yǐngpiàn pāishè",
+  "zhuyin": "ㄧㄥˇ ㄆㄧㄢˋ ㄆㄞ ㄕㄜˋ",
+  "korean": "영상 촬영",
+  "pairs": [
+   [
+    "攝",
+    "摄"
+   ]
+  ],
+  "lessonId": "L07"
+ },
+ {
+  "hanzi": "剪輯製作",
+  "simp": "剪辑制作",
+  "pinyin": "jiǎnjí zhìzuò",
+  "zhuyin": "ㄐㄧㄢˇ ㄐㄧˊ ㄓˋ ㄗㄨㄛˋ",
+  "korean": "편집 제작",
+  "pairs": [
+   [
+    "輯",
+    "辑"
+   ],
+   [
+    "製",
+    "制"
+   ]
+  ],
+  "lessonId": "L07"
+ },
+ {
+  "hanzi": "貴公司",
+  "simp": "贵公司",
+  "pinyin": "guì gōngsī",
+  "zhuyin": "ㄍㄨㄟˋ ㄍㄨㄥ ㄙ",
+  "korean": "귀사 (상대방 회사 존칭)",
+  "pairs": [
+   [
+    "貴",
+    "贵"
+   ]
+  ],
+  "lessonId": "L07"
+ },
+ {
+  "hanzi": "無法配合",
+  "simp": "无法配合",
+  "pinyin": "wúfǎ pèihé",
+  "zhuyin": "ㄨˊ ㄈㄚˇ ㄆㄟˋ ㄏㄜˊ",
+  "korean": "맞추기 어렵다, 응하기 어렵다",
+  "pairs": [
+   [
+    "無",
+    "无"
+   ]
+  ],
+  "lessonId": "L07"
+ },
+ {
+  "hanzi": "就診",
+  "simp": "就诊",
+  "pinyin": "jiùzhěn",
+  "zhuyin": "ㄐㄧㄡˋ ㄓㄣ",
+  "korean": "진료를 받다·내원하다",
+  "pairs": [
+   [
+    "診",
+    "诊"
+   ]
+  ],
+  "lessonId": "L08"
+ },
+ {
+  "hanzi": "螢幕錄影",
+  "simp": "萤幕录影",
+  "pinyin": "yíngmù lùyǐng",
+  "zhuyin": "ㄧㄥˊ ㄇㄨˋ ㄌㄨˋ ㄧㄥˊ",
+  "korean": "화면 녹화·스크린 레코딩",
+  "pairs": [
+   [
+    "螢",
+    "萤"
+   ],
+   [
+    "錄",
+    "录"
+   ]
+  ],
+  "lessonId": "L08"
+ },
+ {
+  "hanzi": "名額",
+  "simp": "名额",
+  "pinyin": "míng'é",
+  "zhuyin": "ㄇㄧㄥˊ ㄜˊ",
+  "korean": "정원·한정 인원 자리",
+  "pairs": [
+   [
+    "額",
+    "额"
+   ]
+  ],
+  "lessonId": "L08"
+ },
+ {
+  "hanzi": "預約流程",
+  "simp": "预约流程",
+  "pinyin": "yùyuē liúchéng",
+  "zhuyin": "ㄩˋ ㄩㄝ ㄌㄧㄡˊ ㄔㄥˊ",
+  "korean": "예약 플로우·예약 절차",
+  "pairs": [
+   [
+    "預",
+    "预"
+   ],
+   [
+    "約",
+    "约"
+   ]
+  ],
+  "lessonId": "L08"
+ },
+ {
+  "hanzi": "額滿",
+  "simp": "额满",
+  "pinyin": "émǎn",
+  "zhuyin": "ㄜˊ ㄇㄢˇ",
+  "korean": "정원 마감·만석",
+  "pairs": [
+   [
+    "額",
+    "额"
+   ],
+   [
+    "滿",
+    "满"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "熱門",
+  "simp": "热门",
+  "pinyin": "rèmén",
+  "zhuyin": "ㄖㄜˋ ㄇㄣˊ",
+  "korean": "인기 있는·핫한",
+  "pairs": [
+   [
+    "熱",
+    "热"
+   ],
+   [
+    "門",
+    "门"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "搜尋",
+  "simp": "搜寻",
+  "pinyin": "sōuxún",
+  "zhuyin": "ㄙㄡ ㄒㄩㄣˊ",
+  "korean": "검색하다 (대만식, 중국 본토 搜索과 구분)",
+  "pairs": [
+   [
+    "尋",
+    "寻"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "瀏覽",
+  "simp": "浏览",
+  "pinyin": "liúlǎn",
+  "zhuyin": "ㄌㄧㄡˊ ㄌㄢˇ",
+  "korean": "둘러보다·탐색하다·브라우징하다",
+  "pairs": [
+   [
+    "瀏",
+    "浏"
+   ],
+   [
+    "覽",
+    "览"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "評價",
+  "simp": "评价",
+  "pinyin": "píngjià",
+  "zhuyin": "ㄆㄧㄥˊ ㄐㄧㄚˋ",
+  "korean": "후기·평점·평가 (별점+텍스트 통합)",
+  "pairs": [
+   [
+    "評",
+    "评"
+   ],
+   [
+    "價",
+    "价"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "線上諮詢",
+  "simp": "线上咨询",
+  "pinyin": "xiànshàng zīxún",
+  "zhuyin": "ㄒㄧㄢˋ ㄕㄤˋ ㄗ ㄒㄩㄣˊ",
+  "korean": "온라인 상담 (앱·웹 채팅 상담)",
+  "pairs": [
+   [
+    "線",
+    "线"
+   ],
+   [
+    "諮",
+    "咨"
+   ],
+   [
+    "詢",
+    "询"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "臉部輪廓",
+  "simp": "脸部轮廓",
+  "pinyin": "liǎnbù lúnkuò",
+  "zhuyin": "ㄌㄧㄢˇ ㄅㄨˋ ㄌㄨㄣˊ ㄎㄨㄛˋ",
+  "korean": "얼굴 윤곽·페이스라인",
+  "pairs": [
+   [
+    "臉",
+    "脸"
+   ],
+   [
+    "輪",
+    "轮"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "一站式服務",
+  "simp": "一站式服务",
+  "pinyin": "yízhànshì fúwù",
+  "zhuyin": "ㄧˊ ㄓㄢˋ ㄕˋ ㄈㄨˊ ㄨˋ",
+  "korean": "원스톱 서비스 (한 곳에서 모두 해결)",
+  "pairs": [
+   [
+    "務",
+    "务"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "正式上線",
+  "simp": "正式上线",
+  "pinyin": "zhèngshì shàngxiàn",
+  "zhuyin": "ㄓㄥˋ ㄕˋ ㄕㄤˋ ㄒㄧㄢˋ",
+  "korean": "정식 출시·서비스 오픈 (上線=서비스 오픈, 上刊=콘텐츠 게재와 구분)",
+  "pairs": [
+   [
+    "線",
+    "线"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "精選",
+  "simp": "精选",
+  "pinyin": "jīngxuǎn",
+  "zhuyin": "ㄐㄧㄥ ㄒㄩㄢˇ",
+  "korean": "엄선된·큐레이션된",
+  "pairs": [
+   [
+    "選",
+    "选"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "陸續",
+  "simp": "陆续",
+  "pinyin": "lùxù",
+  "zhuyin": "ㄌㄨˋ ㄒㄩˋ",
+  "korean": "속속·잇달아·하나씩 이어지며",
+  "pairs": [
+   [
+    "陸",
+    "陆"
+   ],
+   [
+    "續",
+    "续"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "覆蓋",
+  "simp": "覆盖",
+  "pinyin": "fùgài",
+  "zhuyin": "ㄈㄨˋ ㄍㄞˋ",
+  "korean": "커버하다·망라하다 (서비스 범위)",
+  "pairs": [
+   [
+    "蓋",
+    "盖"
+   ]
+  ],
+  "lessonId": "L09"
+ },
+ {
+  "hanzi": "推說",
+  "simp": "推说",
+  "pinyin": "tuī shuō",
+  "zhuyin": "ㄊㄨㄟ ㄕㄨㄛ",
+  "korean": "핑계 대다, 둘러대다",
+  "pairs": [
+   [
+    "說",
+    "说"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "浪費時間",
+  "simp": "浪费时间",
+  "pinyin": "làngfèi shíjiān",
+  "zhuyin": "ㄌㄤˋ ㄈㄟˋ ㄕˊ ㄐㄧㄢ",
+  "korean": "시간 낭비",
+  "pairs": [
+   [
+    "費",
+    "费"
+   ],
+   [
+    "時",
+    "时"
+   ],
+   [
+    "間",
+    "间"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "應用程式",
+  "simp": "应用程式",
+  "pinyin": "yìngyòng chéngshì",
+  "zhuyin": "ㄧㄥˋ ㄩㄥˋ ㄔㄥˊ ㄕˋ",
+  "korean": "앱·애플리케이션 (대만식, 중국 본토는 應用程序)",
+  "pairs": [
+   [
+    "應",
+    "应"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "持續思考",
+  "simp": "持续思考",
+  "pinyin": "chíxù sīkǎo",
+  "zhuyin": "ㄔˊ ㄒㄩˋ ㄙ ㄎㄠˇ",
+  "korean": "끊임없이 고민하다, 지속적으로 생각하다",
+  "pairs": [
+   [
+    "續",
+    "续"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "疑問",
+  "simp": "疑问",
+  "pinyin": "yíwèn",
+  "zhuyin": "ㄧˊ ㄨㄣˋ",
+  "korean": "의문·궁금한 점 (격식, 구어의 問題보다 공식적)",
+  "pairs": [
+   [
+    "問",
+    "问"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "積分",
+  "simp": "积分",
+  "pinyin": "jīfēn",
+  "zhuyin": "ㄐㄧ ㄈㄣ",
+  "korean": "포인트·적립금",
+  "pairs": [
+   [
+    "積",
+    "积"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "拒絕登入",
+  "simp": "拒绝登入",
+  "pinyin": "jùjué dēngrù",
+  "zhuyin": "ㄐㄩˋ ㄐㄩㄝˊ ㄉㄥ ㄖㄨˋ",
+  "korean": "로그인 거부·차단",
+  "pairs": [
+   [
+    "絕",
+    "绝"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "下單",
+  "simp": "下单",
+  "pinyin": "xiàdān",
+  "zhuyin": "ㄒㄧㄚˋ ㄉㄢ",
+  "korean": "주문하다·예약 결제하다",
+  "pairs": [
+   [
+    "單",
+    "单"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "寶貴",
+  "simp": "宝贵",
+  "pinyin": "bǎoguì",
+  "zhuyin": "ㄅㄠˇ ㄍㄨㄟˋ",
+  "korean": "소중한·귀중한 (공식 용어)",
+  "pairs": [
+   [
+    "寶",
+    "宝"
+   ],
+   [
+    "貴",
+    "贵"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "回饋意見",
+  "simp": "回馈意见",
+  "pinyin": "huíkuì yìjiàn",
+  "zhuyin": "ㄏㄨㄟˊ ㄎㄨㄟˋ ㄧˋ ㄐㄧㄢˋ",
+  "korean": "피드백·의견 (대만식, 중국 본토는 反饋意見)",
+  "pairs": [
+   [
+    "饋",
+    "馈"
+   ],
+   [
+    "見",
+    "见"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "始終",
+  "simp": "始终",
+  "pinyin": "shǐzhōng",
+  "zhuyin": "ㄕˇ ㄓㄨㄥ",
+  "korean": "시종·항상·언제나 (격식 문어)",
+  "pairs": [
+   [
+    "終",
+    "终"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "致力於",
+  "simp": "致力于",
+  "pinyin": "zhìlì yú",
+  "zhuyin": "ㄓˋ ㄌㄧˋ ㄩˊ",
+  "korean": "~에 힘쓰다·노력하다 (격식 공문)",
+  "pairs": [
+   [
+    "於",
+    "于"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "優質",
+  "simp": "优质",
+  "pinyin": "yōuzhì",
+  "zhuyin": "ㄧㄡ ㄓˋ",
+  "korean": "우수한·고품질의",
+  "pairs": [
+   [
+    "優",
+    "优"
+   ],
+   [
+    "質",
+    "质"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "認真審核",
+  "simp": "认真审核",
+  "pinyin": "rènzhēn shěnhé",
+  "zhuyin": "ㄖㄣˋ ㄓㄣ ㄕㄣˇ ㄏㄜˊ",
+  "korean": "꼼꼼히 검토하다·성실히 심사하다",
+  "pairs": [
+   [
+    "認",
+    "认"
+   ],
+   [
+    "審",
+    "审"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "宣傳",
+  "simp": "宣传",
+  "pinyin": "xuānchuán",
+  "zhuyin": "ㄒㄩㄢ ㄔㄨㄢˊ",
+  "korean": "홍보하다·선전하다",
+  "pairs": [
+   [
+    "傳",
+    "传"
+   ]
+  ],
+  "lessonId": "L10"
+ },
+ {
+  "hanzi": "記錄",
+  "simp": "记录",
+  "pinyin": "jìlù",
+  "zhuyin": "ㄐㄧˋ ㄌㄨˋ",
+  "korean": "기록하다, 메모하다",
+  "pairs": [
+   [
+    "記",
+    "记"
+   ],
+   [
+    "錄",
+    "录"
+   ]
+  ],
+  "lessonId": "L11"
+ },
+ {
+  "hanzi": "組長",
+  "simp": "组长",
+  "pinyin": "zǔzhǎng",
+  "zhuyin": "ㄗㄨˇ ㄓㄤˇ",
+  "korean": "팀장, 조장 (소규모 팀 리더)",
+  "pairs": [
+   [
+    "組",
+    "组"
+   ],
+   [
+    "長",
+    "长"
+   ]
+  ],
+  "lessonId": "L11"
+ },
+ {
+  "hanzi": "盡力",
+  "simp": "尽力",
+  "pinyin": "jìnlì",
+  "zhuyin": "ㄐㄧㄣˋ ㄌㄧˋ",
+  "korean": "최선을 다하다, 힘껏 하다",
+  "pairs": [
+   [
+    "盡",
+    "尽"
+   ]
+  ],
+  "lessonId": "L11"
+ },
+ {
+  "hanzi": "爭取",
+  "simp": "争取",
+  "pinyin": "zhēngqǔ",
+  "zhuyin": "ㄓㄥ ㄑㄩˇ",
+  "korean": "쟁취하다, 적극적으로 얻어내다",
+  "pairs": [
+   [
+    "爭",
+    "争"
+   ]
+  ],
+  "lessonId": "L11"
+ },
+ {
+  "hanzi": "個人",
+  "simp": "个人",
+  "pinyin": "gèrén",
+  "zhuyin": "ㄍㄜˋ ㄖㄣˊ",
+  "korean": "개인적으로 (입장 표명 완충어)",
+  "pairs": [
+   [
+    "個",
+    "个"
+   ]
+  ],
+  "lessonId": "L11"
+ },
+ {
+  "hanzi": "術前術後",
+  "simp": "术前术后",
+  "pinyin": "shù qián shù hòu",
+  "zhuyin": "ㄕㄨˋ ㄑㄧㄢˊ ㄕㄨˋ ㄏㄡˋ",
+  "korean": "시술 전후 (before & after)",
+  "pairs": [
+   [
+    "術",
+    "术"
+   ],
+   [
+    "後",
+    "后"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "比價",
+  "simp": "比价",
+  "pinyin": "bǐ jià",
+  "zhuyin": "ㄅㄧˇ ㄐㄧㄚˋ",
+  "korean": "가격 비교(하다)",
+  "pairs": [
+   [
+    "價",
+    "价"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "潛水",
+  "simp": "潜水",
+  "pinyin": "qián shuǐ",
+  "zhuyin": "ㄑㄧㄢˊ ㄕㄨㄟˇ",
+  "korean": "눈팅하다 (SNS·커뮤니티에서 보기만 하다)",
+  "pairs": [
+   [
+    "潛",
+    "潜"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "無版權配樂",
+  "simp": "无版权配乐",
+  "pinyin": "wú bǎn quán pèi yuè",
+  "zhuyin": "ㄨˊ ㄅㄢˇ ㄑㄩㄢˊ ㄆㄟˋ ㄩㄝˋ",
+  "korean": "저작권 없는 배경음악 (royalty-free music)",
+  "pairs": [
+   [
+    "無",
+    "无"
+   ],
+   [
+    "權",
+    "权"
+   ],
+   [
+    "樂",
+    "乐"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "投廣告",
+  "simp": "投广告",
+  "pinyin": "tóu guǎng gào",
+  "zhuyin": "ㄊㄡˊ ㄍㄨㄤˇ ㄍㄠˋ",
+  "korean": "광고를 집행하다·돌리다",
+  "pairs": [
+   [
+    "廣",
+    "广"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "隨行翻譯",
+  "simp": "随行翻译",
+  "pinyin": "suí háng fān yì",
+  "zhuyin": "ㄙㄨㄟˊ ㄏㄤˊ ㄈㄢ ㄧˋ",
+  "korean": "동행 통역사",
+  "pairs": [
+   [
+    "隨",
+    "随"
+   ],
+   [
+    "譯",
+    "译"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "法律糾紛",
+  "simp": "法律纠纷",
+  "pinyin": "fǎ lǜ jiū fēn",
+  "zhuyin": "ㄈㄚˇ ㄌㄩˋ ㄐㄧㄡ ㄈㄣ",
+  "korean": "법적 분쟁",
+  "pairs": [
+   [
+    "糾",
+    "纠"
+   ],
+   [
+    "紛",
+    "纷"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "難以",
+  "simp": "难以",
+  "pinyin": "nán yǐ",
+  "zhuyin": "ㄋㄢˊ ㄧˇ",
+  "korean": "~하기 어렵다 (격식 문어체)",
+  "pairs": [
+   [
+    "難",
+    "难"
+   ]
+  ],
+  "lessonId": "L12"
+ },
+ {
+  "hanzi": "鳳凰電波拉提",
+  "simp": "凤凰电波拉提",
+  "pinyin": "fèng huáng diàn bō lā tí",
+  "zhuyin": "ㄈㄥˋ ㄏㄨㄤˊ ㄉㄧㄢˋ ㄅㄛ ㄌㄚ ㄊㄧˊ",
+  "korean": "피닉스 써마지 리프팅. 이탈리아 의료기기 브랜드 Phoenix(鳳凰=봉황)의 고주파(RF·電波) 리프팅 시술. 피부 심층부를 가열해 콜라겐 재생을 유도하고 처진 피부를 끌어올림(拉提=리프팅). 대만에서는 써마지 계열 시술 중 인지도가 높음.",
+  "pairs": [
+   [
+    "鳳",
+    "凤"
+   ],
+   [
+    "電",
+    "电"
+   ]
+  ],
+  "lessonId": "L13"
+ },
+ {
+  "hanzi": "喬雅露",
+  "simp": "乔雅露",
+  "pinyin": "qiáo yǎ lù",
+  "zhuyin": "ㄑㄧㄠˊ ㄧㄚˇ ㄌㄨˋ",
+  "korean": "쥬베룩(Juvelook). PLA(폴리락트산)+HA(히알루론산) 복합 수광 주사. 피부 재생·광택·탄력 개선 목적. 한국 제품으로 대만 醫美 시장에서 인기.",
+  "pairs": [
+   [
+    "喬",
+    "乔"
+   ]
+  ],
+  "lessonId": "L13"
+ },
+ {
+  "hanzi": "美國音波2代",
+  "simp": "美国音波2代",
+  "pinyin": "měi guó yīn bō èr dài",
+  "zhuyin": "ㄇㄟˇ ㄍㄨㄛˊ ㄧㄣ ㄅㄛ ㄦˋ ㄉㄞˋ",
+  "korean": "미국 울쎄라 2세대(Ultherapy Prime). 고강도 집속 초음파(HIFU)로 SMAS 근막층까지 침투해 리프팅.",
+  "pairs": [
+   [
+    "國",
+    "国"
+   ]
+  ],
+  "lessonId": "L13"
+ },
+ {
+  "hanzi": "連結",
+  "simp": "连结",
+  "pinyin": "liánjié",
+  "zhuyin": "ㄌㄧㄢˊ ㄐㄧㄝˊ",
+  "korean": "링크; 연결",
+  "pairs": [
+   [
+    "連",
+    "连"
+   ],
+   [
+    "結",
+    "结"
+   ]
+  ],
+  "lessonId": "L14"
+ },
+ {
+  "hanzi": "輪廓",
+  "simp": "轮廓",
+  "pinyin": "lúnkuò",
+  "zhuyin": "ㄌㄨㄣˊ ㄎㄨㄛˋ",
+  "korean": "윤곽; 얼굴 라인",
+  "pairs": [
+   [
+    "輪",
+    "轮"
+   ]
+  ],
+  "lessonId": "L14"
+ },
+ {
+  "hanzi": "優惠券／折價券",
+  "simp": "优惠券／折价券",
+  "pinyin": "yōuhuìquàn／zhéjiàquàn",
+  "zhuyin": "ㄧㄡ ㄏㄨㄟˋ ㄩㄢˋ／ㄓㄜˊ ㄐㄧㄚˋ ㄩㄢˋ",
+  "korean": "할인 쿠폰 (優惠券=공식·앱UI, 折價券=대만 구어)",
+  "pairs": [
+   [
+    "優",
+    "优"
+   ],
+   [
+    "價",
+    "价"
+   ]
+  ],
+  "lessonId": "L14"
+ },
+ {
+  "hanzi": "折現率",
+  "simp": "折现率",
+  "pinyin": "zhéxiànlǜ",
+  "zhuyin": "ㄓㄜˊ ㄒㄧㄢˋ ㄌㄩˋ",
+  "korean": "할인율 (折扣率과 혼용)",
+  "pairs": [
+   [
+    "現",
+    "现"
+   ]
+  ],
+  "lessonId": "L14"
+ },
+ {
+  "hanzi": "撰寫",
+  "simp": "撰写",
+  "pinyin": "zhuànxiě",
+  "zhuyin": "ㄓㄨㄢˋ ㄒㄧㄝˇ",
+  "korean": "작성하다 (격식체)",
+  "pairs": [
+   [
+    "寫",
+    "写"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "收據認證",
+  "simp": "收据认证",
+  "pinyin": "shōujù rènzhèng",
+  "zhuyin": "ㄕㄡ ㄐㄩˋ ㄖㄣˋ ㄓㄥˋ",
+  "korean": "영수증 인증 (실제 결제 확인된 후기임을 보증하는 플랫폼 기능)",
+  "pairs": [
+   [
+    "據",
+    "据"
+   ],
+   [
+    "認",
+    "认"
+   ],
+   [
+    "證",
+    "证"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "親切",
+  "simp": "亲切",
+  "pinyin": "qīnqiè",
+  "zhuyin": "ㄑㄧㄣ ㄑㄧㄝˋ",
+  "korean": "친절하다",
+  "pairs": [
+   [
+    "親",
+    "亲"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "強迫",
+  "simp": "强迫",
+  "pinyin": "qiǎngpò",
+  "zhuyin": "ㄑㄧㄤˇ ㄆㄛˋ",
+  "korean": "강요하다, 강제로 ~시키다",
+  "pairs": [
+   [
+    "強",
+    "强"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "付款金額",
+  "simp": "付款金额",
+  "pinyin": "fùkuǎn jīné",
+  "zhuyin": "ㄈㄨˋ ㄎㄨㄢˇ ㄐㄧㄣ ㄜˊ",
+  "korean": "결제 금액",
+  "pairs": [
+   [
+    "額",
+    "额"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "恢復期",
+  "simp": "恢复期",
+  "pinyin": "huīfùqī",
+  "zhuyin": "ㄏㄨㄟ ㄈㄨˋ ㄑㄧ",
+  "korean": "회복기 (시술·수술 후 회복 기간)",
+  "pairs": [
+   [
+    "復",
+    "复"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "預留",
+  "simp": "预留",
+  "pinyin": "yùliú",
+  "zhuyin": "ㄩˋ ㄌㄧㄡˊ",
+  "korean": "미리 남겨두다, 여유를 두다",
+  "pairs": [
+   [
+    "預",
+    "预"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "雙下巴",
+  "simp": "双下巴",
+  "pinyin": "shuāng xià bā",
+  "zhuyin": "ㄕㄨㄤ ㄒㄧㄚˋ ㄅㄚ",
+  "korean": "이중턱",
+  "pairs": [
+   [
+    "雙",
+    "双"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "下頜線",
+  "simp": "下颌线",
+  "pinyin": "xià hé xiàn",
+  "zhuyin": "ㄒㄧㄚˋ ㄏㄜˊ ㄒㄧㄢˋ",
+  "korean": "턱라인, 턱선",
+  "pairs": [
+   [
+    "頜",
+    "颌"
+   ],
+   [
+    "線",
+    "线"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "集中護理",
+  "simp": "集中护理",
+  "pinyin": "jízhōng hùlǐ",
+  "zhuyin": "ㄐㄧˊ ㄓㄨㄥ ㄏㄨˋ ㄌㄧˇ",
+  "korean": "집중 관리",
+  "pairs": [
+   [
+    "護",
+    "护"
+   ]
+  ],
+  "lessonId": "L15"
+ },
+ {
+  "hanzi": "不限發數",
+  "simp": "不限发数",
+  "pinyin": "bú xiàn fā shù",
+  "zhuyin": "ㄅㄨˊ ㄒㄧㄢˋ ㄈㄚ ㄕㄨˋ",
+  "korean": "횟수 무제한 (발수 제한 없음, 레이저·고주파 기기 시술 단위)",
+  "pairs": [
+   [
+    "發",
+    "发"
+   ],
+   [
+    "數",
+    "数"
+   ]
+  ],
+  "lessonId": "L15"
  }
 ];
 if (typeof module !== 'undefined' && module.exports) module.exports = { T2S_CARDS };
